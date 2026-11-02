@@ -1,19 +1,17 @@
-# GitHub Profile Dashboard: обзор проекта
+# GitHub Profile Dashboard — обзор проекта
 
-## Назначение
+Одностраничный навигационный dashboard на React и Vite для перехода к портфолио-репозиториям.
 
-Одностраничный dashboard на React и Vite для навигации по портфолио-репозиториям. Демонстрирует интерфейс каталога проектов и ссылки на связанные материалы.
+## Основные файлы
+- [React entry point](../src/main.jsx)
+- [Dashboard interface](../src/App.jsx)
+- [Styles](../src/index.css)
+- [Package scripts](../package.json)
+- [Pages workflow](../.github/workflows/pages.yml)
 
-## Структура
+## Ссылки
+- [Опубликованный dashboard](https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/)
+- [Репозиторий](https://github.com/ekatmoz88-alt/github-profile-dashboard-vite)
+- [GitHub Actions](https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/actions)
 
-- `index.html` — HTML-точка входа Vite.
-- `src/main.jsx` — точка входа React.
-- `src/App.jsx` — основной интерфейс.
-- `src/index.css` — стили.
-- `package.json` / `package-lock.json` — npm-зависимости и скрипты.
-- `vite.config.*` — конфигурация Vite.
-- `.github/workflows/pages.yml` — сборка и публикация Pages.
-
-## Ограничения
-
-Dashboard — навигационная витрина, не официальный API GitHub и не live-мониторинг статуса репозиториев.
+Dashboard — навигационная витрина, не официальный GitHub API и не live-мониторинг статуса репозиториев.
