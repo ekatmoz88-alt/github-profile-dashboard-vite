@@ -44,6 +44,11 @@ function eventDescription(event) {
   }
 }
 
+function websiteUrl(value) {
+  if (!value) return '';
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+}
+
 export default function App() {
   const [profile, setProfile] = useState(null);
   const [repositories, setRepositories] = useState([]);
@@ -89,8 +94,7 @@ export default function App() {
     const total = Object.values(counts).reduce((sum, count) => sum + count, 0) || 1;
     return Object.entries(counts)
       .map(([name, count]) => ({ name, count, percent: Math.round((count / total) * 100) }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 7);
+      .sort((a, b) => b.count - a.count);
   }, [repositories]);
 
   const visibleRepos = useMemo(() => {
@@ -145,7 +149,7 @@ export default function App() {
                 <div className="profile-meta">
                   {profile.company && <span>▣ {profile.company}</span>}
                   {profile.location && <span>⌖ {profile.location}</span>}
-                  {profile.blog && <a href={profile.blog.startsWith('http') ? profile.blog : `https://${profile.blog}`} target="_blank" rel="noreferrer">↗ Website</a>}
+                  {profile.blog && <a href={websiteUrl(profile.blog)} target="_blank" rel="noreferrer">↗ Website</a>}
                   <span>Joined {new Date(profile.created_at).toLocaleDateString('en', { month: 'short', year: 'numeric' })}</span>
                 </div>
               </div>
@@ -186,6 +190,7 @@ export default function App() {
                           <span>★ {formatNumber(repo.stargazers_count)}</span>
                           <span>⑂ {formatNumber(repo.forks_count)}</span>
                           <span>Updated {timeAgo(repo.updated_at)}</span>
+                          {repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noreferrer">Live site ↗</a>}
                         </div>
                       </div>
                       <span className={repo.private ? 'visibility private' : 'visibility'}>{repo.private ? 'Private' : 'Public'}</span>
