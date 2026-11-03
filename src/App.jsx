@@ -168,16 +168,17 @@ export default function App() {
               <div className="featured-project-grid">
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">DESKTOP SOFTWARE DOCUMENTATION</p>
-                    <h3>Deshifrator — Desktop Application Technical Documentation</h3>
-                    <p>Technical documentation for a desktop application (ARM), covering system architecture, file exchange, MRZ processing, SOAP integrations, and key technical decisions.</p>
+                    <p className="eyebrow">ENTERPRISE SOAP · .NET 8</p>
+                    <h3>Modern UMMS SOAP Client (.NET 8)</h3>
+                    <p>Documentation case study for an anonymized enterprise SOAP API and client system, covering service methods, client workflows, offline synchronization, encrypted-file exchange, and digital signatures.</p>
                     <div className="featured-project-tags">
-                      <span>Technical Writing</span>
-                      <span>Software Documentation</span>
-                      <span>System Architecture</span>
+                      <span>SOAP API</span>
+                      <span>.NET 8</span>
+                      <span>Enterprise Documentation</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/umms-enterprise-soap-client.html" target="_blank" rel="noreferrer">Published case study ↗</a>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">Documentation repository ↗</a>
                 </article>
 
                 <article className="featured-project panel">
