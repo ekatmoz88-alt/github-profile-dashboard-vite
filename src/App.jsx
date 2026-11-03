@@ -163,7 +163,7 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>Selected examples of desktop software, Oracle data-platform, and enterprise documentation.</p>
+                <p>Selected examples of enterprise SOAP client, Oracle data-platform, and enterprise system documentation.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
