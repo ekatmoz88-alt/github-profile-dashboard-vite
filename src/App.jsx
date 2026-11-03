@@ -178,7 +178,7 @@ export default function App() {
                     </div>
                   </div>
                   <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/umms-enterprise-soap-client.html" target="_blank" rel="noreferrer">Published case study ↗</a>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">Documentation repository ↗</a>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">umms-docs · Public ↗</a>
                 </article>
 
                 <article className="featured-project panel">
