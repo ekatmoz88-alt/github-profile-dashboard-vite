@@ -159,6 +159,22 @@ export default function App() {
               </div>
             </section>
 
+            <section className="featured-project panel" aria-labelledby="featured-project-title">
+              <div className="featured-project-copy">
+                <p className="eyebrow">FEATURED PROJECT</p>
+                <h2 id="featured-project-title">Deshifrator — Desktop Application Technical Documentation</h2>
+                <p>Technical documentation for a desktop application (ARM), covering system architecture, file exchange, MRZ processing, SOAP integrations, and key technical decisions.</p>
+                <div className="featured-project-tags">
+                  <span>Technical Writing</span>
+                  <span>Software Documentation</span>
+                  <span>System Architecture</span>
+                </div>
+              </div>
+              <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">
+                Open project repository ↗
+              </a>
+            </section>
+
             <section className="stats-grid" aria-label="GitHub statistics">
               <article className="stat-card"><span className="stat-icon">▤</span><span className="stat-label">Public repositories</span><strong>{formatNumber(profile.public_repos)}</strong><small>On this account</small></article>
               <article className="stat-card"><span className="stat-icon">★</span><span className="stat-label">Total stars</span><strong>{formatNumber(totalStars)}</strong><small>Across loaded repositories</small></article>
