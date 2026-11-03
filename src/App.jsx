@@ -159,20 +159,62 @@ export default function App() {
               </div>
             </section>
 
-            <section className="featured-project panel" aria-labelledby="featured-project-title">
-              <div className="featured-project-copy">
-                <p className="eyebrow">FEATURED PROJECT</p>
-                <h2 id="featured-project-title">Deshifrator — Desktop Application Technical Documentation</h2>
-                <p>Technical documentation for a desktop application (ARM), covering system architecture, file exchange, MRZ processing, SOAP integrations, and key technical decisions.</p>
-                <div className="featured-project-tags">
-                  <span>Technical Writing</span>
-                  <span>Software Documentation</span>
-                  <span>System Architecture</span>
-                </div>
+            <section className="featured-projects" aria-label="Featured portfolio projects">
+              <div className="featured-projects-heading">
+                <p className="eyebrow">SELECTED WORK</p>
+                <h2>Featured technical documentation projects</h2>
+                <p>Selected examples of API, software, and data-platform documentation.</p>
               </div>
-              <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">
-                Open project repository ↗
-              </a>
+              <div className="featured-project-grid">
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">DESKTOP SOFTWARE DOCUMENTATION</p>
+                    <h3>Deshifrator — Desktop Application Technical Documentation</h3>
+                    <p>Technical documentation for a desktop application (ARM), covering system architecture, file exchange, MRZ processing, SOAP integrations, and key technical decisions.</p>
+                    <div className="featured-project-tags">
+                      <span>Technical Writing</span>
+                      <span>Software Documentation</span>
+                      <span>System Architecture</span>
+                    </div>
+                  </div>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">
+                    GitHub repository ↗
+                  </a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">DOCS-AS-CODE · API QUALITY</p>
+                    <h3>Technical Writing Workflows</h3>
+                    <p>Docs-as-Code example with OpenAPI validation, Spectral, Markdown linting, Lychee link checking, and automated quality checks using GitHub Actions.</p>
+                    <div className="featured-project-tags">
+                      <span>OpenAPI</span>
+                      <span>Spectral</span>
+                      <span>GitHub Actions</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">ORACLE · DATA PLATFORM DOCUMENTATION</p>
+                    <h3>Global11 Demo Data Platform</h3>
+                    <p>Documentation for Oracle Global 11g, including the relational data model, OLAP patterns, and SQL scripts and scenarios.</p>
+                    <div className="featured-project-tags">
+                      <span>Oracle 11g</span>
+                      <span>Relational Model</span>
+                      <span>OLAP</span>
+                    </div>
+                  </div>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">
+                    GitHub repository ↗
+                  </a>
+                </article>
+              </div>
             </section>
 
             <section className="stats-grid" aria-label="GitHub statistics">
