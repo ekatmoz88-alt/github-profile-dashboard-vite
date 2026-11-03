@@ -163,7 +163,7 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>Selected examples of API, software, and data-platform documentation.</p>
+                <p>Selected examples of desktop software, Oracle data-platform, and enterprise documentation.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -177,26 +177,7 @@ export default function App() {
                       <span>System Architecture</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">
-                    GitHub repository ↗
-                  </a>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">DOCS-AS-CODE · API QUALITY</p>
-                    <h3>Technical Writing Workflows</h3>
-                    <p>Docs-as-Code example with OpenAPI validation, Spectral, Markdown linting, Lychee link checking, and automated quality checks using GitHub Actions.</p>
-                    <div className="featured-project-tags">
-                      <span>OpenAPI</span>
-                      <span>Spectral</span>
-                      <span>GitHub Actions</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                  </div>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                 </article>
 
                 <article className="featured-project panel">
@@ -210,9 +191,21 @@ export default function App() {
                       <span>OLAP</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">
-                    GitHub repository ↗
-                  </a>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
+                    <h3>Territory Docs</h3>
+                    <p>Technical documentation for the Territory project, including system and database documentation, structured project materials, and Russian/English documentation review.</p>
+                    <div className="featured-project-tags">
+                      <span>Technical Documentation</span>
+                      <span>Database Documentation</span>
+                      <span>RU / EN</span>
+                    </div>
+                  </div>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                 </article>
               </div>
             </section>
