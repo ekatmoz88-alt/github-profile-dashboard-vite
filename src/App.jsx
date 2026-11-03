@@ -163,7 +163,7 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>Selected examples of enterprise SOAP client, Oracle data-platform, and enterprise system documentation.</p>
+                <p>Selected examples of enterprise SOAP/API, database, system, and C++ UI component documentation.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -207,6 +207,24 @@ export default function App() {
                     </div>
                   </div>
                   <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">C++ · UI NAVIGATION COMPONENT</p>
+                    <h3>Cobalt UI Navigation</h3>
+                    <p>Source-based technical documentation for a C++ UI navigation component, covering architecture, native interface abstraction, NavItem lifecycle, focus management, callbacks, queued updates, and compatibility fallback behavior.</p>
+                    <div className="featured-project-tags">
+                      <span>C++</span>
+                      <span>UI Architecture</span>
+                      <span>API Reference</span>
+                      <span>Source-based Documentation</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
                 </article>
               </div>
             </section>
