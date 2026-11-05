@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C# / SQLite Data Access Layer Review</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#121a2b;--line:#29364b;--text:#e8edf6;--muted:#a7b4c8;--accent:#8bb8ff;--good:#a7d8b2;--warn:#f0c879}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1120px;margin:0 auto;padding:52px 28px 80px}.eyebrow{color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.12;letter-spacing:-.04em;margin:.6rem 0 1rem}h2{font-size:1.45rem;margin:2.8rem 0 1rem;letter-spacing:-.02em}
+.lead{max-width:780px;color:var(--muted);font-size:1.08rem}.meta{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 34px}.pill{border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--muted);font-size:.82rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:18px 0}
+.notice{border-left:3px solid var(--accent);color:var(--muted)}table{width:100%;border-collapse:collapse;font-size:.94rem}th,td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}td:first-child{font-weight:650;min-width:150px}td:nth-child(2){color:#c2ccdb}td:last-child{white-space:nowrap;color:var(--warn);font-weight:650}
+code{color:#c6d8ff;background:#1b2940;padding:2px 5px;border-radius:5px;font-size:.9em}ol{padding-left:1.4rem}li{padding:4px 0}.muted{color:var(--muted)}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media(max-width:760px){main{padding:34px 16px 56px}.panel{padding:12px;overflow-x:auto}table{min-width:780px}td:last-child{white-space:normal}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">Technical documentation · Source-based review</div>
+<h1>C# / SQLite Data Access Layer Review</h1>
+<p class="lead">An implementation-focused review of the DbStationary data access layer, covering connection management, command execution, reader lifecycle, parameter binding, mapping and error handling.</p>
+<div class="meta"><span class="pill">C#</span><span class="pill">SQLite</span><span class="pill">Static source review</span><span class="pill">Portfolio case study</span></div>
+<div class="panel notice"><strong>Scope and evidence.</strong> This review is based on inspected source excerpts from the connection factory, command wrapper, parameter helpers, reader extensions, mapping layer and provider classes. The original application source is not published here. This page is a review artifact, not a source-code mirror. No claim is made that the application was built, executed, load-tested or covered by a complete automated test suite.</div>
+<h2>01 · Component responsibilities</h2>
+<div class="panel"><table><thead><tr><th>Component</th><th>Observed responsibility</th></tr></thead><tbody>
+<tr><td><code>ConnectionFactory</code></td><td>Creates, opens and returns the SQLite connection.</td></tr>
+<tr><td><code>SQLiteCommandEx&lt;T&gt;</code></td><td>Wraps command execution and result handling.</td></tr>
+<tr><td><code>SQLiteCommandEx_Params</code></td><td>Creates and binds SQLite parameters, including GUID helpers.</td></tr>
+<tr><td><code>SQLiteDataReaderEx</code></td><td>Provides typed access to values returned by a reader.</td></tr>
+<tr><td><code>SQLiteMaps</code></td><td>Maps database values to application models.</td></tr>
+<tr><td>Providers</td><td>Execute application-level data operations.</td></tr>
+</tbody></table></div>
+<h2>02 · Architecture verification findings</h2>
+<div class="panel"><table><thead><tr><th>Area</th><th>Source evidence</th><th>Review status</th></tr></thead><tbody>
+<tr><td>Thread safety</td><td><code>ConnectionFactory.cs:11, 27–33</code> uses a static singleton and returns the same connection without visible locking. <code>CaseProvider.cs:43–45</code> begins transactions on that shared connection.</td><td>Risk identified</td></tr>
+<tr><td>Connection lifecycle</td><td><code>ConnectionFactory.cs:18–24</code> creates and opens the connection in the factory constructor. <code>GetConnection()</code> reuses it; no close/dispose path is implemented in this class.</td><td>Partially verified</td></tr>
+<tr><td>Resource disposal</td><td><code>SQLiteCommandEx.cs:99–110, 130–141, 162–173, 235–239, 261–265</code> contains execution paths using <code>using</code>. Parameter-array overloads at <code>197–215, 248–252, 275–279</code> do not dispose the command. The factory retains its connection.</td><td>Inconsistent disposal</td></tr>
+<tr><td>DataReader lifecycle</td><td><code>SQLiteCommandEx.cs:220–227</code>: <code>AsDataReader()</code> returns a reader from inside a <code>using</code> scope, so it is disposed before the caller can consume it.</td><td>Defect confirmed</td></tr>
+<tr><td>Parameter handling</td><td><code>SQLiteCommandEx_Params.cs:10–22, 25–36</code> creates and adds named parameters. <code>SQLiteCommandEx.cs:299–302</code> maps null to <code>DBNull.Value</code>. <code>ResetParams</code> relies on <code>Debug.Assert</code> for count matching (<code>286–293</code>). Provider call sites use parameterized commands.</td><td>Partially verified</td></tr>
+<tr><td>Type conversion</td><td><code>SQLiteDataReaderEx.cs:28–30, 33–102, 104–121</code> contains a direct generic cast, typed getters and DBNull checks. <code>SQLiteMaps.cs:24–91</code> uses these methods in model mapping. Conversion behavior was not comprehensively tested.</td><td>Partially verified</td></tr>
+<tr><td>GUID processing</td><td><code>CaseProvider.cs:54</code> stores <code>CaseGUID</code> as a string; <code>SQLiteMaps.cs:36–38</code> reads it using <code>Guid.Parse</code>. <code>SQLiteCommandEx_Params.cs:140–155</code> defines GUID parameter helpers. No round-trip test evidence was supplied.</td><td>Partially verified</td></tr>
+<tr><td>Error handling</td><td><code>CaseProvider.cs:308–312</code> catches, logs and rethrows exceptions in <code>LoadCases()</code>. The inspected command execution methods generally propagate exceptions; a consistent logging policy is not visible across providers.</td><td>Partially verified</td></tr>
+</tbody></table></div>
+<h2>03 · Recommended follow-up verification</h2>
+<div class="panel"><ol>
+<li>Trace connection ownership from creation through disposal.</li>
+<li>Inspect concurrent execution paths and define thread-safety guarantees.</li>
+<li>Verify reader, command and connection disposal on success and failure paths.</li>
+<li>Test parameter binding, argument-count mismatches, nulls and unexpected values.</li>
+<li>Add type-conversion and GUID round-trip tests.</li>
+<li>Review exception handling and ensure diagnostic logs do not expose sensitive data.</li>
+</ol></div>
+<h2>04 · Review limitations</h2>
+<p class="muted">Statuses describe only the supplied source excerpts. The concurrency risk is not a demonstrated runtime failure. Disposal and conversion findings should be validated with focused tests. The reader-lifecycle defect follows directly from the <code>using</code> scope in the inspected <code>AsDataReader()</code> implementation.</p>
+<div class="footer">Independent C# / SQLite review case · Separate from the Oracle Global11 project · <a href="../../">Back to portfolio dashboard</a></div>
+</main></body></html>
