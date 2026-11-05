@@ -152,15 +152,15 @@ function SqliteArchitectureReview() {
                 <text x="378" y="203" fontWeight="700">SQLite Database</text>
                 <path d="M378 174 V144" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
                 <rect x="296" y="96" width="165" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="378" y="125" fontWeight="700">Data Reader</text>
+                <text x="378" y="125" fontWeight="700">SQLiteDataReaderEx</text>
                 <path d="M461 120 H520" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
                 <rect x="526" y="96" width="215" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
                 <text x="633" y="125" fontWeight="700">SQLiteMaps</text>
                 <path d="M633 144 V169" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
                 <rect x="526" y="174" width="215" height="48" rx="7" fill="#eaf3fb" stroke="#8db7d7"/>
                 <text x="633" y="203" fontWeight="700">Application Models</text>
-                <path d="M633 222 V247 H120 V222" stroke="#397da9" strokeWidth="1.6" strokeDasharray="5 4" markerEnd="url(#sqlite-arrow-flow)" fill="none"/>
-                <text x="375" y="270" fontSize="11" fill="#718096">Mapped result returned to application code</text>
+                <path d="M741 198 H750 V285 H8 V42 H15" stroke="#397da9" strokeWidth="1.6" strokeDasharray="5 4" markerEnd="url(#sqlite-arrow-flow)" fill="none"/>
+                <text x="375" y="270" fontSize="11" fill="#718096">Mapped result returned to Application Code</text>
               </g>
             </svg>
           </div>
@@ -168,9 +168,182 @@ function SqliteArchitectureReview() {
         </article>
       </div>
 
+
+      <div className="sqlite-diagram-grid sqlite-additional-diagrams">
+
+        <article className="panel sqlite-diagram-card" id="sqlite-component-architecture">
+          <div className="panel-heading">
+            <div>
+              <p className="eyebrow">03 · COMPONENT ARCHITECTURE</p>
+              <h3>Data Access Layer Components</h3>
+            </div>
+          </div>
+          <div className="sqlite-svg-wrap">
+            <svg viewBox="0 0 760 300" role="img"
+              aria-label="Conceptual component architecture of the C Sharp SQLite data access layer">
+              <defs>
+                <marker id="sqlite-arrow-components" markerWidth="8" markerHeight="8"
+                  refX="6" refY="3" orient="auto">
+                  <path d="M0 0 L6 3 L0 6" fill="none"
+                    stroke="#397da9" strokeWidth="1.3"/>
+                </marker>
+              </defs>
+
+              <rect x="18" y="24" width="724" height="250" rx="12"
+                fill="#f8fafc" stroke="#b9c8d6" strokeDasharray="5 4"/>
+              <text x="38" y="49" fontSize="12" fontWeight="700"
+                fill="#52677d">DATA ACCESS LAYER</text>
+
+              <g textAnchor="middle" fill="#203b55">
+                <rect x="42" y="85" width="190" height="58" rx="8"
+                  fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="137" y="109" fontSize="14" fontWeight="700">ConnectionFactory</text>
+                <text x="137" y="128" fontSize="11" fill="#52677d">Connection access</text>
+
+                <rect x="285" y="85" width="190" height="58" rx="8"
+                  fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="380" y="109" fontSize="14" fontWeight="700">SQLiteCommandEx&lt;T&gt;</text>
+                <text x="380" y="128" fontSize="11" fill="#52677d">Command execution</text>
+
+                <rect x="528" y="85" width="190" height="58" rx="8"
+                  fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="623" y="109" fontSize="14" fontWeight="700">SQLiteDataReaderEx</text>
+                <text x="623" y="128" fontSize="11" fill="#52677d">Result reading</text>
+
+                <rect x="285" y="190" width="190" height="58" rx="8"
+                  fill="#eaf3fb" stroke="#8db7d7"/>
+                <text x="380" y="214" fontSize="14" fontWeight="700">SQLiteMaps</text>
+                <text x="380" y="233" fontSize="11" fill="#52677d">Data mapping</text>
+              </g>
+
+              <path d="M232 114 H278" stroke="#397da9" strokeWidth="2"
+                markerEnd="url(#sqlite-arrow-components)"/>
+              <path d="M475 114 H521" stroke="#397da9" strokeWidth="2"
+                markerEnd="url(#sqlite-arrow-components)"/>
+              <path d="M623 143 V160 H380 V183" fill="none"
+                stroke="#397da9" strokeWidth="2"
+                markerEnd="url(#sqlite-arrow-components)"/>
+
+              <text x="380" y="290" textAnchor="middle" fontSize="11"
+                fill="#718096">Conceptual grouping — internal dependencies require source verification</text>
+            </svg>
+          </div>
+          <p className="sqlite-diagram-note">
+            The diagram groups the identified components by their described responsibilities.
+            It does not assert a complete dependency graph.
+          </p>
+        </article>
+
+        <article className="panel sqlite-diagram-card" id="sqlite-interaction-sequence">
+          <div className="panel-heading">
+            <div>
+              <p className="eyebrow">04 · INTERACTION SEQUENCE</p>
+              <h3>Conceptual Request Lifecycle</h3>
+            </div>
+          </div>
+          <div className="sqlite-svg-wrap">
+            <svg viewBox="0 0 760 390" role="img"
+              aria-label="Conceptual sequence of a request through SQLite data access components">
+              <defs>
+                <marker id="sqlite-arrow-sequence" markerWidth="8" markerHeight="8"
+                  refX="6" refY="3" orient="auto">
+                  <path d="M0 0 L6 3 L0 6" fill="none"
+                    stroke="#397da9" strokeWidth="1.3"/>
+                </marker>
+              </defs>
+
+              <g textAnchor="middle" fontSize="11" fontWeight="700" fill="#203b55">
+                <rect x="8" y="18" width="112" height="42" rx="6" fill="#eaf3fb" stroke="#8db7d7"/>
+                <text x="64" y="43">Application</text>
+
+                <rect x="133" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="189" y="43">ConnectionFactory</text>
+
+                <rect x="258" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="314" y="43">Command</text>
+
+                <rect x="383" y="18" width="112" height="42" rx="6" fill="#edf6f1" stroke="#91bda6"/>
+                <text x="439" y="43">SQLite</text>
+
+                <rect x="508" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="564" y="43">Data Reader</text>
+
+                <rect x="633" y="18" width="112" height="42" rx="6" fill="#eaf3fb" stroke="#8db7d7"/>
+                <text x="689" y="43">SQLiteMaps</text>
+              </g>
+
+              <g stroke="#b6c2ce" strokeDasharray="4 4" strokeWidth="1.2">
+                <path d="M64 60 V340"/>
+                <path d="M189 60 V340"/>
+                <path d="M314 60 V340"/>
+                <path d="M439 60 V340"/>
+                <path d="M564 60 V340"/>
+                <path d="M689 60 V340"/>
+              </g>
+
+              <g fill="none" stroke="#397da9" strokeWidth="1.8"
+                markerEnd="url(#sqlite-arrow-sequence)">
+                <path d="M64 91 H189"/>
+                <path d="M189 131 H314"/>
+                <path d="M314 171 H439"/>
+                <path d="M439 211 H564"/>
+                <path d="M564 251 H689"/>
+              </g>
+
+              <g fontSize="11" fill="#52677d">
+                <text x="126" y="83" textAnchor="middle">1 · Request</text>
+                <text x="251" y="123" textAnchor="middle">2 · Connection</text>
+                <text x="376" y="163" textAnchor="middle">3 · Execute</text>
+                <text x="501" y="203" textAnchor="middle">4 · Read</text>
+                <text x="626" y="243" textAnchor="middle">5 · Map</text>
+              </g>
+
+              <path d="M689 291 H64" fill="none" stroke="#397da9"
+                strokeWidth="1.8" strokeDasharray="5 4"
+                markerEnd="url(#sqlite-arrow-sequence)"/>
+              <text x="376" y="280" textAnchor="middle" fontSize="11"
+                fill="#52677d">6 · Mapped result returned to application</text>
+
+              <text x="380" y="375" textAnchor="middle" fontSize="11"
+                fill="#718096">Illustrative sequence — exact call order and ownership require source verification</text>
+            </svg>
+          </div>
+          <p className="sqlite-diagram-note">
+            A conceptual lifecycle view, not a verified runtime trace or timing diagram.
+          </p>
+        </article>
+
+      </div>
+
+
+      <article className="panel sqlite-diagram-card sqlite-review-map"
+        id="sqlite-architecture-review-map">
+        <div className="panel-heading">
+          <div>
+            <p className="eyebrow">05 · ARCHITECTURE REVIEW MAP</p>
+            <h3>Areas to Validate</h3>
+          </div>
+        </div>
+        <div className="sqlite-review-map-grid">
+          {reviewAreas.map(([name, description], index) => (
+            <div className="sqlite-review-map-item" key={name}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <strong>{name}</strong>
+                <p>{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="sqlite-diagram-note">
+          Review areas derived from the available source-based review material.
+          These are verification points, not confirmed defects.
+        </p>
+      </article>
+
       <div className="sqlite-review-columns">
         <article className="panel">
-          <p className="eyebrow">03 · COMPONENT RESPONSIBILITIES</p>
+          <p className="eyebrow">06 · COMPONENT RESPONSIBILITIES</p>
           <h3>Component Responsibilities</h3>
           <div className="sqlite-table-wrap">
             <table className="sqlite-table">
@@ -185,7 +358,7 @@ function SqliteArchitectureReview() {
         </article>
 
         <article className="panel">
-          <p className="eyebrow">04 · ARCHITECTURE REVIEW</p>
+          <p className="eyebrow">07 · REVIEW AREAS</p>
           <h3>Areas to Validate</h3>
           <p className="sqlite-muted">Review focus areas, not claims of confirmed defects.</p>
           <div className="sqlite-risk-list">
@@ -200,7 +373,7 @@ function SqliteArchitectureReview() {
       </div>
 
       <article className="panel sqlite-recommendations">
-        <p className="eyebrow">05 · RECOMMENDATIONS</p>
+        <p className="eyebrow">08 · RECOMMENDATIONS</p>
         <h3>Recommended Verification Steps</h3>
         <ol>
           {recommendations.map((item) => <li key={item}>{item}</li>)}

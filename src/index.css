@@ -274,3 +274,61 @@ h1, h2 { font-family: 'Space Grotesk', sans-serif; }
   .sqlite-diagram-card { padding: 15px; }
   .sqlite-review-columns .panel, .sqlite-recommendations { padding: 17px; }
 }
+
+/* Additional C# / SQLite architecture diagrams */
+.sqlite-additional-diagrams {
+  margin-top: 18px;
+}
+
+.sqlite-review-map {
+  margin-top: 18px;
+}
+
+.sqlite-review-map-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sqlite-review-map-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e1e8ef;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.sqlite-review-map-item > span {
+  display: flex;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: #eaf3fb;
+  color: #397da9;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sqlite-review-map-item strong {
+  display: block;
+  color: #203b55;
+  font-size: 13px;
+}
+
+.sqlite-review-map-item p {
+  margin: 5px 0 0;
+  color: #52677d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .sqlite-review-map-grid {
+    grid-template-columns: 1fr;
+  }
+}
