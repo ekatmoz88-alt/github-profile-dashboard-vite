@@ -355,17 +355,47 @@ function SqliteArchitectureReview() {
           </div>
         </article>
 
-        <article className="panel">
+        <article className="panel sqlite-review-audit">
           <p className="eyebrow">07 · REVIEW AREAS</p>
-          <h3>Areas to Validate</h3>
-          <p className="sqlite-muted">Review focus areas, not claims of confirmed defects.</p>
-          <div className="sqlite-risk-list">
-            {reviewAreas.map(([name, description], index) => (
-              <div className="sqlite-risk-item" key={name}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div><strong>{name}</strong><p>{description}</p></div>
-              </div>
-            ))}
+          <h3>Architecture Verification Checklist</h3>
+          <p className="sqlite-muted">
+            Evidence to inspect in the source code before assigning a review result.
+            No implementation defects are asserted.
+          </p>
+          <div className="sqlite-table-wrap">
+            <table className="sqlite-table">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>What to inspect</th>
+                  <th>Evidence required</th>
+                  <th>Review status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reviewAreas.map(([name, description], index) => {
+                  const evidence = [
+                    "Shared connection and command usage; synchronization or ownership boundaries.",
+                    "Connection creation, reuse, ownership transfer and close paths.",
+                    "Dispose, using/finally blocks and cleanup on success and exception paths.",
+                    "Reader open/read/close sequence and connection use while the reader is active.",
+                    "Parameter creation, binding, types and SQL construction at call sites.",
+                    "Database value reads, null checks, SQLite type handling and conversion code.",
+                    "GUID parsing, serialization, database representation and round-trip tests.",
+                    "Exception handling, propagation, logging and diagnostic context."
+                  ][index];
+
+                  return (
+                    <tr key={name}>
+                      <th scope="row">{name}</th>
+                      <td>{description}</td>
+                      <td>{evidence}</td>
+                      <td><span className="sqlite-review-pending">Not verified</span></td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </article>
       </div>
