@@ -420,8 +420,8 @@ function SqliteArchitectureReview() {
       </article>
 
       <div className="sqlite-review-links">
-        <a href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/data-access-review.md" target="_blank" rel="noreferrer">Source review document ↗</a>
-        <a href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">Repository ↗</a>
+        <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/src/App.jsx" target="_blank" rel="noreferrer">Review implementation (React) ↗</a>
+        <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite" target="_blank" rel="noreferrer">Dashboard repository ↗</a>
       </div>
       <p className="sqlite-disclaimer">
         This is a separate C# / SQLite review case. It is not represented as part of the Oracle Global11 architecture.
@@ -604,7 +604,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="#sqlite-review">View architecture review ↓</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/data-access-review.md" target="_blank" rel="noreferrer">Source Markdown ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/src/App.jsx" target="_blank" rel="noreferrer">Review implementation (React) ↗</a>
                   </div>
                 </article>
 
