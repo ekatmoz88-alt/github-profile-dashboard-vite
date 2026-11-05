@@ -420,7 +420,7 @@ function SqliteArchitectureReview() {
       </article>
 
       <div className="sqlite-review-links">
-        <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/src/App.jsx" target="_blank" rel="noreferrer">Review implementation (React) ↗</a>
+        <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/sqlite-data-access-review.md" target="_blank" rel="noreferrer">Source review (Markdown) ↗</a>
         <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite" target="_blank" rel="noreferrer">Dashboard repository ↗</a>
       </div>
       <p className="sqlite-disclaimer">
@@ -604,7 +604,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="#sqlite-review">View architecture review ↓</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/src/App.jsx" target="_blank" rel="noreferrer">Review implementation (React) ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/sqlite-data-access-review.md" target="_blank" rel="noreferrer">Source review (Markdown) ↗</a>
                   </div>
                 </article>
 
