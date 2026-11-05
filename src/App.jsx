@@ -52,11 +52,12 @@ function websiteUrl(value) {
 
 function SqliteArchitectureReview() {
   const components = [
-    ["ConnectionFactory", "Creates or provides database connections."],
-    ["SQLiteCommandEx<T>", "Encapsulates command execution and result handling."],
-    ["SQLiteDataReaderEx", "Reads records returned by database operations."],
+    ["ConnectionFactory", "Creates, opens and provides SQLite connections."],
+    ["SQLiteCommandEx<T>", "Wraps command execution and result handling."],
+    ["SQLiteCommandEx_Params", "Creates and binds SQLite parameters, including GUID helpers."],
+    ["SQLiteDataReaderEx", "Provides typed access to values returned by a reader."],
     ["SQLiteMaps", "Maps database values to application models."],
-    ["Application Models", "Represent data consumed by application code."]
+    ["Providers", "Execute application-level data operations."]
   ];
 
   const reviewAreas = [
@@ -420,7 +421,7 @@ function SqliteArchitectureReview() {
       </article>
 
       <div className="sqlite-review-links">
-        <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Source review (Markdown) ↗</a>
+        <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone HTML review ↗</a>
         <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite" target="_blank" rel="noreferrer">Dashboard repository ↗</a>
       </div>
       <p className="sqlite-disclaimer">
