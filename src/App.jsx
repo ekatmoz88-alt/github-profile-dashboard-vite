@@ -49,6 +49,176 @@ function websiteUrl(value) {
   return /^https?:\/\//i.test(value) ? value : `https://${value}`;
 }
 
+
+function SqliteArchitectureReview() {
+  const components = [
+    ["ConnectionFactory", "Creates or provides database connections."],
+    ["SQLiteCommandEx<T>", "Encapsulates command execution and result handling."],
+    ["SQLiteDataReaderEx", "Reads records returned by database operations."],
+    ["SQLiteMaps", "Maps database values to application models."],
+    ["Application Models", "Represent data consumed by application code."]
+  ];
+
+  const reviewAreas = [
+    ["Thread safety", "Check concurrent access to shared connections and commands."],
+    ["Connection lifecycle", "Verify connection creation, reuse, ownership and closure."],
+    ["Resource disposal", "Check deterministic disposal of connections, commands and readers."],
+    ["DataReader lifecycle", "Verify reader lifetime and behavior while a connection is in use."],
+    ["Parameter handling", "Review parameter binding, types and protection against unsafe SQL construction."],
+    ["Type conversion", "Check null handling, SQLite type affinity and conversion boundaries."],
+    ["GUID processing", "Verify GUID serialization, storage format and round-trip conversion."],
+    ["Error handling", "Review exception propagation, diagnostics and logging."]
+  ];
+
+  const recommendations = [
+    "Trace connection ownership from creation through disposal.",
+    "Inspect concurrent execution paths and define thread-safety guarantees.",
+    "Verify that readers, commands and connections are disposed on success and failure paths.",
+    "Review parameter binding and test edge cases for null and unexpected values.",
+    "Add tests for type conversion and GUID round-trip behavior.",
+    "Check exception handling and ensure diagnostic logs do not expose sensitive data."
+  ];
+
+  return (
+    <section className="sqlite-review" id="sqlite-review">
+      <div className="sqlite-review-heading">
+        <p className="eyebrow">SOURCE-BASED ARCHITECTURE REVIEW</p>
+        <h2>C# / SQLite Data Access Layer</h2>
+        <p>
+          A separate technical case examining the responsibilities, data flow
+          and review areas of a C# data access layer using SQLite.
+        </p>
+        <div className="featured-project-tags">
+          <span>C#</span><span>SQLite</span><span>Data Access Layer</span>
+          <span>Architecture Review</span>
+        </div>
+      </div>
+
+      <div className="sqlite-diagram-grid">
+        <article className="panel sqlite-diagram-card">
+          <div className="panel-heading">
+            <div><p className="eyebrow">01 · SYSTEM CONTEXT</p><h3>Architecture Overview</h3></div>
+          </div>
+          <div className="sqlite-svg-wrap">
+            <svg viewBox="0 0 760 250" role="img" aria-label="Application interacts with the data access layer, which communicates with SQLite">
+              <defs>
+                <marker id="sqlite-arrow-context" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0 0 L6 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.3"/>
+                </marker>
+              </defs>
+              <rect x="18" y="70" width="190" height="100" rx="10" fill="#eaf3fb" stroke="#8db7d7"/>
+              <text x="113" y="112" textAnchor="middle" fontSize="17" fontWeight="700" fill="#203b55">Application</text>
+              <text x="113" y="137" textAnchor="middle" fontSize="12" fill="#52677d">Application code</text>
+              <path d="M208 120 H285" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-context)"/>
+              <rect x="292" y="45" width="190" height="150" rx="10" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="387" y="83" textAnchor="middle" fontSize="16" fontWeight="700" fill="#203b55">Data Access Layer</text>
+              <text x="387" y="111" textAnchor="middle" fontSize="12" fill="#52677d">ConnectionFactory</text>
+              <text x="387" y="132" textAnchor="middle" fontSize="12" fill="#52677d">SQLiteCommandEx</text>
+              <text x="387" y="153" textAnchor="middle" fontSize="12" fill="#52677d">Reader · Mapping</text>
+              <path d="M482 120 H559" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-context)"/>
+              <rect x="566" y="70" width="175" height="100" rx="10" fill="#edf6f1" stroke="#91bda6"/>
+              <ellipse cx="653" cy="94" rx="48" ry="12" fill="#d8eee2" stroke="#72a98b"/>
+              <path d="M605 94 V145 C605 160 701 160 701 145 V94" fill="#edf6f1" stroke="#72a98b"/>
+              <ellipse cx="653" cy="145" rx="48" ry="12" fill="#d8eee2" stroke="#72a98b"/>
+              <text x="653" y="121" textAnchor="middle" fontSize="15" fontWeight="700" fill="#285b42">SQLite</text>
+              <text x="380" y="225" textAnchor="middle" fontSize="12" fill="#718096">Logical context — exact deployment boundaries are not asserted</text>
+            </svg>
+          </div>
+          <p className="sqlite-diagram-note">The application uses the data access layer to communicate with the SQLite database.</p>
+        </article>
+
+        <article className="panel sqlite-diagram-card">
+          <div className="panel-heading">
+            <div><p className="eyebrow">02 · DATA FLOW</p><h3>Request and Result Flow</h3></div>
+          </div>
+          <div className="sqlite-svg-wrap">
+            <svg viewBox="0 0 760 310" role="img" aria-label="Data access request and result flow through the SQLite components">
+              <defs>
+                <marker id="sqlite-arrow-flow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                  <path d="M0 0 L6 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.3"/>
+                </marker>
+              </defs>
+              <g fontSize="13" textAnchor="middle" fill="#203b55">
+                <rect x="15" y="18" width="210" height="48" rx="7" fill="#eaf3fb" stroke="#8db7d7"/>
+                <text x="120" y="47" fontWeight="700">Application Code</text>
+                <path d="M120 66 V91" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="15" y="96" width="210" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="120" y="125" fontWeight="700">ConnectionFactory</text>
+                <path d="M120 144 V169" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="15" y="174" width="210" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="120" y="203" fontWeight="700">SQLiteCommandEx&lt;T&gt;</text>
+                <path d="M225 198 H290" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="296" y="174" width="165" height="48" rx="7" fill="#edf6f1" stroke="#91bda6"/>
+                <text x="378" y="203" fontWeight="700">SQLite Database</text>
+                <path d="M378 174 V144" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="296" y="96" width="165" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="378" y="125" fontWeight="700">Data Reader</text>
+                <path d="M461 120 H520" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="526" y="96" width="215" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
+                <text x="633" y="125" fontWeight="700">SQLiteMaps</text>
+                <path d="M633 144 V169" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
+                <rect x="526" y="174" width="215" height="48" rx="7" fill="#eaf3fb" stroke="#8db7d7"/>
+                <text x="633" y="203" fontWeight="700">Application Models</text>
+                <path d="M633 222 V247 H120 V222" stroke="#397da9" strokeWidth="1.6" strokeDasharray="5 4" markerEnd="url(#sqlite-arrow-flow)" fill="none"/>
+                <text x="375" y="270" fontSize="11" fill="#718096">Mapped result returned to application code</text>
+              </g>
+            </svg>
+          </div>
+          <p className="sqlite-diagram-note">Conceptual flow based on the component names and responsibilities described in the review.</p>
+        </article>
+      </div>
+
+      <div className="sqlite-review-columns">
+        <article className="panel">
+          <p className="eyebrow">03 · COMPONENT RESPONSIBILITIES</p>
+          <h3>Component Responsibilities</h3>
+          <div className="sqlite-table-wrap">
+            <table className="sqlite-table">
+              <thead><tr><th>Component</th><th>Responsibility</th></tr></thead>
+              <tbody>
+                {components.map(([name, description]) => (
+                  <tr key={name}><th scope="row">{name}</th><td>{description}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article className="panel">
+          <p className="eyebrow">04 · ARCHITECTURE REVIEW</p>
+          <h3>Areas to Validate</h3>
+          <p className="sqlite-muted">Review focus areas, not claims of confirmed defects.</p>
+          <div className="sqlite-risk-list">
+            {reviewAreas.map(([name, description], index) => (
+              <div className="sqlite-risk-item" key={name}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div><strong>{name}</strong><p>{description}</p></div>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <article className="panel sqlite-recommendations">
+        <p className="eyebrow">05 · RECOMMENDATIONS</p>
+        <h3>Recommended Verification Steps</h3>
+        <ol>
+          {recommendations.map((item) => <li key={item}>{item}</li>)}
+        </ol>
+      </article>
+
+      <div className="sqlite-review-links">
+        <a href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/data-access-review.md" target="_blank" rel="noreferrer">Source review document ↗</a>
+        <a href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">Repository ↗</a>
+      </div>
+      <p className="sqlite-disclaimer">
+        This is a separate C# / SQLite review case. It is not represented as part of the Oracle Global11 architecture.
+        The diagrams are conceptual and should be checked against the source code before being treated as implementation-level documentation.
+      </p>
+    </section>
+  );
+}
+
 export default function App() {
   const [profile, setProfile] = useState(null);
   const [repositories, setRepositories] = useState([]);
@@ -213,6 +383,21 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">C# · SQLITE · SOURCE-BASED REVIEW</p>
+                    <h3>C# / SQLite Data Access Layer Review</h3>
+                    <p>Independent architecture review of a data access layer, covering component responsibilities, request and result flow, resource lifecycle, data mapping, and verification areas.</p>
+                    <div className="featured-project-tags">
+                      <span>C#</span><span>SQLite</span><span>Architecture Review</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="#sqlite-review">View architecture review ↓</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/data-access-review.md" target="_blank" rel="noreferrer">Source Markdown ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">ORACLE · DATA PLATFORM DOCUMENTATION</p>
                     <h3>Global11 Demo Data Platform</h3>
                     <p>Documentation for Oracle Global 11g, including the relational data model, OLAP patterns, and SQL scripts and scenarios.</p>
@@ -264,6 +449,8 @@ export default function App() {
                 </article>
               </div>
             </section>
+
+            <SqliteArchitectureReview />
 
             <section className="stats-grid" aria-label="GitHub statistics">
               <article className="stat-card"><span className="stat-icon">▤</span><span className="stat-label">Public repositories</span><strong>{formatNumber(profile.public_repos)}</strong><small>On this account</small></article>
