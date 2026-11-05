@@ -31,6 +31,7 @@ code{color:#c6d8ff;background:#1b2940;padding:2px 5px;border-radius:5px;font-siz
 <tr><td><code>SQLiteMaps</code></td><td>Maps database values to application models.</td></tr>
 <tr><td>Providers</td><td>Execute application-level data operations.</td></tr>
 </tbody></table></div>
+<p class="muted"><strong>Model boundary.</strong> Application Models are shown as consumers of mapped data in the diagrams. They are not listed as data-access-layer components.</p>
 <h2>02 · Architecture verification findings</h2>
 <div class="panel"><table><thead><tr><th>Area</th><th>Source evidence</th><th>Review status</th></tr></thead><tbody>
 <tr><td>Thread safety</td><td><code>ConnectionFactory.cs:11, 27–33</code> uses a static singleton and returns the same connection without visible locking. <code>CaseProvider.cs:43–45</code> begins transactions on that shared connection.</td><td>Risk identified</td></tr>
