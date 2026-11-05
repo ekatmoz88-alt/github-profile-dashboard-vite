@@ -19,6 +19,8 @@ The review is static. It does not claim that the application was built, executed
 | `SQLiteMaps` | Maps database values to application models. |
 | Providers | Execute application-level data operations. |
 
+> **Model boundary:** Application Models are shown as consumers of mapped data in the diagrams. They are not listed as data-access-layer components.
+
 ## Findings
 
 | Area | Source evidence | Review status |
