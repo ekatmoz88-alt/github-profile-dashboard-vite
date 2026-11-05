@@ -168,6 +168,36 @@ export default function App() {
               <div className="featured-project-grid">
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">REST API · OPENAPI 3.1</p>
+                    <h3>Orders API Documentation</h3>
+                    <p>Docs-as-Code portfolio example for a REST API, with OpenAPI 3.1 specification, endpoint descriptions, request and response schemas, and error responses.</p>
+                    <div className="featured-project-tags">
+                      <span>REST API</span>
+                      <span>OpenAPI 3.1</span>
+                      <span>API Reference</span>
+                    </div>
+                  </div>
+                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">SOFTWARE · SYSTEM DOCUMENTATION</p>
+                    <h3>Deshifrator Documentation</h3>
+                    <p>Technical documentation for a software system, covering architecture, data exchange, MRZ processing, and database structure.</p>
+                    <div className="featured-project-tags">
+                      <span>System Architecture</span>
+                      <span>Data Exchange</span>
+                      <span>IDEF1X / UML</span>
+                    </div>
+                  </div>
+                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/data-exchange-and-mrz.html" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SOAP · .NET 8</p>
                     <h3>Modern UMMS SOAP Client (.NET 8)</h3>
                     <p>Documentation case study for an anonymized enterprise SOAP API and client system, covering service methods, client workflows, offline synchronization, encrypted-file exchange, and digital signatures.</p>
@@ -192,7 +222,10 @@ export default function App() {
                       <span>OLAP</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
                 </article>
 
                 <article className="featured-project panel">
@@ -206,7 +239,10 @@ export default function App() {
                       <span>RU / EN</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
                 </article>
 
                 <article className="featured-project panel">
