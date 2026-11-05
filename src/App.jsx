@@ -359,8 +359,9 @@ function SqliteArchitectureReview() {
           <p className="eyebrow">07 · REVIEW AREAS</p>
           <h3>Architecture Verification Checklist</h3>
           <p className="sqlite-muted">
-            Evidence to inspect in the source code before assigning a review result.
-            No implementation defects are asserted.
+            Reviewed against the available DbStationary C# source files. Statuses describe
+            what the inspected implementation demonstrates; they do not imply a complete
+            runtime, concurrency or test-suite verification.
           </p>
           <div className="sqlite-table-wrap">
             <table className="sqlite-table">
@@ -368,21 +369,31 @@ function SqliteArchitectureReview() {
                 <tr>
                   <th>Area</th>
                   <th>What to inspect</th>
-                  <th>Evidence required</th>
+                  <th>Source evidence</th>
                   <th>Review status</th>
                 </tr>
               </thead>
               <tbody>
                 {reviewAreas.map(([name, description], index) => {
                   const evidence = [
-                    "Shared connection and command usage; synchronization or ownership boundaries.",
-                    "Connection creation, reuse, ownership transfer and close paths.",
-                    "Dispose, using/finally blocks and cleanup on success and exception paths.",
-                    "Reader open/read/close sequence and connection use while the reader is active.",
-                    "Parameter creation, binding, types and SQL construction at call sites.",
-                    "Database value reads, null checks, SQLite type handling and conversion code.",
-                    "GUID parsing, serialization, database representation and round-trip tests.",
-                    "Exception handling, propagation, logging and diagnostic context."
+                    "ConnectionFactory.cs:11, 27–33 — one static singleton is initialized without locking and returns the same connection. CaseProvider.cs:43–45 — callers begin transactions on that shared connection.",
+                    "ConnectionFactory.cs:18–24 — connection is created and opened in the factory constructor. GetConnection() reuses it; no close/dispose path is implemented in this class.",
+                    "SQLiteCommandEx.cs:99–110, 130–141, 162–173, 235–239, 261–265 — several execution paths use using. Params overloads at 197–215, 248–252 and 275–279 do not dispose the command. ConnectionFactory retains its connection.",
+                    "SQLiteCommandEx.cs:220–227 — AsDataReader() returns reader from inside using, so it is disposed before the caller can consume it. Other reader paths use using around execution and mapping.",
+                    "SQLiteCommandEx_Params.cs:10–22, 25–36 — named SQLite parameters are created and added. SQLiteCommandEx.cs:299–302 maps null to DBNull.Value. ResetParams relies on Debug.Assert for count matching (286–293). CaseProvider.cs and SecurityProvider.cs show parameterized call sites.",
+                    "SQLiteDataReaderEx.cs:28–30, 33–102, 104–121 — direct generic cast, typed getters and DBNull checks are implemented. SQLiteMaps.cs:24–91 shows their use in model mapping; conversion behavior is not comprehensively tested here.",
+                    "CaseProvider.cs:54 stores CaseGUID as a string; SQLiteMaps.cs:36–38 reads it with Guid.Parse. SQLiteCommandEx_Params.cs:140–155 defines Guid parameter helpers. No round-trip test evidence was supplied.",
+                    "CaseProvider.cs:308–312 catches, logs and rethrows exceptions in LoadCases(). The inspected command execution methods generally let exceptions propagate; no consistent logging policy is visible across providers."
+                  ][index];
+                  const status = [
+                    "Risk identified",
+                    "Partially verified",
+                    "Inconsistent disposal",
+                    "Defect confirmed",
+                    "Partially verified",
+                    "Partially verified",
+                    "Partially verified",
+                    "Partially verified"
                   ][index];
 
                   return (
@@ -390,7 +401,7 @@ function SqliteArchitectureReview() {
                       <th scope="row">{name}</th>
                       <td>{description}</td>
                       <td>{evidence}</td>
-                      <td><span className="sqlite-review-pending">Not verified</span></td>
+                      <td><span className="sqlite-review-pending">{status}</span></td>
                     </tr>
                   );
                 })}
