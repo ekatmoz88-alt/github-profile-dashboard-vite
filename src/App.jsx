@@ -313,9 +313,6 @@ function SqliteArchitectureReview() {
           </p>
         </article>
 
-      </div>
-
-
       <article className="panel sqlite-diagram-card sqlite-review-map"
         id="sqlite-architecture-review-map">
         <div className="panel-heading">
@@ -340,6 +337,7 @@ function SqliteArchitectureReview() {
           These are verification points, not confirmed defects.
         </p>
       </article>
+      </div>
 
       <div className="sqlite-review-columns">
         <article className="panel">
