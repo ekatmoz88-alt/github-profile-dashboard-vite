@@ -664,8 +664,8 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
-                    <h3>Territory Docs</h3>
-                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. The technical-project document (code 53281996.425530.9-4757-3.П6.01) describes the logical and physical database structure. The available model excerpts cover core entities and case workflows, operation lifecycles and electronic-signature links, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. The physical-structure contents list 381 numbered tables and include a Sybase PowerDesigner model.</p>\n                    <div className="featured-project-tags">
+                    <h3>Passport Account System — Territory Docs</h3>
+                    <p>Technical documentation for a separate passport-accounting information system, including Oracle database models, API and source-code materials. The available technical-project and data-model excerpts describe core entities and case workflows, operation lifecycles, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. This repository is distinct from the FMS PПО «Территория» archive and from the standalone АРМ «Дискриптор» research.</p>\n                    <div className="featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
                       <span>RU / EN</span>
