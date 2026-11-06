@@ -577,6 +577,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
                   </div>
                 </article>
@@ -594,6 +595,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
                   </div>
                 </article>
