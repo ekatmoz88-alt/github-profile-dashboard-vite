@@ -699,7 +699,8 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
                     <h3>Passport Account System — Territory Docs</h3>
-                    <p>Technical documentation for a separate passport-accounting information system, including Oracle database models, API and source-code materials. The available technical-project and data-model excerpts describe core entities and case workflows, operation lifecycles, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. This repository is distinct from the FMS PПО «Территория» archive and from the standalone АРМ «Дискриптор» research.</p>\n                    <div className="featured-project-tags">
+                    <p>Technical documentation for a separate passport-accounting information system, including Oracle database models, API and source-code materials. The available technical-project and data-model excerpts describe core entities and case workflows, operation lifecycles, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. This repository is distinct from the FMS PПО «Территория» archive and from the standalone АРМ «Дискриптор» research.</p>
+                    <div className="featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
                       <span>RU / EN</span>
