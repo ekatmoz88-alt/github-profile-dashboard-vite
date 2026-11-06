@@ -59,7 +59,7 @@ npm run preview
 
 ## Deployment
 
-The project is configured for deployment to Vercel at the domain root and to GitHub Pages under the repository subpath. The GitHub Actions workflow builds the Vite application and copies the standalone HTML review pages into the Pages artifact.
+The live dashboard is deployed to Vercel at the domain root: https://github-profile-dashboard-vite.vercel.app/. The repository does not currently contain a GitHub Pages deployment workflow for the Vite application. The other portfolio projects keep their own independent GitHub Pages sites.
 
 ## Evidence and scope
 
