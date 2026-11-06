@@ -647,7 +647,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
                     <h3>Territory Docs</h3>
-                    <p>Technical documentation for the Territory project, including system and database documentation, structured project materials, and Russian/English documentation review.</p>
+                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. A separate 2014 physical-structure specification lists 381 numbered tables and describes fields, indexes and the accompanying PowerDesigner model.</p>
                     <div className="featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
@@ -656,6 +656,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-docs/database/physical-structure-specification" target="_blank" rel="noreferrer">Physical DB structure (2014) ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
