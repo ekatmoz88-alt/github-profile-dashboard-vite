@@ -732,6 +732,60 @@ export default function App() {
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">FINTECH · OPERATIONAL WORKFLOWS &amp; SECURITY</p>
+                    <h3>Fintech Documentation Demo</h3>
+                    <p>Documentation for a fictional crypto-onramp operator console, covering KYC and onboarding journeys, operator workflows, PII classification, and audit logging.</p>
+                    <div className="featured-project-tags">
+                      <span>Operational Workflows</span>
+                      <span>Data Classification</span>
+                      <span>Audit Logging</span>
+                      <span>Demo Case</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/fintech-docs-demo" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">DOCS-AS-CODE · CI QUALITY AUTOMATION</p>
+                    <h3>Technical Writing Workflows</h3>
+                    <p>A documentation pipeline demonstrating automated OpenAPI validation with Spectral, Markdown linting, and link checking with Lychee in GitHub Actions.</p>
+                    <div className="featured-project-tags">
+                      <span>Spectral</span>
+                      <span>markdownlint</span>
+                      <span>Lychee</span>
+                      <span>GitHub Actions</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">ENGINEERING DOCUMENTATION · SIGNAL PROCESSING HARDWARE</p>
+                    <h3>ADP201P4 Signal Processing Module</h3>
+                    <p>Source-based technical documentation for a PCI signal-processing module built around four ADSP-TS201S processors, including system architecture, ADM interface, and external connectors.</p>
+                    <div className="featured-project-tags">
+                      <span>Hardware Architecture</span>
+                      <span>DSP</span>
+                      <span>PCI</span>
+                      <span>Technical Manual</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/adp201p4-hardware-spec" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
               </div>
             </section>
 
