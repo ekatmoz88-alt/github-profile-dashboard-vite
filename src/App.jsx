@@ -647,7 +647,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
                     <h3>Territory Docs</h3>
-                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. The technical-project document (code 53281996.425530.9-4757-3.П6.01) covers the logical and physical database structure; its physical-structure contents list 381 numbered tables, fields, indexes and a PowerDesigner model.</p>
+                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. The technical-project document (code 53281996.425530.9-4757-3.П6.01) covers both logical and physical database structure. The logical-model contents cover 25 functional sections, including the core Person model; the physical-structure contents list 381 numbered tables, fields, indexes and a PowerDesigner model.</p>
                     <div className="featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
