@@ -647,7 +647,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
                     <h3>Territory Docs</h3>
-                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. The technical-project document (code 53281996.425530.9-4757-3.П6.01) describes the logical and physical database structure. The available model excerpt covers dictionaries, hierarchical address data (KLADR/FIAS/OKATO), departments and access roles, signals, audit logs and biometrics; the physical-structure contents list 381 numbered tables and include a PowerDesigner model."featured-project-tags">
+                    <p>Technical documentation for the Territory project, including Oracle database models, API and source-code materials. The technical-project document (code 53281996.425530.9-4757-3.П6.01) describes the logical and physical database structure. The available model excerpts cover core entities and case workflows, operation lifecycles and electronic-signature links, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. The physical-structure contents list 381 numbered tables and include a Sybase PowerDesigner model."featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
                       <span>RU / EN</span>
