@@ -566,17 +566,22 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">SOFTWARE · SYSTEM DOCUMENTATION</p>
-                    <h3>Deshifrator Documentation</h3>
-                    <p>Technical documentation for a software system, covering architecture, data exchange, MRZ processing, and database structure.</p>
+                    <p className="eyebrow">DESKTOP SOFTWARE · APPLICATION SUITE DOCUMENTATION</p>
+                    <h3>Deshifrator — ModuleMobile, ModuleStationary &amp; PassportPaint</h3>
+                    <p>Technical documentation for the Deshifrator application suite: ModuleMobile search and UMMS SOAP workflows; ModuleStationary import, synchronization and SQLite storage; and Printer / PassportPaint passport-layout editing, MRZ generation and printing. Also covers encrypted file exchange, shared WPF components, FIAS/Elasticsearch and OCR dependencies. Based on available descriptions and selected source excerpts, not a complete source-code transfer.</p>
                     <div className="featured-project-tags">
-                      <span>System Architecture</span>
-                      <span>Data Exchange</span>
-                      <span>IDEF1X / UML</span>
+                      <span>.NET Framework / WPF</span>
+                      <span>SOAP / XML / SQLite</span>
+                      <span>Passport Layouts &amp; MRZ</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/index.html" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md" target="_blank" rel="noreferrer">Application suite review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md" target="_blank" rel="noreferrer">Dependencies &amp; runtime ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/data-access-review.md" target="_blank" rel="noreferrer">SQLite data-access review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
                 </article>
 
                 <article className="featured-project panel">
@@ -623,23 +628,6 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">.NET · DEPENDENCIES · CONFIGURATION REVIEW</p>
-                    <h3>Deshifrator Architecture &amp; Dependencies</h3>
-                    <p>Artifact-based review of the desktop application and its stationary and mobile modules, including .NET Framework 4.5, SQLite schemas, the mobile SOAP endpoint configuration, local FIAS/Elasticsearch settings, and OCR dependencies. Configuration evidence is distinguished from unverified runtime behavior.</p>
-                    <div className="featured-project-tags">
-                      <span>.NET / WPF</span>
-                      <span>SQLite</span>
-                      <span>SOAP / Elasticsearch</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/architecture.html" target="_blank" rel="noreferrer">Read architecture review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Documentation repository ↗</a>
                   </div>
                 </article>
 
