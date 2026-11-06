@@ -601,6 +601,21 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">UMMS · C# · SQLITE · SOURCE REVIEW</p>
+                    <h3>UMMS — Local Case &amp; Dossier Storage</h3>
+                    <p>Source-based review of the Stationary Station data-access component: case and dossier relationships, SQLite persistence, XML-backed person documents, addresses and case records, scenario storage, and loading workflows. Findings are limited to the inspected CaseProvider implementation.</p>
+                    <div className="featured-project-tags">
+                      <span>C#</span><span>SQLite</span><span>XML Serialization</span><span>Data Access</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs/blob/main/05_%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%BE%D1%81%D1%8C%D0%B5_%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%A7%D0%9D%D0%90%D0%AF.md" target="_blank" rel="noreferrer">Source-based review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS documentation repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">C# · SQLITE · SOURCE-BASED REVIEW</p>
                     <h3>C# / SQLite Data Access Layer Review</h3>
                     <p>Independent architecture review of a data access layer, covering component responsibilities, request and result flow, resource lifecycle, data mapping, and verification areas.</p>
