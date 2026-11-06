@@ -509,9 +509,9 @@ export default function App() {
       <main className="dashboard">
         <section className="hero">
           <div className="hero-copy">
-            <p className="eyebrow">DEVELOPER OVERVIEW</p>
-            <h1>GitHub dashboard</h1>
-            <p className="hero-subtitle">A live snapshot of repositories, reach and recent public activity.</p>
+            <p className="eyebrow">TECHNICAL WRITING · API DOCUMENTATION · DOCS-AS-CODE</p>
+            <h1>Technical Documentation Portfolio</h1>
+            <p className="hero-subtitle">Selected enterprise documentation projects, API references, architecture reviews and public GitHub work.</p>
           </div>
           <a className="github-link" href={`https://github.com/${USERNAME}`} target="_blank" rel="noreferrer">
             View GitHub profile ↗
@@ -546,7 +546,7 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>Selected examples of enterprise SOAP/API, database, system, and C++ UI component documentation.</p>
+                <p>Selected technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. Each project links to its public documentation repository or published reference.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -562,6 +562,40 @@ export default function App() {
                   </div>
                   <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                   <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">DESKTOP APPLICATION · SYSTEM ARCHITECTURE &amp; TECHNICAL SPECIFICATION</p>
+                    <h3>ARM Descriptor — Document Processing Workstation</h3>
+                    <p>Independent technical documentation of the Descriptor workstation: system context, stationary and mobile station responsibilities, functional subsystems, hardware and software requirements, dossier exchange, search interface, font configuration and document-printing workflows. The repository separates requirements documented in the technical project from details verified against source code or test evidence.</p>
+                    <div className="featured-project-tags">
+                      <span>System Architecture</span>
+                      <span>Requirements Analysis</span>
+                      <span>Desktop Software</span>
+                      <span>Technical Documentation</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · ARCHITECTURE &amp; INTEGRATIONS</p>
+                    <h3>FMS Territory — Enterprise Information System</h3>
+                    <p>Technical archive documenting the FMS Territory application: functional modules, deployment models, external data exchanges, system requirements and development lifecycle. This project is documented independently from the Descriptor workstation and the Passport / UMMS system.</p>
+                    <div className="featured-project-tags">
+                      <span>Enterprise Architecture</span>
+                      <span>System Integrations</span>
+                      <span>Deployment Models</span>
+                      <span>Technical Analysis</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
+                  </div>
                 </article>
 
                 <article className="featured-project panel">
