@@ -616,6 +616,21 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">UMMS · WPF · SOAP/XML · SYSTEM OVERVIEW</p>
+                    <h3>UMMS — Document Processing Workstation &amp; SOAP Integration</h3>
+                    <p>Public, source-based overview connecting the documented Mobile and Stationary workstation roles with the generated UMMS NP SOAP client, local dossier storage, and observed 2014 runtime diagnostics. The integration path is explicitly marked as provisional where caller and transfer code are not yet available.</p>
+                    <div className="featured-project-tags">
+                      <span>WPF / .NET</span><span>SOAP / XML</span><span>WSDL</span><span>Technical Analysis</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs/blob/main/06_%D0%90%D0%A0%D0%9C_%D0%B8_SOAP_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%A7%D0%9D%D0%90%D0%AF.md" target="_blank" rel="noreferrer">Architecture review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS documentation repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">C# · SQLITE · SOURCE-BASED REVIEW</p>
                     <h3>C# / SQLite Data Access Layer Review</h3>
                     <p>Independent architecture review of a data access layer, covering component responsibilities, request and result flow, resource lifecycle, data mapping, and verification areas.</p>
