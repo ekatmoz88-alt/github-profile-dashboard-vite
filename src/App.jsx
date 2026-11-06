@@ -628,18 +628,18 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">SOFTWARE · APPLICATION ARCHITECTURE REVIEW</p>
-                    <h3>Application Suite Architecture Review</h3>
-                    <p>Source-based review of ModuleMobile, ModuleStationary and Printer / PassportPaint, covering component responsibilities, UMMS SOAP integration, XML-based file exchange, encryption flow and SQLite data access. Findings distinguish observed source behavior from unverified assumptions.</p>
+                    <p className="eyebrow">.NET · DEPENDENCIES · CONFIGURATION REVIEW</p>
+                    <h3>Deshifrator Architecture &amp; Dependencies</h3>
+                    <p>Artifact-based review of the desktop application and its stationary and mobile modules, including .NET Framework 4.5, SQLite schemas, the mobile SOAP endpoint configuration, local FIAS/Elasticsearch settings, and OCR dependencies. Configuration evidence is distinguished from unverified runtime behavior.</p>
                     <div className="featured-project-tags">
-                      <span>Software Architecture</span>
-                      <span>SOAP / XML</span>
+                      <span>.NET / WPF</span>
                       <span>SQLite</span>
+                      <span>SOAP / Elasticsearch</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/application-suite-review.md" target="_blank" rel="noreferrer">Read architecture review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/architecture.html" target="_blank" rel="noreferrer">Read architecture review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Documentation repository ↗</a>
                   </div>
                 </article>
 
