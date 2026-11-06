@@ -575,7 +575,7 @@ export default function App() {
                       <span>IDEF1X / UML</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/data-exchange-and-mrz.html" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/index.html" target="_blank" rel="noreferrer">Published documentation ↗</a>
                   <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                 </article>
 
