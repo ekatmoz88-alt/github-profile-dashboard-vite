@@ -622,17 +622,17 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SOAP · .NET 8</p>
-                    <h3>Modern UMMS SOAP Client (.NET 8)</h3>
-                    <p>Documentation case study for an anonymized enterprise SOAP API and client system, covering service methods, client workflows, offline synchronization, encrypted-file exchange, and digital signatures.</p>
+                    <p className="eyebrow">ENTERPRISE SOAP · WPF / LEGACY CLIENT</p>
+                    <h3>UMMS SOAP API &amp; Client — Integration Case Study</h3>
+                    <p>Historical integration case study describing SOAP operations for authentication, reference-data synchronization and transaction submission, with XSD-based data structures and search workflows for WPF operator and mobile clients. The linked case study is Russian-language and does not describe a .NET 8 implementation.</p>
                     <div className="featured-project-tags">
-                      <span>SOAP API</span>
-                      <span>.NET 8</span>
-                      <span>Enterprise Documentation</span>
+                      <span>SOAP / WSDL / XSD</span>
+                      <span>WPF Client</span>
+                      <span>Legacy Integration</span>
                     </div>
                   </div>
-                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/umms-enterprise-soap-client.html" target="_blank" rel="noreferrer">Published case study ↗</a>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">umms-docs · Public ↗</a>
+                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/umms-enterprise-soap-client.html" target="_blank" rel="noreferrer">Published case study (RU) ↗</a>
+                  <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">Related source-based UMMS documentation ↗</a>
                 </article>
 
                 <article className="featured-project panel">
