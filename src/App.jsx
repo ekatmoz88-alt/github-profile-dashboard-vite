@@ -628,6 +628,23 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">SOFTWARE · APPLICATION ARCHITECTURE REVIEW</p>
+                    <h3>Application Suite Architecture Review</h3>
+                    <p>Source-based review of ModuleMobile, ModuleStationary and Printer / PassportPaint, covering component responsibilities, UMMS SOAP integration, XML-based file exchange, encryption flow and SQLite data access. Findings distinguish observed source behavior from unverified assumptions.</p>
+                    <div className="featured-project-tags">
+                      <span>Software Architecture</span>
+                      <span>SOAP / XML</span>
+                      <span>SQLite</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/docs/architecture/application-suite-review.md" target="_blank" rel="noreferrer">Read architecture review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
                     <h3>Territory Docs</h3>
                     <p>Technical documentation for the Territory project, including system and database documentation, structured project materials, and Russian/English documentation review.</p>
