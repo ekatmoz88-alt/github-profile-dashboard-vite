@@ -568,7 +568,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">DESKTOP SOFTWARE · APPLICATION SUITE DOCUMENTATION</p>
                     <h3>Deshifrator — ModuleMobile, ModuleStationary &amp; PassportPaint</h3>
-                    <p>Technical documentation for the Deshifrator application suite: ModuleMobile search and UMMS SOAP workflows; ModuleStationary import, synchronization and SQLite storage; and Printer / PassportPaint passport-layout editing, MRZ generation and printing. Also covers encrypted file exchange, shared WPF components, FIAS/Elasticsearch and OCR dependencies. Based on available descriptions and selected source excerpts, not a complete source-code transfer.</p>
+                    <p>Technical documentation for the historical Deshifrator application suite: ModuleMobile search and UMMS SOAP workflows; ModuleStationary import, synchronization and SQLite storage; and Printer / PassportPaint passport-layout editing, MRZ generation and printing. This is a separate research track from АРМ «Дискриптор» and is not evidence of shared architecture or components. Based on available descriptions and selected source excerpts, not a complete source-code transfer.</p>
                     <div className="featured-project-tags">
                       <span>.NET Framework / WPF</span>
                       <span>SOAP / XML / SQLite</span>
