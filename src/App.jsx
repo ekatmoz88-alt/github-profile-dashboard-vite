@@ -566,19 +566,23 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">DESKTOP APPLICATION · SYSTEM ARCHITECTURE &amp; TECHNICAL SPECIFICATION</p>
-                    <h3>ARM Descriptor — Document Processing Workstation</h3>
-                    <p>Independent technical documentation of the Descriptor workstation: system context, stationary and mobile station responsibilities, functional subsystems, hardware and software requirements, dossier exchange, search interface, font configuration and document-printing workflows. The repository separates requirements documented in the technical project from details verified against source code or test evidence.</p>
+                    <p className="eyebrow">DESKTOP WORKSTATION · SYSTEM ARCHITECTURE &amp; SOFTWARE COMPONENTS</p>
+                    <h3>АРМ «Дискриптор» — архитектура и программные модули</h3>
+                    <p>Unified documentation case bringing together the АРМ «Дискриптор» system design and related source-based analysis of the mobile and stationary software components, dossier exchange, UMMS SOAP workflows, local SQLite storage, and passport-layout / MRZ processing. The technical-project materials describe the workstation context and its interaction with ППО «Территория» through ПОШ ВБД. The exact mapping between the project labels ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary codebase remains subject to primary-source verification; the card therefore groups the documentation, not an unverified claim that every component is identical.</p>
                     <div className="featured-project-tags">
                       <span>System Architecture</span>
-                      <span>Requirements Analysis</span>
-                      <span>Desktop Software</span>
-                      <span>Technical Documentation</span>
+                      <span>WPF / .NET Framework</span>
+                      <span>SOAP / XML / SQLite</span>
+                      <span>Requirements &amp; Source Review</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">АРМ «Дискриптор» — published specification ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Architecture repository ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Mobile / stationary software documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md" target="_blank" rel="noreferrer">Application suite and source review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md" target="_blank" rel="noreferrer">Dependencies &amp; runtime ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Software documentation repository ↗</a>
                   </div>
                 </article>
 
@@ -597,26 +601,6 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">DESKTOP SOFTWARE · APPLICATION SUITE DOCUMENTATION</p>
-                    <h3>Deshifrator — ModuleMobile, ModuleStationary &amp; PassportPaint</h3>
-                    <p>Technical documentation for the historical Deshifrator application suite: ModuleMobile search and UMMS SOAP workflows; ModuleStationary import, synchronization and SQLite storage; and Printer / PassportPaint passport-layout editing, MRZ generation and printing. This is a separate research track from АРМ «Дискриптор» and is not evidence of shared architecture or components. Based on available descriptions and selected source excerpts, not a complete source-code transfer.</p>
-                    <div className="featured-project-tags">
-                      <span>.NET Framework / WPF</span>
-                      <span>SOAP / XML / SQLite</span>
-                      <span>Passport Layouts &amp; MRZ</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md" target="_blank" rel="noreferrer">Application suite review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md" target="_blank" rel="noreferrer">Dependencies &amp; runtime ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/data-access-review.md" target="_blank" rel="noreferrer">SQLite data-access review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
