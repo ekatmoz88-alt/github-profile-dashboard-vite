@@ -4,7 +4,7 @@ A public portfolio dashboard for selected technical writing and documentation en
 
 **Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
 **GitHub profile:** https://github.com/ekatmoz88-alt  
-**Bilingual repository registry and audit:** https://github-profile-dashboard-vite.vercel.app/portfolio-audit.html
+**Bilingual repository registry and audit:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
 
 ## Purpose
 
