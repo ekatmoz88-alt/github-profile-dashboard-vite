@@ -112,7 +112,7 @@ function SqliteArchitectureReview() {
                 <path d="M0 0 L7 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.5"/>
               </marker>
             </defs>
-            <g fontFamily="DM Sans, sans-serif" textAnchor="middle">
+            <g fontFamily="Inter, sans-serif" textAnchor="middle">
               <rect x="20" y="140" width="150" height="70" rx="8" fill="#eaf3fb" stroke="#8db7d7"/>
               <text x="95" y="170" fontSize="15" fontWeight="700" fill="#203b55">Application</text>
               <text x="95" y="190" fontSize="11" fill="#52677d">Code</text>
