@@ -14,12 +14,13 @@ Each project remains an independent workstream. The dashboard links to the corre
 ## Featured work
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
-- [ARM Descriptor](https://github.com/ekatmoz88-alt/descriptor-arm-spec) — independent document-processing workstation architecture and requirements.
-- [FMS Territory](https://github.com/ekatmoz88-alt/ppo-territory-archive) — enterprise information system archive, functional modules and integrations.
-- [Deshifrator](https://github.com/ekatmoz88-alt/deshifrator-docs) — historical desktop application suite documentation and source-based review.
-- [UMMS](https://github.com/ekatmoz88-alt/umms-docs) — public SOAP integration and local case/dossier storage documentation.
+- [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://ekatmoz88-alt.github.io/ppo-territory-archive/) — consolidated portfolio case covering the enterprise information system, workstation architecture, database, APIs, source-code analysis, UMMS SOAP workflows and mobile/stationary software components. Supporting repositories and published documentation:
+  - [ППО «Территория» — system archive](https://github.com/ekatmoz88-alt/ppo-territory-archive) · [published site](https://ekatmoz88-alt.github.io/ppo-territory-archive/)
+  - [Database, API and source documentation](https://github.com/ekatmoz88-alt/territory-docs) · [published site](https://ekatmoz88-alt.github.io/territory-docs/)
+  - [АРМ «Дискриптор» — architecture and requirements](https://github.com/ekatmoz88-alt/descriptor-arm-spec) · [published site](https://ekatmoz88-alt.github.io/descriptor-arm-spec/)
+  - [Mobile/stationary software and source review](https://github.com/ekatmoz88-alt/deshifrator-docs) · [published site](https://ekatmoz88-alt.github.io/deshifrator-docs/)
+  - [UMMS SOAP and local storage documentation](https://github.com/ekatmoz88-alt/umms-docs)
 - [GLOBAL11 Demo Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle relational model, data dictionary and SQL documentation.
-- [Passport Account System](https://github.com/ekatmoz88-alt/territory-docs) — separate passport-accounting system documentation.
 - [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — source-based C++ component documentation.
 - [Fintech Documentation Demo](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — fictional operator-console workflows, data classification and audit logging.
 - [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — automated OpenAPI, Markdown and link-quality checks.
