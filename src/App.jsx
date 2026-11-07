@@ -379,6 +379,10 @@ export default function App() {
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.en.md" target="_blank" rel="noreferrer">Access control · English ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.ru.md" target="_blank" rel="noreferrer">Права доступа · Русский ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
+                    <p className="featured-project-secondary"><strong>Original diagrams · WMF source files</strong></p>
+                    <a className="featured-project-secondary" href="/original-diagrams/territory/%D0%B4%D0%BB%D0%BE.wmf" download>Original diagram: дло.wmf ↓</a>
+                    <a className="featured-project-secondary" href="/original-diagrams/territory/%D0%B4%D0%BE%D1%81%D1%8C%D0%B5.wmf" download>Original diagram: досье.wmf ↓</a>
+                    <a className="featured-project-secondary" href="/original-diagrams/territory/%D1%80%D0%B0.wmf" download>Original diagram: ра.wmf ↓</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
