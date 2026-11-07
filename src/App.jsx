@@ -591,38 +591,6 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">C# · SQLITE · SOURCE-BASED REVIEW</p>
-                    <h3>C# / SQLite Data Access Layer Review</h3>
-                    <p>Independent architecture review of a data access layer, covering component responsibilities, request and result flow, resource lifecycle, data mapping, and verification areas.</p>
-                    <div className="featured-project-tags">
-                      <span>C#</span><span>SQLite</span><span>Architecture Review</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="#sqlite-review">View architecture review ↓</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Source review (Markdown) ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ORACLE · DATA PLATFORM DOCUMENTATION</p>
-                    <h3>Global11 Demo Data Platform</h3>
-                    <p>Documentation for Oracle Global 11g, including the relational data model, OLAP patterns, and SQL scripts and scenarios.</p>
-                    <div className="featured-project-tags">
-                      <span>Oracle 11g</span>
-                      <span>Relational Model</span>
-                      <span>OLAP</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
                     <p className="eyebrow">C++ · UI NAVIGATION COMPONENT</p>
                     <h3>Cobalt UI Navigation</h3>
                     <p>Source-based technical documentation for a C++ UI navigation component, covering architecture, native interface abstraction, NavItem lifecycle, focus management, callbacks, queued updates, and compatibility fallback behavior.</p>
@@ -707,8 +675,9 @@ export default function App() {
             <section className="content-grid">
               <div className="panel repositories-panel">
                 <div className="panel-heading">
-                  <div><p className="eyebrow">PROJECTS</p><h2>Repositories <span>{repositories.length}</span></h2></div>
+                  <div><p className="eyebrow">FULL ACCOUNT INDEX</p><h2>All public repositories <span>{repositories.length}</span></h2></div>
                 </div>
+                <p className="panel-note">Live index of the account repositories. Curated portfolio case studies are presented separately above.</p>
                 <div className="repo-controls">
                   <input aria-label="Search repositories" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search repositories…" />
                   <select aria-label="Sort repositories" value={sort} onChange={(e) => setSort(e.target.value)}>
