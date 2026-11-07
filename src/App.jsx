@@ -578,62 +578,16 @@ export default function App() {
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">ППО «Территория» — system archive ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">System archive repository ↗</a>
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Database, API &amp; source documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">Database and source documentation repository ↗</a>
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">АРМ «Дискриптор» — system specification ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Workstation architecture repository ↗</a>
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Mobile / stationary software documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Software and source review repository ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS SOAP and local storage documentation ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation site ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
                   </div>
                 </article>
 
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SOAP · WPF / LEGACY CLIENT</p>
-                    <h3>UMMS SOAP API &amp; Client — Integration Case Study</h3>
-                    <p>Historical integration case study describing SOAP operations for authentication, reference-data synchronization and transaction submission, with XSD-based data structures and search workflows for WPF operator and mobile clients. The linked case study is Russian-language and does not describe a .NET 8 implementation.</p>
-                    <div className="featured-project-tags">
-                      <span>SOAP / WSDL / XSD</span>
-                      <span>WPF Client</span>
-                      <span>Legacy Integration</span>
-                    </div>
-                  </div>
-                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/umms-enterprise-soap-client.html" target="_blank" rel="noreferrer">Published case study (RU) ↗</a>
-                  <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">Related source-based UMMS documentation ↗</a>
-                </article>
 
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">UMMS · C# · SQLITE · SOURCE REVIEW</p>
-                    <h3>UMMS — Local Case &amp; Dossier Storage</h3>
-                    <p>Source-based review of the Stationary Station data-access component: case and dossier relationships, SQLite persistence, XML-backed person documents, addresses and case records, scenario storage, and loading workflows. Findings are limited to the inspected CaseProvider implementation.</p>
-                    <div className="featured-project-tags">
-                      <span>C#</span><span>SQLite</span><span>XML Serialization</span><span>Data Access</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs/blob/main/05_%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%BE%D1%81%D1%8C%D0%B5_%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%A7%D0%9D%D0%90%D0%AF.md" target="_blank" rel="noreferrer">Source-based review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS documentation repository ↗</a>
-                  </div>
-                </article>
 
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">UMMS · WPF · SOAP/XML · SYSTEM OVERVIEW</p>
-                    <h3>UMMS — Document Processing Workstation &amp; SOAP Integration</h3>
-                    <p>Public, source-based overview connecting the documented Mobile and Stationary workstation roles with the generated UMMS NP SOAP client, local dossier storage, and observed 2014 runtime diagnostics. The integration path is explicitly marked as provisional where caller and transfer code are not yet available.</p>
-                    <div className="featured-project-tags">
-                      <span>WPF / .NET</span><span>SOAP / XML</span><span>WSDL</span><span>Technical Analysis</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/umms-docs/blob/main/06_%D0%90%D0%A0%D0%9C_%D0%B8_SOAP_%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%9F%D0%A3%D0%91%D0%9B%D0%98%D0%A7%D0%9D%D0%90%D0%AF.md" target="_blank" rel="noreferrer">Architecture review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS documentation repository ↗</a>
-                  </div>
-                </article>
+
+
+
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
