@@ -568,7 +568,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · WORKSTATION · INTEGRATIONS</p>
                     <h3>ППО «Территория» и связанные технические системы</h3>
-                    <p>Documentation hub for several separately documented systems: the PPO Territory information system, ARM Descriptor workstation, Deshifrator desktop application suite, and UMMS SOAP client/API materials. The architecture catalogue covers system context, functional domains, Oracle data structures, deployment models, integration directions, workstation components, SQLite data access, and SOAP workflows. The systems remain separate architecture boundaries; the mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code is not assumed.</p>
+                    <p>Documentation hub for several separately documented systems: the PPO Territory information system, ARM Descriptor workstation, Deshifrator desktop application suite, and UMMS SOAP client/API materials. The architecture catalogue covers system context, functional domains, Oracle data structures, deployment models, integration directions, workstation components, SQLite data access, and SOAP workflows. The systems remain separate architecture boundaries; the mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code is not assumed. Supplementary source notes for ARM PPZ/PVK, AS Passport RF and MSKTs are catalogued separately and are not presented as components of these systems.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>WPF / .NET Framework</span>
@@ -581,6 +581,7 @@ export default function App() {
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation site ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/README.md" target="_blank" rel="noreferrer">Architecture catalogue ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
                   </div>
                 </article>
