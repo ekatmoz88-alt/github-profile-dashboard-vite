@@ -568,7 +568,12 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · WORKSTATION · INTEGRATIONS</p>
                     <h3>ППО «Территория» и связанные технические системы</h3>
-                    <p>Documentation hub for several separately documented systems: the PPO Territory information system, ARM Descriptor workstation, Deshifrator desktop application suite, and UMMS SOAP client/API materials. The architecture catalogue covers system context, functional domains, Oracle data structures, deployment models, integration directions, workstation components, SQLite data access, and SOAP workflows. The systems remain separate architecture boundaries; the mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code is not assumed. Supplementary source notes for ARM PPZ/PVK, AS Passport RF and MSKTs are catalogued separately and are not presented as components of these systems.</p>
+                    <ul className="featured-project-bullets">
+                      <li>Analysed system architecture, components, deployment models, integrations, and database structures across separately documented software systems.</li>
+                      <li>Reconstructed and structured technical workflows from source code and documentation, identifying information gaps and architecture risks.</li>
+                      <li>Prepared design proposals for offline data synchronisation, data integrity controls, and Oracle RMAN backup and recovery procedures.</li>
+                    </ul>
+                    <p className="project-note">Source-based analysis and design proposals; proposed workflows are not presented as verified production implementations.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>WPF / .NET Framework</span>
