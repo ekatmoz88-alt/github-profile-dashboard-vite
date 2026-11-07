@@ -3,7 +3,8 @@
 A public portfolio dashboard for selected technical writing and documentation engineering work.
 
 **Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
-**GitHub profile:** https://github.com/ekatmoz88-alt
+**GitHub profile:** https://github.com/ekatmoz88-alt  
+**Bilingual repository registry and audit:** https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html
 
 ## Purpose
 
@@ -12,6 +13,8 @@ The dashboard presents selected documentation case studies across API documentat
 Each project remains an independent workstream. The dashboard links to the corresponding public documentation site, repository or review artifact; it does not combine the underlying systems into one architecture.
 
 ## Featured work
+
+The dashboard currently presents **6 curated project cards**. This is intentionally a selected-work section, not a one-card-per-repository list. The live **All public repositories** index is separate and retrieves the public repository inventory from GitHub. The [bilingual audit and registry](https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html) records the repository count, forks, private repositories, language coverage, scope boundaries and tag recommendations.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
 - [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://github.com/ekatmoz88-alt/territory-descriptor-unified) · [published site](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) — one repository containing the Territory system overview, database/API materials, Descriptor workstation architecture, software-component reviews, selected C# source fragments, and UMMS SOAP documentation. The consolidated materials retain section-level boundaries; the mapping between ПОМС / ПОСС and ModuleMobile / ModuleStationary remains under verification. [Interactive EN/RU architecture catalogue](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Canonical Mermaid source](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md) · [Detailed component maps](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md). The primary catalogue contains 10 Mermaid diagrams; the companion maps contain 7 additional component-level diagrams.
