@@ -566,14 +566,14 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SYSTEMS · DATA &amp; INTEGRATION ARCHITECTURE</p>
-                    <h3>Enterprise Architecture Documentation — Territory &amp; Related Systems</h3>
+                    <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
+                    <h3>Enterprise Systems Architecture — Territory, Descriptor, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
-                      <li>Created an evidence-based architecture catalogue for four separately documented systems: PPO Territory, ARM Descriptor, Deshifrator, and UMMS.</li>
-                      <li>Maintained 10 Mermaid views covering system boundaries, functional domains, Oracle inventory and conceptual data relationships, deployment variants, external exchanges, workstation components, SQLite data access, and the UMMS SOAP boundary.</li>
-                      <li>Separated source-backed facts, logical reconstructions, unverified details, and modernization proposals; identified evidence gaps instead of inventing topology or interfaces.</li>
+                      <li>Maintained four separate system boundaries: PPO Territory, ARM Descriptor, Deshifrator, and UMMS. No shared runtime or integration is inferred without evidence.</li>
+                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, ARM Descriptor workstation, Deshifrator components and SQLite data access, and the UMMS SOAP boundary.</li>
+                      <li>Separated documented facts, logical reconstructions and unverified details; the catalogue records evidence gaps instead of inventing modules, topology or interface contracts.</li>
                     </ul>
-                    <p className="project-note">Architecture diagrams are conceptual where stated. The 401-table Oracle inventory and seven exchange directions are source-reported; physical schema, live endpoints, and site-specific deployment remain subject to verification. Offline synchronisation and RMAN procedures are proposals, not verified production implementations.</p>
+                    <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The conceptual ER model, physical schema, live endpoints and site-specific deployment remain subject to verification; conceptual diagrams are not as-built production configurations.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
