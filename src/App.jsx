@@ -586,7 +586,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · ARCHITECTURE &amp; INTEGRATIONS</p>
                     <h3>FMS Territory — Enterprise Information System</h3>
-                    <p>Technical archive documenting the FMS Territory application: functional modules, deployment models, external data exchanges, system requirements and development lifecycle. This project is documented independently from the Descriptor workstation and the Passport / UMMS system.</p>
+                    <p>Technical archive documenting the FMS Territory application: functional modules, deployment models, external data exchanges, system requirements and development lifecycle. The companion `territory-docs` repository provides deeper database, API and source-code documentation for the same PПО «Территория» system. The Descriptor workstation is documented separately.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>System Integrations</span>
@@ -700,8 +700,8 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
-                    <h3>Passport Account System — Territory Docs</h3>
-                    <p>Technical documentation for a separate passport-accounting information system, including Oracle database models, API and source-code materials. The available technical-project and data-model excerpts describe core entities and case workflows, operation lifecycles, person and organization records, document quality controls, Russian and foreign passports, residence registration, address-reference requests, invitations, migration-card intake, dictionaries, address hierarchies, access roles, signals, audit logs and biometrics. This repository is distinct from the FMS PПО «Территория» archive and from the standalone АРМ «Дискриптор» research.</p>
+                    <h3>PПО «Территория» — Database, API &amp; Source Documentation</h3>
+                    <p>Companion technical documentation for the FMS PПО «Территория» information system. This repository focuses on the Oracle data model, core entities, passport and migration-related modules, business records and operation lifecycles, API operations, source-code models, reference data, access roles, signals, audit and biometrics. It complements the broader system archive and is not a separate passport-accounting product. АРМ «Дискриптор» remains a separately documented workstation.</p>
                     <div className="featured-project-tags">
                       <span>Technical Documentation</span>
                       <span>Database Documentation</span>
