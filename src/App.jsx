@@ -331,7 +331,7 @@ export default function App() {
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
                 <p>6 curated technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The live repository index is a separate list of all public repositories. Each case study links to its public documentation repository or published reference.</p>
-                <p className="panel-note"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; cross-project audit / Двуязычный реестр и межрепозиторный аудит ↗</a> · 6 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
+                <p className="panel-note"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; audit · 24 public / 2 private / Двуязычный реестр и аудит · 24 публичных / 2 приватных ↗</a> · 6 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
