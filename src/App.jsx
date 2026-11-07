@@ -567,8 +567,8 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · WORKSTATION · INTEGRATIONS</p>
-                    <h3>ППО «Территория» и АРМ «Дискриптор» — единый документируемый комплекс</h3>
-                    <p>Unified portfolio case covering the PПО «Территория» information system and the АРМ «Дискриптор» workstation in its documented integration context. The materials span system architecture and deployment, the workstation's stationary and mobile roles, the ПОШ ВБД exchange boundary, Oracle data structures and business entities, API and source-code models, UMMS SOAP workflows, local SQLite dossier storage, and passport-layout / MRZ processing. The repositories are consolidated here as one documentation project; component-level identity is stated only where supported by source material. The precise mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code remains under verification.</p>
+                    <h3>ППО «Территория» и связанные технические системы</h3>
+                    <p>Documentation hub for several separately documented systems: the PPO Territory information system, ARM Descriptor workstation, Deshifrator desktop application suite, and UMMS SOAP client/API materials. The architecture catalogue covers system context, functional domains, Oracle data structures, deployment models, integration directions, workstation components, SQLite data access, and SOAP workflows. The systems remain separate architecture boundaries; the mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code is not assumed.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>WPF / .NET Framework</span>
@@ -579,6 +579,8 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation site ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/README.md" target="_blank" rel="noreferrer">Architecture catalogue ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
                   </div>
                 </article>
