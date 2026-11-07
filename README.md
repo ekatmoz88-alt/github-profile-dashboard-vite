@@ -1,5 +1,7 @@
 # Technical Documentation Portfolio
 
+[English](README.md) | [Русский](README.ru.md)
+
 A public portfolio dashboard for selected technical writing and documentation engineering work.
 
 **Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
