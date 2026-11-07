@@ -9,8 +9,6 @@ A public portfolio dashboard for selected technical writing and documentation en
 **Bilingual repository registry and audit:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
 
 
-Original source diagrams are preserved in WMF format in `public/original-diagrams/territory/` and linked from the Territory featured-project card in the live dashboard.
-
 ## Purpose
 
 The dashboard presents selected documentation case studies across API documentation, enterprise information systems, desktop applications, database architecture and source-based technical analysis.
