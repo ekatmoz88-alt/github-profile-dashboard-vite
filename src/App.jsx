@@ -52,381 +52,165 @@ function websiteUrl(value) {
 
 function SqliteArchitectureReview() {
   const components = [
-    ["ConnectionFactory", "Creates, opens and provides SQLite connections."],
-    ["SQLiteCommandEx<T>", "Wraps command execution and result handling."],
-    ["SQLiteCommandEx_Params", "Creates and binds SQLite parameters, including GUID helpers."],
+    ["ConnectionFactory", "Provides the shared SQLite connection."],
+    ["SQLiteCommandEx<T>", "Executes commands and coordinates result handling."],
+    ["SQLiteCommandEx_Params", "Creates and binds typed SQLite parameters, including GUID helpers."],
     ["SQLiteDataReaderEx", "Provides typed access to values returned by a reader."],
     ["SQLiteMaps", "Maps database values to application models."],
     ["Providers", "Execute application-level data operations."]
   ];
 
   const reviewAreas = [
-    ["Thread safety", "Check concurrent access to shared connections and commands."],
-    ["Connection lifecycle", "Verify connection creation, reuse, ownership and closure."],
-    ["Resource disposal", "Check deterministic disposal of connections, commands and readers."],
-    ["DataReader lifecycle", "Verify reader lifetime and behavior while a connection is in use."],
-    ["Parameter handling", "Review parameter binding, types and protection against unsafe SQL construction."],
-    ["Type conversion", "Check null handling, SQLite type affinity and conversion boundaries."],
-    ["GUID processing", "Verify GUID serialization, storage format and round-trip conversion."],
-    ["Error handling", "Review exception propagation, diagnostics and logging."]
+    ["Thread safety", "ConnectionFactory.cs:11, 27–33 — a static singleton returns the same connection without visible locking. CaseProvider.cs:43–45 starts transactions on that shared connection.", "Risk identified"],
+    ["Connection lifecycle", "ConnectionFactory.cs:18–24 — the connection is created and opened in the factory constructor. GetConnection() reuses it; no close/dispose path is implemented in this class.", "Partially verified"],
+    ["Resource disposal", "SQLiteCommandEx.cs:99–110, 130–141, 162–173, 235–239, 261–265 — several paths use using. Parameter-array overloads at 197–215, 248–252 and 275–279 do not dispose the command. The factory retains its connection.", "Inconsistent disposal"],
+    ["DataReader lifecycle", "SQLiteCommandEx.cs:220–227 — AsDataReader() returns a reader from inside a using scope, so it is disposed before the caller can consume it.", "Defect confirmed"],
+    ["Parameter handling", "SQLiteCommandEx_Params.cs:10–22, 25–36 — named parameters are created and added. SQLiteCommandEx.cs:299–302 maps null to DBNull.Value. ResetParams relies on Debug.Assert for count matching (286–293).", "Partially verified"],
+    ["Type conversion", "SQLiteDataReaderEx.cs:28–30, 33–102, 104–121 — direct generic cast, typed getters and DBNull checks. SQLiteMaps.cs:24–91 uses these methods in model mapping; conversion behavior is not comprehensively tested.", "Partially verified"],
+    ["GUID processing", "CaseProvider.cs:54 stores CaseGUID as a string; SQLiteMaps.cs:36–38 reads it with Guid.Parse. SQLiteCommandEx_Params.cs:140–155 defines GUID parameter helpers. No round-trip test evidence was supplied.", "Partially verified"],
+    ["Error handling", "CaseProvider.cs:308–312 catches, logs and rethrows exceptions in LoadCases(). A consistent logging policy is not visible across the inspected providers.", "Partially verified"]
   ];
 
   const recommendations = [
     "Trace connection ownership from creation through disposal.",
     "Inspect concurrent execution paths and define thread-safety guarantees.",
-    "Verify that readers, commands and connections are disposed on success and failure paths.",
-    "Review parameter binding and test edge cases for null and unexpected values.",
-    "Add tests for type conversion and GUID round-trip behavior.",
-    "Check exception handling and ensure diagnostic logs do not expose sensitive data."
+    "Verify reader, command and connection disposal on success and failure paths.",
+    "Test parameter binding, argument-count mismatches, nulls and unexpected values.",
+    "Add type-conversion and GUID round-trip tests.",
+    "Review exception handling and ensure diagnostic logs do not expose sensitive data."
   ];
 
   return (
     <section className="sqlite-review" id="sqlite-review">
       <div className="sqlite-review-heading">
-        <p className="eyebrow">SOURCE-BASED ARCHITECTURE REVIEW</p>
+        <p className="eyebrow">DESHIFRATOR · SOURCE-BASED COMPONENT REVIEW</p>
         <h2>C# / SQLite Data Access Layer</h2>
         <p>
-          A separate technical case examining the responsibilities, data flow
-          and review areas of a C# data access layer using SQLite.
+          Source-based review of the DbStationary SQLite data-access components
+          documented in the Deshifrator application-suite track. This is a
+          component-level view, not a deployment topology.
         </p>
         <div className="featured-project-tags">
-          <span>C#</span><span>SQLite</span><span>Data Access Layer</span>
-          <span>Architecture Review</span>
+          <span>C#</span><span>SQLite</span><span>DbStationary</span>
+          <span>Data Access Layer</span><span>Source Review</span>
         </div>
+        <p className="sqlite-muted">
+          <a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive EN/RU architecture catalogue ↗</a>
+          {" · "}
+          <a href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Canonical component map ↗</a>
+        </p>
       </div>
 
-      <div className="sqlite-diagram-grid">
-        <article className="panel sqlite-diagram-card">
-          <div className="panel-heading">
-            <div><p className="eyebrow">01 · SYSTEM CONTEXT</p><h3>Architecture Overview</h3></div>
-          </div>
-          <div className="sqlite-svg-wrap">
-            <svg viewBox="0 0 760 250" role="img" aria-label="Application interacts with the data access layer, which communicates with SQLite">
-              <defs>
-                <marker id="sqlite-arrow-context" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                  <path d="M0 0 L6 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.3"/>
-                </marker>
-              </defs>
-              <rect x="18" y="70" width="190" height="100" rx="10" fill="#eaf3fb" stroke="#8db7d7"/>
-              <text x="113" y="112" textAnchor="middle" fontSize="17" fontWeight="700" fill="#203b55">Application</text>
-              <text x="113" y="137" textAnchor="middle" fontSize="12" fill="#52677d">Application code</text>
-              <path d="M208 120 H285" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-context)"/>
-              <rect x="292" y="45" width="190" height="150" rx="10" fill="#f2f6fa" stroke="#9aabba"/>
-              <text x="387" y="83" textAnchor="middle" fontSize="16" fontWeight="700" fill="#203b55">Data Access Layer</text>
-              <text x="387" y="111" textAnchor="middle" fontSize="12" fill="#52677d">ConnectionFactory</text>
-              <text x="387" y="132" textAnchor="middle" fontSize="12" fill="#52677d">SQLiteCommandEx</text>
-              <text x="387" y="153" textAnchor="middle" fontSize="12" fill="#52677d">Reader · Mapping</text>
-              <path d="M482 120 H559" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-context)"/>
-              <rect x="566" y="70" width="175" height="100" rx="10" fill="#edf6f1" stroke="#91bda6"/>
-              <ellipse cx="653" cy="94" rx="48" ry="12" fill="#d8eee2" stroke="#72a98b"/>
-              <path d="M605 94 V145 C605 160 701 160 701 145 V94" fill="#edf6f1" stroke="#72a98b"/>
-              <ellipse cx="653" cy="145" rx="48" ry="12" fill="#d8eee2" stroke="#72a98b"/>
-              <text x="653" y="121" textAnchor="middle" fontSize="15" fontWeight="700" fill="#285b42">SQLite</text>
-              <text x="380" y="225" textAnchor="middle" fontSize="12" fill="#718096">Logical context — exact deployment boundaries are not asserted</text>
-            </svg>
-          </div>
-          <p className="sqlite-diagram-note">The application uses the data access layer to communicate with the SQLite database.</p>
-        </article>
-
-        <article className="panel sqlite-diagram-card">
-          <div className="panel-heading">
-            <div><p className="eyebrow">02 · DATA FLOW</p><h3>Request and Result Flow</h3></div>
-          </div>
-          <div className="sqlite-svg-wrap">
-            <svg viewBox="0 0 760 310" role="img" aria-label="Data access request and result flow through the SQLite components">
-              <defs>
-                <marker id="sqlite-arrow-flow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                  <path d="M0 0 L6 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.3"/>
-                </marker>
-              </defs>
-              <g fontSize="13" textAnchor="middle" fill="#203b55">
-                <rect x="15" y="18" width="210" height="48" rx="7" fill="#eaf3fb" stroke="#8db7d7"/>
-                <text x="120" y="47" fontWeight="700">Application Code</text>
-                <path d="M120 66 V91" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="15" y="96" width="210" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="120" y="125" fontWeight="700">ConnectionFactory</text>
-                <path d="M120 144 V169" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="15" y="174" width="210" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="120" y="203" fontWeight="700">SQLiteCommandEx&lt;T&gt;</text>
-                <path d="M225 198 H290" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="296" y="174" width="165" height="48" rx="7" fill="#edf6f1" stroke="#91bda6"/>
-                <text x="378" y="203" fontWeight="700">SQLite Database</text>
-                <path d="M378 174 V144" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="296" y="96" width="165" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="378" y="125" fontWeight="700">SQLiteDataReaderEx</text>
-                <path d="M461 120 H520" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="526" y="96" width="215" height="48" rx="7" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="633" y="125" fontWeight="700">SQLiteMaps</text>
-                <path d="M633 144 V169" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-arrow-flow)"/>
-                <rect x="526" y="174" width="215" height="48" rx="7" fill="#eaf3fb" stroke="#8db7d7"/>
-                <text x="633" y="203" fontWeight="700">Application Models</text>
-                <path d="M741 198 H750 V285 H8 V42 H15" stroke="#397da9" strokeWidth="1.6" strokeDasharray="5 4" markerEnd="url(#sqlite-arrow-flow)" fill="none"/>
-                <text x="375" y="270" fontSize="11" fill="#718096">Mapped result returned to Application Code</text>
-              </g>
-            </svg>
-          </div>
-          <p className="sqlite-diagram-note">Conceptual flow based on the component names and responsibilities described in the review.</p>
-        </article>
-      </div>
-
-
-      <div className="sqlite-diagram-grid sqlite-additional-diagrams">
-
-        <article className="panel sqlite-diagram-card" id="sqlite-component-architecture">
-          <div className="panel-heading">
-            <div>
-              <p className="eyebrow">03 · COMPONENT ARCHITECTURE</p>
-              <h3>Data Access Layer Components</h3>
-            </div>
-          </div>
-          <div className="sqlite-svg-wrap">
-            <svg viewBox="0 0 760 300" role="img"
-              aria-label="Conceptual component architecture of the C Sharp SQLite data access layer">
-              <defs>
-                <marker id="sqlite-arrow-components" markerWidth="8" markerHeight="8"
-                  refX="6" refY="3" orient="auto">
-                  <path d="M0 0 L6 3 L0 6" fill="none"
-                    stroke="#397da9" strokeWidth="1.3"/>
-                </marker>
-              </defs>
-
-              <rect x="18" y="24" width="724" height="250" rx="12"
-                fill="#f8fafc" stroke="#b9c8d6" strokeDasharray="5 4"/>
-              <text x="38" y="49" fontSize="12" fontWeight="700"
-                fill="#52677d">DATA ACCESS LAYER</text>
-
-              <g textAnchor="middle" fill="#203b55">
-                <rect x="42" y="85" width="190" height="58" rx="8"
-                  fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="137" y="109" fontSize="14" fontWeight="700">ConnectionFactory</text>
-                <text x="137" y="128" fontSize="11" fill="#52677d">Connection access</text>
-
-                <rect x="285" y="85" width="190" height="58" rx="8"
-                  fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="380" y="109" fontSize="14" fontWeight="700">SQLiteCommandEx&lt;T&gt;</text>
-                <text x="380" y="128" fontSize="11" fill="#52677d">Command execution</text>
-
-                <rect x="528" y="85" width="190" height="58" rx="8"
-                  fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="623" y="109" fontSize="14" fontWeight="700">SQLiteDataReaderEx</text>
-                <text x="623" y="128" fontSize="11" fill="#52677d">Result reading</text>
-
-                <rect x="285" y="190" width="190" height="58" rx="8"
-                  fill="#eaf3fb" stroke="#8db7d7"/>
-                <text x="380" y="214" fontSize="14" fontWeight="700">SQLiteMaps</text>
-                <text x="380" y="233" fontSize="11" fill="#52677d">Data mapping</text>
-              </g>
-
-              <path d="M232 114 H278" stroke="#397da9" strokeWidth="2"
-                markerEnd="url(#sqlite-arrow-components)"/>
-              <path d="M475 114 H521" stroke="#397da9" strokeWidth="2"
-                markerEnd="url(#sqlite-arrow-components)"/>
-              <path d="M623 143 V160 H380 V183" fill="none"
-                stroke="#397da9" strokeWidth="2"
-                markerEnd="url(#sqlite-arrow-components)"/>
-
-              <text x="380" y="290" textAnchor="middle" fontSize="11"
-                fill="#718096">Conceptual grouping — internal dependencies require source verification</text>
-            </svg>
-          </div>
-          <p className="sqlite-diagram-note">
-            The diagram groups the identified components by their described responsibilities.
-            It does not assert a complete dependency graph.
-          </p>
-        </article>
-
-        <article className="panel sqlite-diagram-card" id="sqlite-interaction-sequence">
-          <div className="panel-heading">
-            <div>
-              <p className="eyebrow">04 · INTERACTION SEQUENCE</p>
-              <h3>Conceptual Request Lifecycle</h3>
-            </div>
-          </div>
-          <div className="sqlite-svg-wrap">
-            <svg viewBox="0 0 760 390" role="img"
-              aria-label="Conceptual sequence of a request through SQLite data access components">
-              <defs>
-                <marker id="sqlite-arrow-sequence" markerWidth="8" markerHeight="8"
-                  refX="6" refY="3" orient="auto">
-                  <path d="M0 0 L6 3 L0 6" fill="none"
-                    stroke="#397da9" strokeWidth="1.3"/>
-                </marker>
-              </defs>
-
-              <g textAnchor="middle" fontSize="11" fontWeight="700" fill="#203b55">
-                <rect x="8" y="18" width="112" height="42" rx="6" fill="#eaf3fb" stroke="#8db7d7"/>
-                <text x="64" y="43">Application</text>
-
-                <rect x="133" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="189" y="43">ConnectionFactory</text>
-
-                <rect x="258" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="314" y="43">Command</text>
-
-                <rect x="383" y="18" width="112" height="42" rx="6" fill="#edf6f1" stroke="#91bda6"/>
-                <text x="439" y="43">SQLite</text>
-
-                <rect x="508" y="18" width="112" height="42" rx="6" fill="#f2f6fa" stroke="#9aabba"/>
-                <text x="564" y="43">Data Reader</text>
-
-                <rect x="633" y="18" width="112" height="42" rx="6" fill="#eaf3fb" stroke="#8db7d7"/>
-                <text x="689" y="43">SQLiteMaps</text>
-              </g>
-
-              <g stroke="#b6c2ce" strokeDasharray="4 4" strokeWidth="1.2">
-                <path d="M64 60 V340"/>
-                <path d="M189 60 V340"/>
-                <path d="M314 60 V340"/>
-                <path d="M439 60 V340"/>
-                <path d="M564 60 V340"/>
-                <path d="M689 60 V340"/>
-              </g>
-
-              <g fill="none" stroke="#397da9" strokeWidth="1.8"
-                markerEnd="url(#sqlite-arrow-sequence)">
-                <path d="M64 91 H189"/>
-                <path d="M189 131 H314"/>
-                <path d="M314 171 H439"/>
-                <path d="M439 211 H564"/>
-                <path d="M564 251 H689"/>
-              </g>
-
-              <g fontSize="11" fill="#52677d">
-                <text x="126" y="83" textAnchor="middle">1 · Request</text>
-                <text x="251" y="123" textAnchor="middle">2 · Connection</text>
-                <text x="376" y="163" textAnchor="middle">3 · Execute</text>
-                <text x="501" y="203" textAnchor="middle">4 · Read</text>
-                <text x="626" y="243" textAnchor="middle">5 · Map</text>
-              </g>
-
-              <path d="M689 291 H64" fill="none" stroke="#397da9"
-                strokeWidth="1.8" strokeDasharray="5 4"
-                markerEnd="url(#sqlite-arrow-sequence)"/>
-              <text x="376" y="280" textAnchor="middle" fontSize="11"
-                fill="#52677d">6 · Mapped result returned to application</text>
-
-              <text x="380" y="375" textAnchor="middle" fontSize="11"
-                fill="#718096">Illustrative sequence — exact call order and ownership require source verification</text>
-            </svg>
-          </div>
-          <p className="sqlite-diagram-note">
-            A conceptual lifecycle view, not a verified runtime trace or timing diagram.
-          </p>
-        </article>
-
-      <article className="panel sqlite-diagram-card sqlite-review-map"
-        id="sqlite-architecture-review-map">
+      <article className="panel sqlite-diagram-card" id="sqlite-component-architecture">
         <div className="panel-heading">
-          <div>
-            <p className="eyebrow">05 · ARCHITECTURE REVIEW MAP</p>
-            <h3>Areas to Validate</h3>
-          </div>
+          <div><p className="eyebrow">01 · CANONICAL COMPONENT VIEW</p><h3>SQLite Data Access Architecture</h3></div>
         </div>
-        <div className="sqlite-review-map-grid">
-          {reviewAreas.map(([name, description], index) => (
-            <div className="sqlite-review-map-item" key={name}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <strong>{name}</strong>
-                <p>{description}</p>
-              </div>
-            </div>
-          ))}
+        <div className="sqlite-svg-wrap">
+          <svg viewBox="0 0 1000 390" role="img" aria-label="Application code uses SQLiteCommandEx and parameter helpers. The command obtains a connection through ConnectionFactory and uses SQLiteDataReaderEx, SQLiteMaps and application models for result mapping.">
+            <defs>
+              <marker id="sqlite-canonical-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+                <path d="M0 0 L7 3 L0 6" fill="none" stroke="#397da9" strokeWidth="1.5"/>
+              </marker>
+            </defs>
+            <g fontFamily="DM Sans, sans-serif" textAnchor="middle">
+              <rect x="20" y="140" width="150" height="70" rx="8" fill="#eaf3fb" stroke="#8db7d7"/>
+              <text x="95" y="170" fontSize="15" fontWeight="700" fill="#203b55">Application</text>
+              <text x="95" y="190" fontSize="11" fill="#52677d">Code</text>
+
+              <rect x="230" y="55" width="190" height="70" rx="8" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="325" y="84" fontSize="14" fontWeight="700" fill="#203b55">SQLiteCommandEx&lt;T&gt;</text>
+              <text x="325" y="105" fontSize="11" fill="#52677d">Command execution</text>
+
+              <rect x="230" y="225" width="190" height="70" rx="8" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="325" y="254" fontSize="13" fontWeight="700" fill="#203b55">SQLiteCommandEx_Params</text>
+              <text x="325" y="275" fontSize="11" fill="#52677d">Typed parameter helpers</text>
+
+              <rect x="480" y="55" width="180" height="70" rx="8" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="570" y="84" fontSize="14" fontWeight="700" fill="#203b55">ConnectionFactory</text>
+              <text x="570" y="105" fontSize="11" fill="#52677d">Shared connection</text>
+
+              <rect x="770" y="55" width="190" height="70" rx="8" fill="#edf6f1" stroke="#91bda6"/>
+              <ellipse cx="865" cy="72" rx="45" ry="10" fill="#d8eee2" stroke="#72a98b"/>
+              <path d="M820 72 V107 C820 120 910 120 910 107 V72" fill="#edf6f1" stroke="#72a98b"/>
+              <ellipse cx="865" cy="107" rx="45" ry="10" fill="#d8eee2" stroke="#72a98b"/>
+              <text x="865" y="94" fontSize="14" fontWeight="700" fill="#285b42">MainDB.db3</text>
+
+              <rect x="480" y="205" width="180" height="70" rx="8" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="570" y="234" fontSize="14" fontWeight="700" fill="#203b55">SQLiteDataReaderEx</text>
+              <text x="570" y="255" fontSize="11" fill="#52677d">Typed reader access</text>
+
+              <rect x="710" y="205" width="130" height="70" rx="8" fill="#f2f6fa" stroke="#9aabba"/>
+              <text x="775" y="234" fontSize="14" fontWeight="700" fill="#203b55">SQLiteMaps</text>
+              <text x="775" y="255" fontSize="11" fill="#52677d">Row mapping</text>
+
+              <rect x="860" y="290" width="120" height="65" rx="8" fill="#eaf3fb" stroke="#8db7d7"/>
+              <text x="920" y="316" fontSize="12" fontWeight="700" fill="#203b55">Application</text>
+              <text x="920" y="336" fontSize="12" fontWeight="700" fill="#203b55">Models</text>
+            </g>
+            <g fill="none" stroke="#397da9" strokeWidth="2" markerEnd="url(#sqlite-canonical-arrow)">
+              <path d="M170 155 L225 100"/>
+              <path d="M170 195 L225 260"/>
+              <path d="M420 90 H475"/>
+              <path d="M660 90 H765"/>
+              <path d="M325 125 V170 H570 V200"/>
+              <path d="M660 240 H705"/>
+              <path d="M840 240 L855 310"/>
+            </g>
+          </svg>
         </div>
         <p className="sqlite-diagram-note">
-          Review areas derived from the available source-based review material.
-          These are verification points, not confirmed defects.
+          Logical dependency view mirrored from the canonical component map. It is not
+          a complete runtime call graph; connection lifetime and reader disposal are
+          assessed separately in the source review below.
         </p>
       </article>
-      </div>
 
       <div className="sqlite-review-columns">
         <article className="panel">
-          <p className="eyebrow">06 · COMPONENT RESPONSIBILITIES</p>
+          <p className="eyebrow">02 · COMPONENT RESPONSIBILITIES</p>
           <h3>Component Responsibilities</h3>
           <div className="sqlite-table-wrap">
             <table className="sqlite-table">
               <thead><tr><th>Component</th><th>Responsibility</th></tr></thead>
-              <tbody>
-                {components.map(([name, description]) => (
-                  <tr key={name}><th scope="row">{name}</th><td>{description}</td></tr>
-                ))}
-              </tbody>
+              <tbody>{components.map(([name, description]) => (
+                <tr key={name}><th scope="row">{name}</th><td>{description}</td></tr>
+              ))}</tbody>
             </table>
           </div>
         </article>
 
         <article className="panel sqlite-review-audit">
-          <p className="eyebrow">07 · REVIEW AREAS</p>
+          <p className="eyebrow">03 · SOURCE REVIEW</p>
           <h3>Architecture Verification Checklist</h3>
           <p className="sqlite-muted">
-            Reviewed against the available DbStationary C# source files. Statuses describe
-            what the inspected implementation demonstrates; they do not imply a complete
-            runtime, concurrency or test-suite verification.
+            Findings are limited to the inspected DbStationary C# source excerpts.
+            They do not imply complete runtime, concurrency or test-suite verification.
           </p>
           <div className="sqlite-table-wrap">
             <table className="sqlite-table">
-              <thead>
-                <tr>
-                  <th>Area</th>
-                  <th>What to inspect</th>
-                  <th>Source evidence</th>
-                  <th>Review status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {reviewAreas.map(([name, description], index) => {
-                  const evidence = [
-                    "ConnectionFactory.cs:11, 27–33 — one static singleton is initialized without locking and returns the same connection. CaseProvider.cs:43–45 — callers begin transactions on that shared connection.",
-                    "ConnectionFactory.cs:18–24 — connection is created and opened in the factory constructor. GetConnection() reuses it; no close/dispose path is implemented in this class.",
-                    "SQLiteCommandEx.cs:99–110, 130–141, 162–173, 235–239, 261–265 — several execution paths use using. Params overloads at 197–215, 248–252 and 275–279 do not dispose the command. ConnectionFactory retains its connection.",
-                    "SQLiteCommandEx.cs:220–227 — AsDataReader() returns reader from inside using, so it is disposed before the caller can consume it. Other reader paths use using around execution and mapping.",
-                    "SQLiteCommandEx_Params.cs:10–22, 25–36 — named SQLite parameters are created and added. SQLiteCommandEx.cs:299–302 maps null to DBNull.Value. ResetParams relies on Debug.Assert for count matching (286–293). CaseProvider.cs and SecurityProvider.cs show parameterized call sites.",
-                    "SQLiteDataReaderEx.cs:28–30, 33–102, 104–121 — direct generic cast, typed getters and DBNull checks are implemented. SQLiteMaps.cs:24–91 shows their use in model mapping; conversion behavior is not comprehensively tested here.",
-                    "CaseProvider.cs:54 stores CaseGUID as a string; SQLiteMaps.cs:36–38 reads it with Guid.Parse. SQLiteCommandEx_Params.cs:140–155 defines Guid parameter helpers. No round-trip test evidence was supplied.",
-                    "CaseProvider.cs:308–312 catches, logs and rethrows exceptions in LoadCases(). The inspected command execution methods generally let exceptions propagate; no consistent logging policy is visible across providers."
-                  ][index];
-                  const status = [
-                    "Risk identified",
-                    "Partially verified",
-                    "Inconsistent disposal",
-                    "Defect confirmed",
-                    "Partially verified",
-                    "Partially verified",
-                    "Partially verified",
-                    "Partially verified"
-                  ][index];
-
-                  return (
-                    <tr key={name}>
-                      <th scope="row">{name}</th>
-                      <td>{description}</td>
-                      <td>{evidence}</td>
-                      <td><span className="sqlite-review-pending">{status}</span></td>
-                    </tr>
-                  );
-                })}
-              </tbody>
+              <thead><tr><th>Area</th><th>Source evidence</th><th>Review status</th></tr></thead>
+              <tbody>{reviewAreas.map(([name, evidence, status]) => (
+                <tr key={name}><th scope="row">{name}</th><td>{evidence}</td><td><span className="sqlite-review-pending">{status}</span></td></tr>
+              ))}</tbody>
             </table>
           </div>
         </article>
       </div>
 
       <article className="panel sqlite-recommendations">
-        <p className="eyebrow">08 · RECOMMENDATIONS</p>
+        <p className="eyebrow">04 · FOLLOW-UP</p>
         <h3>Recommended Verification Steps</h3>
-        <ol>
-          {recommendations.map((item) => <li key={item}>{item}</li>)}
-        </ol>
+        <ol>{recommendations.map(item => <li key={item}>{item}</li>)}</ol>
       </article>
 
       <div className="sqlite-review-links">
-        <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone HTML review ↗</a>
-        <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite" target="_blank" rel="noreferrer">Dashboard repository ↗</a>
+        <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
+        <a href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Open canonical component maps ↗</a>
       </div>
       <p className="sqlite-disclaimer">
-        This is a separate C# / SQLite review case. It is not represented as part of the Oracle Global11 architecture.
-        The diagrams are conceptual and should be checked against the source code before being treated as implementation-level documentation.
+        This review covers the SQLite data-access layer in the Deshifrator documentation track.
+        It is separate from PPO Territory's Oracle database and from the Global11 demo data platform.
+        Findings are based on selected source excerpts; the original application source is not published here.
       </p>
     </section>
   );
