@@ -21,6 +21,7 @@
 
 ## Избранные направления
 
+- [ППО «Территория» и АРМ «Дискриптор»](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных систем. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
 - API documentation и OpenAPI.
 - Enterprise system architecture и документация нескольких независимых систем.
 - C++ UI component documentation.
