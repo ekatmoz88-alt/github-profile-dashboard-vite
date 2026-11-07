@@ -44,6 +44,11 @@ npm run build
 npm run preview
 ```
 
+## Избранная архитектурная документация
+
+- [Обмен данными и администрирование — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md)
+- [Data exchange and administration — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md)
+
 ## Границы и доказательность
 
 Дашборд — индекс портфолио, а не заявление о том, что автор разработал все перечисленные системы. Описания различают документационные кейсы, анализ исходного кода, демонстрационные проекты и исторические системы. Общая навигация не означает общую исполняемую архитектуру.
