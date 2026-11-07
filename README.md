@@ -25,7 +25,7 @@ Each project remains an independent workstream. The dashboard links to the corre
 
 - Public GitHub profile information and repository activity are retrieved from the GitHub REST API.
 - Featured project descriptions and their links are curated in the dashboard source.
-- The standalone C# / SQLite review is included as a separate technical review page.
+- The standalone C# / SQLite review documents the DbStationary data-access layer in the Deshifrator track. It is separate from PPO Territory's Oracle database and the Global11 demo data platform.
 - Public API rate limits may temporarily affect live profile and activity data.
 
 ## Technology
