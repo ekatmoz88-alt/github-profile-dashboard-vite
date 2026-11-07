@@ -14,12 +14,7 @@ Each project remains an independent workstream. The dashboard links to the corre
 ## Featured work
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
-- [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://ekatmoz88-alt.github.io/ppo-territory-archive/) — consolidated portfolio case covering the enterprise information system, workstation architecture, database, APIs, source-code analysis, UMMS SOAP workflows and mobile/stationary software components. Supporting repositories and published documentation:
-  - [ППО «Территория» — system archive](https://github.com/ekatmoz88-alt/ppo-territory-archive) · [published site](https://ekatmoz88-alt.github.io/ppo-territory-archive/)
-  - [Database, API and source documentation](https://github.com/ekatmoz88-alt/territory-docs) · [published site](https://ekatmoz88-alt.github.io/territory-docs/)
-  - [АРМ «Дискриптор» — architecture and requirements](https://github.com/ekatmoz88-alt/descriptor-arm-spec) · [published site](https://ekatmoz88-alt.github.io/descriptor-arm-spec/)
-  - [Mobile/stationary software and source review](https://github.com/ekatmoz88-alt/deshifrator-docs) · [published site](https://ekatmoz88-alt.github.io/deshifrator-docs/)
-  - [UMMS SOAP and local storage documentation](https://github.com/ekatmoz88-alt/umms-docs)
+- [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://github.com/ekatmoz88-alt/territory-descriptor-unified) · [published site](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) — one repository containing the Territory system overview, database/API materials, Descriptor workstation architecture, software-component reviews, selected C# source fragments, and UMMS SOAP documentation. The consolidated materials retain section-level boundaries; the mapping between ПОМС / ПОСС and ModuleMobile / ModuleStationary remains under verification.
 - [GLOBAL11 Demo Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle relational model, data dictionary and SQL documentation.
 - [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — source-based C++ component documentation.
 - [Fintech Documentation Demo](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — fictional operator-console workflows, data classification and audit logging.
