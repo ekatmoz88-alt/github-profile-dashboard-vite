@@ -62,6 +62,11 @@ npm run preview
 
 The live dashboard is deployed to Vercel at the domain root: https://github-profile-dashboard-vite.vercel.app/. The repository does not currently contain a GitHub Pages deployment workflow for the Vite application. The other portfolio projects keep their own independent GitHub Pages sites.
 
+## Featured architecture documentation
+
+- [Data exchange and administration — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md)
+- [Обмен данными и администрирование — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md)
+
 ## Evidence and scope
 
 The dashboard is a portfolio index, not a claim that all listed systems were developed by the author. Each project description identifies its documentation, source-review or demonstration scope. Historical system facts are kept separate from modern portfolio examples, and technical findings are limited to the available project documents and inspected source evidence.
