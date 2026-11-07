@@ -566,41 +566,27 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">DESKTOP WORKSTATION · SYSTEM ARCHITECTURE &amp; SOFTWARE COMPONENTS</p>
-                    <h3>АРМ «Дискриптор» — архитектура и программные модули</h3>
-                    <p>Unified documentation case bringing together the АРМ «Дискриптор» system design and related source-based analysis of the mobile and stationary software components, dossier exchange, UMMS SOAP workflows, local SQLite storage, and passport-layout / MRZ processing. The technical-project materials describe the workstation context and its interaction with ППО «Территория» through ПОШ ВБД. The exact mapping between the project labels ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary codebase remains subject to primary-source verification; the card therefore groups the documentation, not an unverified claim that every component is identical.</p>
+                    <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · WORKSTATION · INTEGRATIONS</p>
+                    <h3>ППО «Территория» и АРМ «Дискриптор» — единый документируемый комплекс</h3>
+                    <p>Unified portfolio case covering the PПО «Территория» information system and the АРМ «Дискриптор» workstation in its documented integration context. The materials span system architecture and deployment, the workstation's stationary and mobile roles, the ПОШ ВБД exchange boundary, Oracle data structures and business entities, API and source-code models, UMMS SOAP workflows, local SQLite dossier storage, and passport-layout / MRZ processing. The repositories are consolidated here as one documentation project; component-level identity is stated only where supported by source material. The precise mapping between ПОМС / ПОСС and the examined ModuleMobile / ModuleStationary code remains under verification.</p>
                     <div className="featured-project-tags">
-                      <span>System Architecture</span>
+                      <span>Enterprise Architecture</span>
                       <span>WPF / .NET Framework</span>
-                      <span>SOAP / XML / SQLite</span>
+                      <span>Oracle / SQLite</span>
+                      <span>SOAP / XML / API</span>
                       <span>Requirements &amp; Source Review</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">АРМ «Дискриптор» — published specification ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Architecture repository ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Mobile / stationary software documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md" target="_blank" rel="noreferrer">Application suite and source review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md" target="_blank" rel="noreferrer">Dependencies &amp; runtime ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Software documentation repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · ARCHITECTURE &amp; INTEGRATIONS</p>
-                    <h3>FMS Territory — Enterprise Information System</h3>
-                    <p>Technical archive documenting the FMS Territory application: functional modules, deployment models, external data exchanges, system requirements and development lifecycle. The companion `territory-docs` repository provides deeper database, API and source-code documentation for the same PПО «Территория» system. The Descriptor workstation is documented separately.</p>
-                    <div className="featured-project-tags">
-                      <span>Enterprise Architecture</span>
-                      <span>System Integrations</span>
-                      <span>Deployment Models</span>
-                      <span>Technical Analysis</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">Public documentation repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">ППО «Территория» — system archive ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/ppo-territory-archive" target="_blank" rel="noreferrer">System archive repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Database, API &amp; source documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">Database and source documentation repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">АРМ «Дискриптор» — system specification ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/descriptor-arm-spec" target="_blank" rel="noreferrer">Workstation architecture repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Mobile / stationary software documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Software and source review repository ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">UMMS SOAP and local storage documentation ↗</a>
                   </div>
                 </article>
 
@@ -678,24 +664,6 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SYSTEM DOCUMENTATION</p>
-                    <h3>PПО «Территория» — Database, API &amp; Source Documentation</h3>
-                    <p>Companion technical documentation for the FMS PПО «Территория» information system. This repository focuses on the Oracle data model, core entities, passport and migration-related modules, business records and operation lifecycles, API operations, source-code models, reference data, access roles, signals, audit and biometrics. It complements the broader system archive and is not a separate passport-accounting product. АРМ «Дискриптор» remains a separately documented workstation.</p>
-                    <div className="featured-project-tags">
-                      <span>Technical Documentation</span>
-                      <span>Database Documentation</span>
-                      <span>RU / EN</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-docs/database/physical-structure-specification" target="_blank" rel="noreferrer">Physical DB structure (2014) ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
