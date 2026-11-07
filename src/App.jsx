@@ -566,28 +566,29 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE INFORMATION SYSTEM · WORKSTATION · INTEGRATIONS</p>
-                    <h3>ППО «Территория» и связанные технические системы</h3>
+                    <p className="eyebrow">ENTERPRISE SYSTEMS · DATA &amp; INTEGRATION ARCHITECTURE</p>
+                    <h3>Enterprise Architecture Documentation — Territory &amp; Related Systems</h3>
                     <ul className="featured-project-bullets">
-                      <li>Analysed system architecture, components, deployment models, integrations, and database structures across separately documented software systems.</li>
-                      <li>Reconstructed and structured technical workflows from source code and documentation, identifying information gaps and architecture risks.</li>
-                      <li>Prepared design proposals for offline data synchronisation, data integrity controls, and Oracle RMAN backup and recovery procedures.</li>
+                      <li>Created an evidence-based architecture catalogue for four separately documented systems: PPO Territory, ARM Descriptor, Deshifrator, and UMMS.</li>
+                      <li>Maintained 10 Mermaid views covering system boundaries, functional domains, Oracle inventory and conceptual data relationships, deployment variants, external exchanges, workstation components, SQLite data access, and the UMMS SOAP boundary.</li>
+                      <li>Separated source-backed facts, logical reconstructions, unverified details, and modernization proposals; identified evidence gaps instead of inventing topology or interfaces.</li>
                     </ul>
-                    <p className="project-note">Source-based analysis and design proposals; proposed workflows are not presented as verified production implementations.</p>
+                    <p className="project-note">Architecture diagrams are conceptual where stated. The 401-table Oracle inventory and seven exchange directions are source-reported; physical schema, live endpoints, and site-specific deployment remain subject to verification. Offline synchronisation and RMAN procedures are proposals, not verified production implementations.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
-                      <span>WPF / .NET Framework</span>
+                      <span>Data Architecture</span>
                       <span>Oracle / SQLite</span>
                       <span>SOAP / XML / API</span>
-                      <span>Requirements &amp; Source Review</span>
+                      <span>Evidence &amp; Governance</span>
+                      <span>Mermaid / Docs-as-Code</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation site ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/README.md" target="_blank" rel="noreferrer">Architecture catalogue ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md#4-ppo-territory--deployment-architecture-evidence-status" target="_blank" rel="noreferrer">Mermaid deployment diagrams ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md#3-ppo-territory--oracle-database-and-logical-data-architecture" target="_blank" rel="noreferrer">Mermaid Oracle architecture diagrams ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md" target="_blank" rel="noreferrer">Canonical Mermaid source (Markdown) ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
                   </div>
