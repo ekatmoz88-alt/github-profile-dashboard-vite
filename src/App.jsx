@@ -331,6 +331,7 @@ export default function App() {
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
                 <p>Selected technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. Each project links to its public documentation repository or published reference.</p>
+                <p className="panel-note"><a href="https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; cross-project audit / Двуязычный реестр и межрепозиторный аудит ↗</a> · 6 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
