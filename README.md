@@ -63,3 +63,8 @@ The live dashboard is deployed to Vercel at the domain root: https://github-prof
 ## Evidence and scope
 
 The dashboard is a portfolio index, not a claim that all listed systems were developed by the author. Each project description identifies its documentation, source-review or demonstration scope. Historical system facts are kept separate from modern portfolio examples, and technical findings are limited to the available project documents and inspected source evidence.
+
+
+## Tags
+
+`portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
