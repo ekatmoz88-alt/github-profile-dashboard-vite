@@ -1,0 +1,52 @@
+# GitHub Portfolio Dashboard
+
+[English](README.md) | [Русский](README.ru.md)
+
+**Публичный дашборд:** https://github-profile-dashboard-vite.vercel.app/  
+**GitHub Pages:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/  
+**Двуязычный реестр и аудит:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
+
+## Назначение
+
+Дашборд показывает выбранные кейсы технического письма и динамический список публичных репозиториев GitHub-аккаунта.
+
+## Подсчёт проектов и репозиториев
+
+- **6 избранных карточек** — отобранные портфельные кейсы, а не полный список репозиториев.
+- **24 публичных репозитория** — динамический индекс GitHub API.
+- **2 приватных репозитория** — не отображаются в публичном индексе.
+- Встроенный обзор C# / SQLite — компонентный анализ в направлении Deshifrator, а не отдельный репозиторий.
+
+Реестр фиксирует срез инвентаризации, языки документации, границы проектов, теги и несоответствия метаданных. Список публичных репозиториев в самом дашборде загружается динамически.
+
+## Избранные направления
+
+- API documentation и OpenAPI.
+- Enterprise system architecture и документация нескольких независимых систем.
+- C++ UI component documentation.
+- Fintech workflows и security documentation.
+- Docs-as-Code и автоматизация QA.
+- Hardware documentation.
+
+## Технологии
+
+React 18 · Vite 6 · JavaScript · GitHub REST API · GitHub Actions · GitHub Pages · Vercel.
+
+## Запуск локально
+
+Требования: Node.js 24 и npm.
+
+```bash
+npm ci
+npm run dev
+npm run build
+npm run preview
+```
+
+## Границы и доказательность
+
+Дашборд — индекс портфолио, а не заявление о том, что автор разработал все перечисленные системы. Описания различают документационные кейсы, анализ исходного кода, демонстрационные проекты и исторические системы. Общая навигация не означает общую исполняемую архитектуру.
+
+## Теги
+
+`portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
