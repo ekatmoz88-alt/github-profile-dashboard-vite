@@ -570,7 +570,7 @@ export default function App() {
                     <h3>Enterprise Systems Architecture — Territory, Descriptor, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
                       <li>Maintained four separate system boundaries: PPO Territory, ARM Descriptor, Deshifrator, and UMMS. No shared runtime or integration is inferred without evidence.</li>
-                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, ARM Descriptor workstation, Deshifrator components and SQLite data access, and the UMMS SOAP boundary.</li>
+                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, ARM Descriptor workstation, Deshifrator components and SQLite data access, and the UMMS SOAP boundary; the companion component maps add 4 detailed diagrams.</li>
                       <li>Separated documented facts, logical reconstructions and unverified details; the catalogue records evidence gaps instead of inventing modules, topology or interface contracts.</li>
                     </ul>
                     <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The conceptual ER model, physical schema, live endpoints and site-specific deployment remain subject to verification; conceptual diagrams are not as-built production configurations.</p>
