@@ -12,7 +12,7 @@
 
 ## Подсчёт проектов и репозиториев
 
-- **6 избранных карточек** — отобранные портфельные кейсы, а не полный список репозиториев.
+- **7 избранных карточек** — отобранные портфельные кейсы, а не полный список репозиториев.
 - **24 публичных репозитория** — динамический индекс GitHub API.
 - **2 приватных репозитория** — не отображаются в публичном индексе.
 - Встроенный обзор C# / SQLite — компонентный анализ в направлении Deshifrator, а не отдельный репозиторий.
@@ -23,6 +23,7 @@
 
 - [ППО «Территория» и АРМ «Дискриптор»](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных систем. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
 - API documentation и OpenAPI.
+- [VIWI / VSM — Sanitized Architecture Study](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — независимая демонстрационная модель общих принципов service mapping, валидации и генерации кода; не является подтверждённой архитектурой продукта.
 - Enterprise system architecture и документация нескольких независимых систем.
 - C++ UI component documentation.
 - Fintech workflows и security documentation.
