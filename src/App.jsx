@@ -330,8 +330,8 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>6 curated technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The live repository index is a separate list of all public repositories. Each case study links to its public documentation repository or published reference.</p>
-                <p className="panel-note"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; audit · snapshot 07 Nov 2026 · 24 public / 2 private / Двуязычный реестр и аудит · срез 07.11.2026 · 24 публичных / 2 приватных ↗</a> · 6 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
+                <p>7 curated technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The live repository index is a separate list of all public repositories. Each case study links to its public documentation repository or published reference.</p>
+                <p className="panel-note"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; audit · snapshot 07 Nov 2026 · 24 public / 2 private / Двуязычный реестр и аудит · срез 07.11.2026 · 24 публичных / 2 приватных ↗</a> · 7 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -390,6 +390,24 @@ export default function App() {
 
 
 
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">ARCHITECTURE STUDY · SERVICE MAPPING &amp; CODE GENERATION</p>
+                    <h3>VIWI / VSM — Sanitized Architecture Study</h3>
+                    <p>An independently authored, technology-neutral demonstration of declarative mapping, model validation, transformation and code-generation concepts. It is not an as-built product architecture and contains no confidential source material.</p>
+                    <div className="featured-project-tags">
+                      <span>Architecture Documentation</span>
+                      <span>Mermaid</span>
+                      <span>Code Generation</span>
+                      <span>Sanitized Demo</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">Architecture study ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/viwi-vsm-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
