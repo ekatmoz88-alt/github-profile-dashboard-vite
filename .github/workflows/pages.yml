@@ -4,7 +4,8 @@ on:
     branches: [main]
     paths:
       - "src/**"
-      - "docs/**"\n      - "public/**"
+      - "docs/**"
+      - "public/**"
       - "index.html"
       - "package.json"
       - "package-lock.json"
@@ -32,7 +33,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run build\n      - name: Validate OpenAPI draft with Spectral\n        run: npx --yes @stoplight/spectral-cli@6.15.0 lint docs/global11-olap/openapi-draft.yaml --ruleset spectral:oas --fail-severity=error
+      - run: npm run build
+      - name: Validate OpenAPI draft with Spectral
+        run: npx --yes @stoplight/spectral-cli@6.15.0 lint docs/global11-olap/openapi-draft.yaml --ruleset spectral:oas --fail-severity=error
       - name: Include standalone review pages
         run: |
           mkdir -p dist/docs
