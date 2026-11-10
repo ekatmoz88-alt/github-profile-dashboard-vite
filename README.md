@@ -17,12 +17,12 @@ Each project remains an independent workstream. The dashboard links to the corre
 
 ## Featured work
 
-The dashboard currently presents **7 curated project cards**. This is intentionally a selected-work section, not a one-card-per-repository list. The live **All public repositories** index is separate and retrieves the public repository inventory from GitHub. The [bilingual audit and registry](https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html) records the repository count, forks, private repositories, language coverage, scope boundaries and tag recommendations.
+The dashboard currently presents **8 curated project cards**. This is intentionally a selected-work section, not a one-card-per-repository list. The live **All public repositories** index is separate and retrieves the public repository inventory from GitHub. The [bilingual audit and registry](https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html) records the repository count, forks, private repositories, language coverage, scope boundaries and tag recommendations.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
 - [VIWI / VSM — Sanitized Architecture Study](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — an independently authored, technology-neutral demonstration of service mapping, validation and code-generation concepts; not an as-built product architecture.
 - [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://github.com/ekatmoz88-alt/territory-descriptor-unified) · [published site](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) — one repository containing the Territory system overview, database/API materials, Descriptor workstation architecture, software-component reviews, selected C# source fragments, and UMMS SOAP documentation. The consolidated materials retain section-level boundaries; the mapping between ПОМС / ПОСС and ModuleMobile / ModuleStationary remains under verification. [Interactive EN/RU architecture catalogue](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [Canonical Mermaid source](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md) · [Detailed component maps](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md). The primary catalogue contains 10 Mermaid diagrams; the companion maps contain 7 additional component-level diagrams.
-- [GLOBAL11 Demo Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle relational model, data dictionary and SQL documentation.
+- [GLOBAL11 Demo Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle relational model, data dictionary and SQL documentation. The dashboard also publishes the [Oracle Data Architecture & OLAP review](https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/) with database review, administrator guidance and draft REST/SOAP schemas.
 - [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — source-based C++ component documentation.
 - [Fintech Documentation Demo](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — fictional operator-console workflows, data classification and audit logging.
 - [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — automated OpenAPI, Markdown and link-quality checks.
@@ -62,7 +62,7 @@ npm run preview
 
 ## Deployment
 
-The live dashboard is deployed to Vercel at the domain root: https://github-profile-dashboard-vite.vercel.app/. The repository does not currently contain a GitHub Pages deployment workflow for the Vite application. The other portfolio projects keep their own independent GitHub Pages sites.
+The live dashboard is deployed to Vercel at the domain root: https://github-profile-dashboard-vite.vercel.app/. The repository includes a GitHub Actions workflow that builds and deploys the Vite application to GitHub Pages; the same dashboard is also deployed to Vercel. The other portfolio projects keep their own independent GitHub Pages sites.
 
 ## Featured architecture documentation
 
