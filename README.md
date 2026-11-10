@@ -77,3 +77,8 @@ The dashboard is a portfolio index, not a claim that all listed systems were dev
 ## Tags
 
 `portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
+
+
+## Enterprise documentation capability map
+
+The featured Enterprise Systems Architecture card also links to the cross-repository [Enterprise Technical Documentation overview](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/), including the C4, UML Sequence and BPMN 2.0 diagram module. The map distinguishes source-backed documentation from demo models and analytical reconstructions.
