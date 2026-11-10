@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GLOBAL11 Oracle data architecture and OLAP design review.">
+  <title>GLOBAL11 · Oracle Data Architecture &amp; OLAP</title>
+  <style>
+    :root{color-scheme:light dark;--bg:#101820;--panel:#182632;--text:#edf4f8;--muted:#afc0cb;--line:#344a59;--link:#8bc7ff;--warn:#f4c46a}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+    main{max-width:980px;margin:0 auto;padding:48px 24px 72px}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;margin:.3em 0}h2{margin-top:2.2em}p,li{color:var(--muted)}a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+    .eyebrow{color:var(--link);font-size:.78rem;letter-spacing:.12em;font-weight:700}.status{border:1px solid var(--warn);border-radius:12px;padding:14px 16px;color:var(--warn);background:#392f1d33;margin:24px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0}.card{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:20px}.card h3{margin:0 0 8px}.card p{margin:0 0 12px}.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:.78rem;color:var(--muted)}
+    code{background:#263946;padding:2px 5px;border-radius:4px}footer{border-top:1px solid var(--line);margin-top:48px;padding-top:20px;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">DATABASE DESIGN · ORACLE · OLAP</p>
+  <h1>GLOBAL11 — Oracle Data Architecture &amp; OLAP</h1>
+  <p>Концептуальная модель данных, проверка стратегии индексации, секционирования и аналитической витрины, а также проектные контракты интеграции.</p>
+  <div class="status"><strong>Статус: архитектурный черновик.</strong> Материалы не являются подтверждением фактической схемы или работающего production API. Перед внедрением требуется сверка с целевой Oracle БД и исходниками сервиса.</div>
+  <section class="grid" aria-label="Документация">
+    <article class="card"><span class="tag">DATABASE</span><h3>Архитектура БД</h3><p>Сущности, связи, индексы, зерно OLAP-фактов, секционирование и ограничения FAST REFRESH.</p><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/global11-olap/database-architecture-review.md">Открыть обзор БД ↗</a></article>
+    <article class="card"><span class="tag">OPERATIONS</span><h3>Руководство администратора</h3><p>Проверка секций, безопасная архивация, обновление MV и сбор статистики.</p><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/global11-olap/administrator-guide.md">Открыть руководство ↗</a></article>
+    <article class="card"><span class="tag">REST · OPENAPI 3.1</span><h3>REST API — схема</h3><p>Начальные схемы заявок и чек-листа. HTTP-маршруты намеренно не выдуманы.</p><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/global11-olap/openapi-draft.yaml">Открыть YAML ↗</a></article>
+    <article class="card"><span class="tag">SOAP · XML · XSD</span><h3>SOAP CreateClaim</h3><p>Фрагмент XSD для полей запроса. Полный WSDL требует подтверждённых namespace, binding, response и endpoint.</p><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/global11-olap/soap-create-claim-request.xsd">Открыть XSD ↗</a></article>
+    <article class="card"><span class="tag">SQL</span><h3>SQL design notes</h3><p>Проверенные замечания и кандидатные SQL-фрагменты. Не является миграционным скриптом.</p><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/global11-olap/sql-design-notes.sql">Открыть SQL ↗</a></article>
+  </section>
+  <h2>Ключевые архитектурные ограничения</h2>
+  <ul>
+    <li>Oracle 11g не поддерживает колонки <code>IDENTITY</code>; для этой версии нужны sequence/trigger или генерация ключей приложением.</li>
+    <li>Bitmap-индексы не следует автоматически применять к часто изменяемой OLTP-таблице заявок.</li>
+    <li>Ежемесячное interval partitioning не архивирует и не удаляет старые данные автоматически.</li>
+    <li><code>REFRESH FAST ON COMMIT</code> не подтверждён: требуется проверка полного определения MV через <code>DBMS_MVIEW.EXPLAIN_MVIEW</code>.</li>
+    <li>Если у заявки несколько деталей убытка, отчёт должен различать зерно заявки и зерно детали.</li>
+  </ul>
+  <footer>
+    <a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite">Dashboard repository ↗</a> ·
+    <a href="https://github.com/ekatmoz88-alt/global11-demo-data-platform">GLOBAL11 source project ↗</a>
+  </footer>
+</main>
+</body>
+</html>
