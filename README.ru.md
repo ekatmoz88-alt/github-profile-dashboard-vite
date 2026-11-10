@@ -57,3 +57,8 @@ npm run preview
 ## Теги
 
 `portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
+
+
+## Карта Enterprise Documentation
+
+В карточке Enterprise Systems Architecture добавлена ссылка на сводный [обзор Enterprise Technical Documentation](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/) с модулем диаграмм C4, UML Sequence и BPMN 2.0. В обзоре отдельно отмечены подтверждённые исходниками материалы, демонстрационные модели и аналитические реконструкции.
