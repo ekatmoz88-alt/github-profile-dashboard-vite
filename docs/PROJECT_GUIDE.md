@@ -17,5 +17,5 @@
 - [Репозиторий](https://github.com/ekatmoz88-alt/github-profile-dashboard-vite)
 - [GitHub Actions](https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/actions)
 
-Dashboard — навигационная витрина, не официальный GitHub API и не live-мониторинг
-статуса репозиториев.
+Dashboard — навигационная витрина, а не официальный GitHub API.
+Он не выполняет live-мониторинг статуса репозиториев.
