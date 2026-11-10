@@ -8,8 +8,8 @@ This documentation consolidates the Oracle data-model and OLAP design material d
 
 - [Database architecture review](database-architecture-review.md) — entity model, index strategy, partitioning, materialized view, OLAP grain and outstanding decisions.
 - [Administrator guide](administrator-guide.md) — safe operational procedures for partition inspection, archival, MV refresh and statistics.
-- [OpenAPI 3.1 draft](openapi-draft.yaml) — reusable request/response schemas only. Operation paths and HTTP methods are intentionally not invented because the supplied excerpt did not include them.
-- [SOAP CreateClaim request XSD](soap-create-claim-request.xsd) — request payload structure only; this is not a complete WSDL contract.
+- [REST API specification](rest-api-specification.md) — known fields, conceptual mappings and missing contract decisions.\n- [OpenAPI 3.1 draft](openapi-draft.yaml) — reusable request/response schemas only. Operation paths and HTTP methods are intentionally not invented because the supplied excerpt did not include them.
+- [SOAP/XML integration specification](soap-integration-specification.md) — request example, field mapping and WSDL prerequisites.\n- [SOAP CreateClaim request XSD](soap-create-claim-request.xsd) — request payload structure only; this is not a complete WSDL contract.
 - [SQL design notes](sql-design-notes.sql) — reviewed illustrative SQL fragments. Not a migration script.
 
 ## Scope and evidence
