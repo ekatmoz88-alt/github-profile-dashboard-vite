@@ -351,6 +351,27 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">ORACLE DATABASE · OLAP · DOCS-AS-CODE</p>
+                    <h3>GLOBAL11 — Oracle Data Architecture &amp; OLAP</h3>
+                    <p>Conceptual Oracle data-model review covering claim-management entities, B-tree and bitmap index strategy, monthly history partitioning, materialized-view refresh constraints, OLAP fact grain, and draft REST/SOAP contracts. The documentation clearly separates design proposals from verified database behavior.</p>
+                    <div className="featured-project-tags">
+                      <span>Oracle SQL</span>
+                      <span>OLTP / OLAP</span>
+                      <span>Partitioning</span>
+                      <span>Materialized Views</span>
+                      <span>OpenAPI 3.1</span>
+                      <span>SOAP / XSD</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/" target="_blank" rel="noreferrer">Published documentation hub ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/tree/main/docs/global11-olap" target="_blank" rel="noreferrer">Documentation source ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GLOBAL11 project repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
                     <h3>Enterprise Systems Architecture — Territory, Descriptor, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
