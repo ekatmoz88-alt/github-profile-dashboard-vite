@@ -205,6 +205,7 @@ function SqliteArchitectureReview() {
 
       <div className="sqlite-review-links">
         <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
+        <a href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/data-exchange-and-mrz.html" target="_blank" rel="noreferrer">Deshifrator · English documentation ↗</a>
         <a href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Open canonical component maps ↗</a>
       </div>
       <p className="sqlite-disclaimer">
@@ -346,6 +347,7 @@ export default function App() {
                     </div>
                   </div>
                   <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                  <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">English documentation ↗</a>
                   <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                 </article>
 
@@ -365,6 +367,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/" target="_blank" rel="noreferrer">Published documentation hub ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/tree/main/docs/global11-olap" target="_blank" rel="noreferrer">Documentation source ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GLOBAL11 project repository ↗</a>
                   </div>
@@ -392,6 +395,8 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · C4 / UML / BPMN ↗</a>
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">English documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs/blob/main/README.en.md" target="_blank" rel="noreferrer">Territory Docs · English README ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md" target="_blank" rel="noreferrer">Canonical Mermaid source (Markdown) ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">System context and scope · English ↗</a>
@@ -427,6 +432,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">Architecture study ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/viwi-vsm-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -445,6 +451,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -463,6 +470,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/fintech-docs-demo" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -481,6 +489,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -499,6 +508,7 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/adp201p4-hardware-spec" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
