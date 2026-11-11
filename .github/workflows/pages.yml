@@ -9,6 +9,7 @@ on:
       - "index.html"
       - "package.json"
       - "package-lock.json"
+      - ".spectral.yaml"
       - "vite.config.js"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -35,7 +36,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Validate OpenAPI draft with Spectral
-        run: npx --yes @stoplight/spectral-cli@6.15.0 lint docs/global11-olap/openapi-draft.yaml --ruleset spectral:oas --fail-severity=error
+        run: npx --yes @stoplight/spectral-cli@6.15.0 lint docs/global11-olap/openapi-draft.yaml --fail-severity=error
       - name: Include standalone review pages
         run: |
           mkdir -p dist/docs
