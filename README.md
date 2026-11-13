@@ -71,7 +71,7 @@ The live dashboard is deployed to Vercel at the domain root: https://github-prof
 
 ## Evidence and scope
 
-All featured cards refer to real projects and workstreams. The dashboard identifies the author's documentation, analysis and source-review contribution without implying authorship of the underlying software where that was not the role. Historical deployment facts are retained; public descriptions are anonymized where required, and technical findings are tied to project materials and inspected source evidence.
+All featured cards refer to real projects and workstreams; system projects were deployed in their respective server environments. The dashboard identifies the author's documentation, analysis and source-review contribution without implying authorship of the underlying software where that was not the role. Historical deployment facts are retained; public descriptions are anonymized where required, and technical findings are tied to project materials and inspected source evidence.
 
 
 ## Tags
