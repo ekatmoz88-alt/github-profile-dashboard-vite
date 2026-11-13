@@ -1,6 +1,18 @@
 import { useEffect, useMemo, useState } from 'react';
 
 const USERNAME = 'ekatmoz88-alt';
+
+// Older copies and parallel variants are kept on GitHub but omitted from the portfolio index.
+const HIDDEN_REPOSITORIES = new Set([
+  'adp201p4-hardware-spec-editable',
+  'api-docs-portfolio',
+  'descriptor-arm-spec',
+  'deshifrator',
+  'deshifrator-docs-public',
+  'github-profile-dashboard-vite-public',
+  'ppo-territory-archive',
+  'territory-docs',
+]);
 const API = 'https://api.github.com';
 
 async function githubGet(path, signal) {
@@ -206,7 +218,6 @@ function SqliteArchitectureReview() {
       <div className="sqlite-review-links">
         <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
         <a href="https://ekatmoz88-alt.github.io/deshifrator-docs/en/data-exchange-and-mrz.html" target="_blank" rel="noreferrer">Deshifrator · English documentation ↗</a>
-        <a href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Open canonical component maps ↗</a>
       </div>
       <p className="sqlite-disclaimer">
         This review covers the SQLite data-access layer in the Deshifrator documentation track.
@@ -236,7 +247,7 @@ export default function App() {
         githubGet(`/users/${USERNAME}/events/public?per_page=30`, signal),
       ]);
       setProfile(userData);
-      setRepositories(repoData);
+      setRepositories(repoData.filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name)));
       setEvents(eventData);
     } catch (err) {
       if (err.name !== 'AbortError') setError(err.message || 'Unable to load GitHub data.');
@@ -331,8 +342,7 @@ export default function App() {
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
                 <h2>Featured technical documentation projects</h2>
-                <p>8 curated technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The live repository index is a separate list of all public repositories. Each case study links to its public documentation repository or published reference.</p>
-                <p className="panel-note"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html" target="_blank" rel="noreferrer">Bilingual repository registry &amp; audit · snapshot 07 Nov 2026 · 24 public / 2 private / Двуязычный реестр и аудит · срез 07.11.2026 · 24 публичных / 2 приватных ↗</a> · 8 curated case-study cards; the live index below lists all public repositories returned by GitHub.</p>
+                <p>Selected technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The repository index below omits legacy copies and parallel variants.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -347,7 +357,6 @@ export default function App() {
                     </div>
                   </div>
                   <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                  <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">English documentation ↗</a>
                   <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                 </article>
 
@@ -396,10 +405,8 @@ export default function App() {
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · C4 / UML / BPMN ↗</a>
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">English documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs/blob/main/README.en.md" target="_blank" rel="noreferrer">Territory Docs · English README ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md" target="_blank" rel="noreferrer">Canonical Mermaid source (Markdown) ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">System context and scope · English ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md" target="_blank" rel="noreferrer">Контекст системы и границы · Русский ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md" target="_blank" rel="noreferrer">Data exchange and administration · English ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md" target="_blank" rel="noreferrer">Обмен данными и администрирование · Русский ↗</a>
@@ -432,7 +439,6 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">Architecture study ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/viwi-vsm-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -451,7 +457,6 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -470,7 +475,6 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/fintech-docs-demo" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -489,7 +493,6 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
@@ -508,7 +511,6 @@ export default function App() {
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/adp201p4-hardware-spec" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
