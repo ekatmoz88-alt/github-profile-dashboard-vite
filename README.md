@@ -17,7 +17,7 @@ Each project remains an independent workstream. The dashboard links to the corre
 
 ## Featured work
 
-The dashboard currently presents **8 curated project cards**. This is intentionally a selected-work section, not a one-card-per-repository list. The live **All public repositories** index is separate and retrieves the public repository inventory from GitHub. The [bilingual audit and registry](https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html) records the repository count, forks, private repositories, language coverage, scope boundaries and tag recommendations.
+The dashboard presents **8 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
 - [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — documentation of the real VIWI/VSM project, covering service mapping, validation and code-generation concepts. The public version is sanitized to protect restricted project details.
@@ -32,6 +32,7 @@ The dashboard currently presents **8 curated project cards**. This is intentiona
 
 - Public GitHub profile information and repository activity are retrieved from the GitHub REST API.
 - Featured project descriptions and their links are curated in the dashboard source.
+- The additional repository index hides unfinished work and duplicate/legacy repositories; it is not a complete account inventory.
 - The standalone C# / SQLite review documents the DbStationary data-access layer in the Deshifrator track. It is separate from PPO Territory's Oracle database and the Global11 demo data platform.
 - Public API rate limits may temporarily affect live profile and activity data.
 
