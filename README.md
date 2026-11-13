@@ -2,7 +2,7 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
-A public portfolio dashboard for selected technical writing and documentation engineering work.
+A public portfolio dashboard for real technical writing and documentation engineering projects.
 
 **Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
 **GitHub profile:** https://github.com/ekatmoz88-alt  
@@ -20,11 +20,11 @@ Each project remains an independent workstream. The dashboard links to the corre
 The dashboard currently presents **8 curated project cards**. This is intentionally a selected-work section, not a one-card-per-repository list. The live **All public repositories** index is separate and retrieves the public repository inventory from GitHub. The [bilingual audit and registry](https://github-profile-dashboard-vite.vercel.app/docs/portfolio-audit.html) records the repository count, forks, private repositories, language coverage, scope boundaries and tag recommendations.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
-- [VIWI / VSM — Sanitized Architecture Study](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — an independently authored, technology-neutral demonstration of service mapping, validation and code-generation concepts; not an as-built product architecture.
+- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — documentation of the real VIWI/VSM project, covering service mapping, validation and code-generation concepts. The public version is sanitized to protect restricted project details.
 - [ППО «Территория» и АРМ «Дискриптор» — unified documentation project](https://github.com/ekatmoz88-alt/territory-descriptor-unified) · [published site](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) — one repository containing the Territory system overview, database/API materials, Descriptor workstation architecture, software-component reviews, selected C# source fragments, and UMMS SOAP documentation. The consolidated materials retain section-level boundaries; the mapping between ПОМС / ПОСС and ModuleMobile / ModuleStationary remains under verification. [Interactive EN/RU architecture catalogue](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [Canonical Mermaid source](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md) · [Detailed component maps](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md). The primary catalogue contains 10 Mermaid diagrams; the companion maps contain 7 additional component-level diagrams.
-- [GLOBAL11 Demo Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle relational model, data dictionary and SQL documentation. The dashboard also publishes the [Oracle Data Architecture & OLAP review](https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/) with database review, administrator guidance and draft REST/SOAP schemas.
+- [GLOBAL11 — Oracle Data Platform](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — real Oracle Global 11g platform deployed and operated on an office server; relational model, data dictionary, schema changes and OLAP design documentation. The dashboard also publishes the [Oracle Data Architecture & OLAP review](https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/) with database review, administrator guidance and draft REST/SOAP schemas.
 - [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — source-based C++ component documentation.
-- [Fintech Documentation Demo](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — fictional operator-console workflows, data classification and audit logging.
+- [Fintech Operations Documentation](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — anonymized documentation of a real crypto-onramp operator-console project, including workflows, data classification and audit logging.
 - [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — automated OpenAPI, Markdown and link-quality checks.
 - [ADP201P4 Hardware Documentation](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/) — source-based signal-processing module architecture and interface documentation.
 
@@ -71,7 +71,7 @@ The live dashboard is deployed to Vercel at the domain root: https://github-prof
 
 ## Evidence and scope
 
-The dashboard is a portfolio index, not a claim that all listed systems were developed by the author. Each project description identifies its documentation, source-review or demonstration scope. Historical system facts are kept separate from modern portfolio examples, and technical findings are limited to the available project documents and inspected source evidence.
+All featured cards refer to real projects and workstreams. The dashboard identifies the author's documentation, analysis and source-review contribution without implying authorship of the underlying software where that was not the role. Historical deployment facts are retained; public descriptions are anonymized where required, and technical findings are tied to project materials and inspected source evidence.
 
 
 ## Tags
@@ -81,4 +81,4 @@ The dashboard is a portfolio index, not a claim that all listed systems were dev
 
 ## Enterprise documentation capability map
 
-The featured Enterprise Systems Architecture card also links to the cross-repository [Enterprise Technical Documentation overview](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/), including the C4, UML Sequence and BPMN 2.0 diagram module. The map distinguishes source-backed documentation from demo models and analytical reconstructions.
+The featured Enterprise Systems Architecture card also links to the cross-repository [Enterprise Technical Documentation overview](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/), including the C4, UML Sequence and BPMN 2.0 diagram module. The map distinguishes source-backed system documentation from design artefacts and analytical models.
