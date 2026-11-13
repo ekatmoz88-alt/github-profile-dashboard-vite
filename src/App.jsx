@@ -459,13 +459,13 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">FINTECH · OPERATIONAL WORKFLOWS &amp; SECURITY</p>
-                    <h3>Fintech Documentation Demo</h3>
-                    <p>Documentation for a fictional crypto-onramp operator console, covering KYC and onboarding journeys, operator workflows, PII classification, and audit logging.</p>
+                    <h3>Fintech Operations Documentation</h3>
+                    <p>Anonymized technical documentation for a real crypto-onramp operator-console project, covering KYC and onboarding journeys, operator workflows, PII classification, and audit logging.</p>
                     <div className="featured-project-tags">
                       <span>Operational Workflows</span>
                       <span>Data Classification</span>
                       <span>Audit Logging</span>
-                      <span>Demo Case</span>
+                      <span>Real Project</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
