@@ -12,6 +12,12 @@ const HIDDEN_REPOSITORIES = new Set([
   'github-profile-dashboard-vite-public',
   'ppo-territory-archive',
   'territory-docs',
+  'DMRS-Global',
+  'desktop',
+  'interference-coatings-analysis-synthesis',
+  'js.org',
+  'orders-api-mcp',
+  'url-dashboard',
 ]);
 const API = 'https://api.github.com';
 
@@ -529,9 +535,9 @@ export default function App() {
             <section className="content-grid">
               <div className="panel repositories-panel">
                 <div className="panel-heading">
-                  <div><p className="eyebrow">FULL ACCOUNT INDEX</p><h2>All public repositories <span>{repositories.length}</span></h2></div>
+                  <div><p className="eyebrow">FULL ACCOUNT INDEX</p><h2>Additional repositories <span>{repositories.length}</span></h2></div>
                 </div>
-                <p className="panel-note">Live index of the account repositories. Curated portfolio case studies are presented separately above.</p>
+                <p className="panel-note">Additional public repositories only. Featured projects, legacy copies and unfinished work are excluded from this index.</p>
                 <div className="repo-controls">
                   <input aria-label="Search repositories" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search repositories…" />
                   <select aria-label="Sort repositories" value={sort} onChange={(e) => setSort(e.target.value)}>
