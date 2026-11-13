@@ -376,13 +376,13 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
-                    <h3>Enterprise Systems Architecture — Territory, Descriptor, Deshifrator &amp; UMMS</h3>
+                    <h3>Enterprise Systems Architecture — Territory, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
-                      <li>Maintained four separate system boundaries: PPO Territory, ARM Descriptor, Deshifrator, and UMMS. No shared runtime or integration is inferred without evidence.</li>
-                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, ARM Descriptor workstation, Deshifrator components and SQLite data access, and the UMMS SOAP boundary; the companion component maps add 7 detailed diagrams.</li>
+                      <li>Maintained three related system boundaries: PPO Territory, Deshifrator and UMMS. ARM Descriptor is a historical label for the same Deshifrator project, not a separate product. Runtime boundaries are preserved where supported by project evidence.</li>
+                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, Deshifrator workstation specification and application components/SQLite data access, and the UMMS SOAP boundary; the companion component maps add 7 detailed diagrams.</li>
                       <li>Separated documented facts, logical reconstructions and unverified details; the catalogue records evidence gaps instead of inventing modules, topology or interface contracts.</li>
                     </ul>
-                    <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The conceptual ER model, physical schema, live endpoints and site-specific deployment remain subject to verification; conceptual diagrams are not as-built production configurations.</p>
+                    <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The systems were deployed and operated in server environments, including office infrastructure. The logical diagrams document real project architecture; they do not reconstruct the physical topology of every individual installation. API routes and operations belonged to the deployed systems; restricted runtime configuration is not published.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
