@@ -19,6 +19,20 @@ const HIDDEN_REPOSITORIES = new Set([
   'orders-api-mcp',
   'url-dashboard',
 ]);
+const FEATURED_REPOSITORIES = new Set([
+  'adp201p4-hardware-spec',
+  'api-docs-portfolio-v2',
+  'cobalt-ui-navigation-docs',
+  'fintech-docs-demo',
+  'global11-demo-data-platform',
+  'territory-descriptor-unified',
+  'technical-writing-workflows',
+  'viwi-vsm-architecture',
+  'deshifrator-docs',
+  'technical-writing-portfolio',
+  'umms-docs',
+]);
+
 const API = 'https://api.github.com';
 
 async function githubGet(path, signal) {
@@ -253,7 +267,7 @@ export default function App() {
         githubGet(`/users/${USERNAME}/events/public?per_page=30`, signal),
       ]);
       setProfile(userData);
-      setRepositories(repoData.filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name)));
+      setRepositories(repoData.filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name) && !FEATURED_REPOSITORIES.has(repo.name)));
       setEvents(eventData);
     } catch (err) {
       if (err.name !== 'AbortError') setError(err.message || 'Unable to load GitHub data.');
