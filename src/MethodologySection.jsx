@@ -31,6 +31,31 @@ const stages = [
   },
 ];
 
+const diagrams = [
+  {
+    title: 'Documentation Engineering Lifecycle',
+    description: 'Analyze → Architect → Document → Verify, including feedback loops.',
+    file: '01-documentation-engineering-lifecycle.md',
+  },
+  {
+    title: 'Documentation Architecture',
+    description: 'From authoritative sources to structured, published documentation.',
+    file: '02-documentation-architecture.md',
+  },
+  {
+    title: 'Evidence & Traceability',
+    description: 'How documented claims connect to source artifacts and verification.',
+    file: '03-evidence-and-traceability.md',
+  },
+  {
+    title: 'Docs-as-Code Workflow',
+    description: 'Authoring, Git review, automated checks, build and publication.',
+    file: '04-docs-as-code-workflow.md',
+  },
+];
+
+const diagramBase = 'https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/documentation/diagrams/';
+
 const principles = [
   'Evidence-based content',
   'Audience-oriented structure',
@@ -79,6 +104,28 @@ export default function MethodologySection() {
             </div>
           </article>
         ))}
+      </div>
+
+      <div className="methodology-diagrams">
+        <div className="methodology-diagrams-heading">
+          <p className="eyebrow">VISUAL FRAMEWORK</p>
+          <h3>Methodology diagrams</h3>
+        </div>
+        <div className="methodology-diagram-links">
+          {diagrams.map((diagram) => (
+            <a
+              className="methodology-diagram-link"
+              href={`${diagramBase}${diagram.file}`}
+              key={diagram.file}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <strong>{diagram.title}</strong>
+              <span>{diagram.description}</span>
+              <em>View Mermaid diagram ↗</em>
+            </a>
+          ))}
+        </div>
       </div>
 
       <div className="methodology-foundation">
