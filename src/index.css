@@ -238,6 +238,44 @@ h1, h2 { font-family: 'Inter', sans-serif; }
 }
 
 
+/* Case-study context and additional portfolio work */
+.case-study-context {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+  margin: 12px 0;
+  padding-left: 17px;
+  color: #5d6d81;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.case-study-context li { padding-left: 2px; }
+.case-study-context strong { color: #344a62; }
+.additional-work {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid #d8e3ed;
+  border-radius: 9px;
+  background: #fff;
+}
+.additional-work h3 { margin: 0 0 5px; color: #17283d; font: 600 16px 'Inter', sans-serif; }
+.additional-work > p:not(.eyebrow) { margin: 0 0 12px; color: #66758a; font-size: 12px; }
+.additional-work-links { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px; }
+.additional-work-links a { color: #1769aa; font-size: 12px; font-weight: 600; }
+.portfolio-method-note {
+  margin-top: 12px;
+  padding: 13px 16px;
+  border-left: 3px solid #8aa8c2;
+  background: #f4f7fa;
+  color: #596b7e;
+  font-size: 11px;
+  line-height: 1.6;
+}
+@media (max-width: 760px) {
+  .case-study-context { grid-template-columns: 1fr; }
+  .additional-work-links { grid-template-columns: 1fr; }
+}
+
 /* C# / SQLite architecture review */
 .sqlite-review { margin: 24px 0 18px; }
 .sqlite-review-heading { margin-bottom: 16px; }
