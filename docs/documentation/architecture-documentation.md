@@ -31,8 +31,10 @@ Keep distinct systems and projects separate. A shared integration, database, or 
 - Provide a legend for non-obvious symbols and abbreviations.
 - Link diagrams to explanatory text and relevant source artifacts.
 
-## Evidence and verification
+## Evidence and review
 
-Identify whether a view is based on source code, deployment configuration, specifications, existing diagrams, interviews, or observed runtime behavior. Validate component names and relationships against the relevant sources. Mark inferred or unresolved relationships explicitly.
+Record the basis of each architecture view (for example, source code, deployment configuration, specifications, existing diagrams, interviews, or observed runtime behavior). Mark inferred or unresolved relationships explicitly.
+
+For evidence levels and rules governing what a diagram can substantiate, see [Documentation Quality Assurance](documentation-quality-assurance.md).
 
 A diagram is a model of selected aspects of a system, not proof of every runtime behavior.
