@@ -12,6 +12,19 @@ The methodology combines four interconnected stages:
 
 ---
 
+## Visual Methodology Diagrams
+
+The methodology is also represented through four complementary diagrams. Each diagram has an editable Mermaid source embedded in its Markdown page and can be viewed directly on GitHub.
+
+| Diagram | Purpose |
+| --- | --- |
+| [Documentation Engineering Lifecycle](diagrams/01-documentation-engineering-lifecycle.md) | Shows the Analyze → Architect → Document → Verify lifecycle and feedback loops. |
+| [Documentation Architecture](diagrams/02-documentation-architecture.md) | Shows how source evidence becomes structured documentation and published content. |
+| [Evidence & Traceability](diagrams/03-evidence-and-traceability.md) | Connects documented claims with source artifacts and verification. |
+| [Docs-as-Code Workflow](diagrams/04-docs-as-code-workflow.md) | Shows authoring, Git review, automated checks, approval, build, and publication. |
+
+---
+
 ## 1. Methodological Framework
 
 ### 1.1 Analyze — Technical Analysis
