@@ -384,7 +384,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ORACLE DATABASE · OLAP · DOCS-AS-CODE</p>
                     <h3>Oracle Global11 — Data Model &amp; OLAP Architecture</h3>
-                    <p>Historical Oracle Global 11g environment deployed and operated on an office server; deployment work was carried out in collaboration with Philip Stoyanov. Documentation covers relational schema preparation and changes, Oracle SQL Developer Data Modeler dimensional design (role-playing time dimensions, level-based and ragged hierarchies, dimension usage, cubes and measures), and the Oracle Analytic Workspace export workflow. The documented design is kept distinct from evidence of an Analytic Workspace runtime deployment.</p>
+                    <p>Historical Oracle Global 11g environment deployed and operated on an office server; Documentation covers relational schema preparation and changes, Oracle SQL Developer Data Modeler dimensional design (role-playing time dimensions, level-based and ragged hierarchies, dimension usage, cubes and measures), and the Oracle Analytic Workspace export workflow. The documented design is kept distinct from evidence of an Analytic Workspace runtime deployment.</p>
                     <div className="featured-project-tags">
                       <span>Oracle Global 11g</span>
                       <span>SQL Developer Data Modeler</span>
