@@ -140,3 +140,52 @@
   .methodology-connector { display: none; }
   .methodology-foundation { grid-template-columns: 1fr; gap: 18px; }
 }
+
+
+.methodology-diagrams {
+  margin-top: 23px;
+  padding-top: 20px;
+  border-top: 1px solid #e6edf3;
+}
+.methodology-diagrams-heading h3 {
+  margin: 0 0 13px;
+  color: #20344b;
+  font-size: 16px;
+}
+.methodology-diagram-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.methodology-diagram-link {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #dce6ef;
+  border-radius: 7px;
+  background: #fff;
+  transition: border-color .15s, transform .15s;
+}
+.methodology-diagram-link:hover {
+  border-color: #8eb6d4;
+  transform: translateY(-1px);
+}
+.methodology-diagram-link strong {
+  color: #203b55;
+  font-size: 12px;
+}
+.methodology-diagram-link span {
+  color: #68798d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.methodology-diagram-link em {
+  color: #1769aa;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+}
+@media (max-width: 620px) {
+  .methodology-diagram-links { grid-template-columns: 1fr; }
+}
