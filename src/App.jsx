@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import MethodologySection from './MethodologySection.jsx';
 
 const USERNAME = 'ekatmoz88-alt';
 
@@ -326,8 +327,8 @@ export default function App() {
         <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">TECHNICAL WRITING · API DOCUMENTATION · DOCS-AS-CODE</p>
-            <h1>Technical Documentation Portfolio</h1>
-            <p className="hero-subtitle">Selected enterprise documentation projects, API references, architecture reviews and public GitHub work.</p>
+            <h1>Technical Writing &amp; Documentation Architecture</h1>
+            <p className="hero-subtitle">I turn complex software systems, APIs and data models into structured, verifiable and maintainable technical information.</p>
           </div>
           <a className="github-link" href={`https://github.com/${USERNAME}`} target="_blank" rel="noreferrer">
             View GitHub profile ↗
@@ -357,6 +358,8 @@ export default function App() {
                 <strong>{formatNumber(profile.following)}</strong><span>Following</span>
               </div>
             </section>
+
+            <MethodologySection />
 
             <section className="featured-projects" aria-label="Featured portfolio projects">
               <div className="featured-projects-heading">
