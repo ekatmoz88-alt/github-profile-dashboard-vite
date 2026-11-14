@@ -26,15 +26,13 @@ A typical workflow is:
 
 The exact branching and approval rules are repository-specific.
 
-## Validation
+## Validation and CI/CD
 
 Possible automated checks include Markdown linting, link checking, YAML parsing, OpenAPI linting, spell and terminology checks, and documentation builds. Run only checks configured for the project and report their actual result.
 
-## CI/CD and publication
-
 A CI workflow may validate source, build a static documentation site, and publish it to a hosting target. Document triggers, required permissions, build commands, output directories, and deployment target from the workflow configuration.
 
-A successful build does not prove technical correctness of the content. Content review and contract validation remain separate quality activities.
+A successful build establishes only that the configured build steps completed. It does not prove technical correctness of the content. See [Documentation Quality Assurance](documentation-quality-assurance.md) for the full verification model.
 
 ## Maintenance
 
