@@ -35,13 +35,14 @@ WSDL, XSD, and representative SOAP messages are related but distinct artifacts. 
 
 OpenAPI describes HTTP APIs and can represent many REST-style interfaces. SOAP contracts are typically described through WSDL and XML Schema. Do not translate one format into another without preserving semantics and recording limitations.
 
-## Verification
+## API-specific review
 
-- Parse and lint the contract.
-- Check operation identifiers, paths, methods, schemas, and references.
+- Check operation identifiers, paths, methods, parameters, schemas, and references.
 - Validate examples against schemas where tooling permits.
 - Compare descriptions with authoritative service contracts.
+- Record unresolved contract questions.
 - Verify runtime behavior separately when a test environment is available.
-- Record unresolved questions.
+
+For general evidence levels, validation boundaries, review records, and release checks, use [Documentation Quality Assurance](documentation-quality-assurance.md).
 
 A valid specification proves the structure of that artifact; it does not alone prove deployed service behavior.
