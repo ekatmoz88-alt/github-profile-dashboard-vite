@@ -358,182 +358,147 @@ export default function App() {
               </div>
             </section>
 
-            <section className="featured-projects" aria-label="Featured portfolio projects">
+            <section className="featured-projects" aria-label="Selected technical documentation case studies">
               <div className="featured-projects-heading">
-                <p className="eyebrow">SELECTED WORK</p>
-                <h2>Featured technical documentation projects</h2>
-                <p>Selected technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The repository index below omits legacy copies and parallel variants.</p>
+                <p className="eyebrow">SELECTED WORK · 6 CASE STUDIES</p>
+                <h2>Technical documentation case studies</h2>
+                <p>A focused selection for API documentation, enterprise systems, desktop software, data architecture and hardware documentation. Each case links directly to its published materials and repository.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">REST API · OPENAPI 3.1</p>
+                    <p className="eyebrow">REST API · OPENAPI 3.1 · DOCS-AS-CODE</p>
                     <h3>Orders API Documentation</h3>
-                    <p>Docs-as-Code portfolio example for a REST API, with OpenAPI 3.1 specification, endpoint descriptions, request and response schemas, and error responses.</p>
-                    <div className="featured-project-tags">
-                      <span>REST API</span>
-                      <span>OpenAPI 3.1</span>
-                      <span>API Reference</span>
-                    </div>
-                  </div>
-                  <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                  <a className="featured-project-link" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ORACLE DATABASE · OLAP · DOCS-AS-CODE</p>
-                    <h3>Oracle Global11 — Data Model &amp; OLAP Architecture</h3>
-                    <p>Historical Oracle Global 11g environment deployed and operated on an office server; Documentation covers relational schema preparation and changes, Oracle SQL Developer Data Modeler dimensional design (role-playing time dimensions, level-based and ragged hierarchies, dimension usage, cubes and measures), and the Oracle Analytic Workspace export workflow. The documented design is kept distinct from evidence of an Analytic Workspace runtime deployment.</p>
-                    <div className="featured-project-tags">
-                      <span>Oracle Global 11g</span>
-                      <span>SQL Developer Data Modeler</span>
-                      <span>Dimensional Modeling</span>
-                      <span>Oracle OLAP</span>
-                      <span>DMRS Metadata</span>
-                      <span>SQL</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published Global11 documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.html" target="_blank" rel="noreferrer">Data Modeler design history ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html" target="_blank" rel="noreferrer">Cube_1111 specification ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GLOBAL11 project repository ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
-                    <h3>Enterprise Systems Architecture — Territory, Deshifrator &amp; UMMS</h3>
-                    <ul className="featured-project-bullets">
-                      <li>Maintained three related system boundaries: PPO Territory, Deshifrator and UMMS. ARM Descriptor is a historical label for the same Deshifrator project, not a separate product. Runtime boundaries are preserved where supported by project evidence.</li>
-                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, Deshifrator workstation specification and application components/SQLite data access, and the UMMS SOAP boundary; the companion component maps add 7 detailed diagrams.</li>
-                      <li>Separated documented facts, logical reconstructions and unverified details; the catalogue records evidence gaps instead of inventing modules, topology or interface contracts.</li>
+                    <p>A developer-facing REST API documentation sample with an OpenAPI 3.1 contract, endpoint descriptions, request and response schemas, and error responses.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> API consumers, backend developers and QA engineers.</li>
+                      <li><strong>Problem:</strong> make the API contract and expected payloads easy to discover and validate.</li>
+                      <li><strong>Inputs and verification:</strong> OpenAPI source, schema review and automated specification checks.</li>
+                      <li><strong>Outcome:</strong> navigable API Reference and a version-controlled documentation workflow.</li>
                     </ul>
-                    <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The systems were deployed and operated in server environments, including office infrastructure. The logical diagrams document real project architecture; they do not reconstruct the physical topology of every individual installation. API routes and operations belonged to the deployed systems; restricted runtime configuration is not published.</p>
-                    <div className="featured-project-tags">
-                      <span>Enterprise Architecture</span>
-                      <span>Data Architecture</span>
-                      <span>Oracle / SQLite</span>
-                      <span>SOAP / XML / API</span>
-                      <span>Evidence &amp; Governance</span>
-                      <span>Mermaid / Docs-as-Code</span>
-                    </div>
+                    <div className="featured-project-tags"><span>REST API</span><span>OpenAPI 3.1</span><span>API Reference</span><span>Spectral</span></div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · C4 / UML / BPMN ↗</a>
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">English documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md" target="_blank" rel="noreferrer">Canonical Mermaid source (Markdown) ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md" target="_blank" rel="noreferrer">Контекст системы и границы · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md" target="_blank" rel="noreferrer">Data exchange and administration · English ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md" target="_blank" rel="noreferrer">Обмен данными и администрирование · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.en.md" target="_blank" rel="noreferrer">Access control · English ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.ru.md" target="_blank" rel="noreferrer">Права доступа · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
-                  </div>
-                </article>
-
-
-
-
-
-
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ARCHITECTURE STUDY · SERVICE MAPPING &amp; CODE GENERATION</p>
-                    <h3>VIWI / VSM — Sanitized Architecture Study</h3>
-                    <p>An independently authored, technology-neutral demonstration of declarative mapping, model validation, transformation and code-generation concepts. It is not an as-built product architecture and contains no confidential source material.</p>
-                    <div className="featured-project-tags">
-                      <span>Architecture Documentation</span>
-                      <span>Mermaid</span>
-                      <span>Code Generation</span>
-                      <span>Sanitized Demo</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">Architecture study ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/viwi-vsm-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/" target="_blank" rel="noreferrer">Published API Reference ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/api-docs-portfolio-v2" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">C++ · UI NAVIGATION COMPONENT</p>
-                    <h3>Cobalt UI Navigation</h3>
-                    <p>Source-based technical documentation for a C++ UI navigation component, covering architecture, native interface abstraction, NavItem lifecycle, focus management, callbacks, queued updates, and compatibility fallback behavior.</p>
-                    <div className="featured-project-tags">
-                      <span>C++</span>
-                      <span>UI Architecture</span>
-                      <span>API Reference</span>
-                      <span>Source-based Documentation</span>
-                    </div>
+                    <p className="eyebrow">SOAP · XML · CLIENT WORKFLOWS</p>
+                    <h3>UMMS — SOAP Integration Documentation</h3>
+                    <p>Public technical documentation for the historical UMMS document-processing system, covering its SOAP API, client workflows and local dossier storage. UMMS is documented as an independent project.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> developers, integrators and specialists maintaining document-processing workflows.</li>
+                      <li><strong>Problem:</strong> explain API operations, client responsibilities and local data handling.</li>
+                      <li><strong>Inputs and verification:</strong> available project documentation and inspected source excerpts; provisional integration paths are labelled.</li>
+                      <li><strong>Outcome:</strong> public API, client, storage and SOAP integration documents, plus a user-guide article.</li>
+                    </ul>
+                    <div className="featured-project-tags"><span>SOAP</span><span>XML</span><span>API Operations</span><span>Local Storage</span></div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/umms-docs/" target="_blank" rel="noreferrer">Published UMMS documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/umms-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">FINTECH · OPERATIONAL WORKFLOWS &amp; SECURITY</p>
-                    <h3>Fintech Operations Documentation</h3>
-                    <p>Anonymized technical documentation for a real crypto-onramp operator-console project, covering KYC and onboarding journeys, operator workflows, PII classification, and audit logging.</p>
-                    <div className="featured-project-tags">
-                      <span>Operational Workflows</span>
-                      <span>Data Classification</span>
-                      <span>Audit Logging</span>
-                      <span>Real Project</span>
-                    </div>
+                    <p className="eyebrow">ENTERPRISE SYSTEM · ORACLE · API / DATABASE</p>
+                    <h3>ППО «Территория» — System &amp; Data Architecture</h3>
+                    <p>Technical documentation for the Territory passport-accounting information system, including functional domains, Oracle data structures, API operations and source-to-database mapping.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> system analysts, developers, database specialists and maintainers.</li>
+                      <li><strong>Problem:</strong> make system scope, data organization and relationships between API, application models and database structures navigable.</li>
+                      <li><strong>Inputs and verification:</strong> project materials, database inventories and inspected source; inferred relationships are distinguished from directly evidenced facts.</li>
+                      <li><strong>Outcome:</strong> architecture, database, source-code and API documentation with diagrams and evidence boundaries.</li>
+                    </ul>
+                    <div className="featured-project-tags"><span>Enterprise Architecture</span><span>Oracle Database</span><span>SQL</span><span>JSON API</span><span>VitePress</span><span>Mermaid</span></div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/fintech-docs-demo" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-docs/api/" target="_blank" rel="noreferrer">API documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">DOCS-AS-CODE · CI QUALITY AUTOMATION</p>
-                    <h3>Technical Writing Workflows</h3>
-                    <p>A documentation pipeline demonstrating automated OpenAPI validation with Spectral, Markdown linting, and link checking with Lychee in GitHub Actions.</p>
-                    <div className="featured-project-tags">
-                      <span>Spectral</span>
-                      <span>markdownlint</span>
-                      <span>Lychee</span>
-                      <span>GitHub Actions</span>
-                    </div>
+                    <p className="eyebrow">DESKTOP SOFTWARE · C# · WPF · SQLITE</p>
+                    <h3>Deshifrator — Application &amp; Component Documentation</h3>
+                    <p>Source-based documentation for a desktop application suite, covering application components, file exchange and MRZ workflows, dependencies, runtime boundaries and selected data-access code.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> developers, maintainers and analysts working with the desktop application suite.</li>
+                      <li><strong>Problem:</strong> explain component responsibilities and make implementation details traceable to inspected source.</li>
+                      <li><strong>Inputs and verification:</strong> supplied project materials and source excerpts; unsupported runtime assumptions are recorded as open questions.</li>
+                      <li><strong>Outcome:</strong> architecture and component reviews, dependency notes, exchange documentation and a C# / SQLite data-access review.</li>
+                    </ul>
+                    <div className="featured-project-tags"><span>C# / .NET</span><span>WPF</span><span>SQLite</span><span>MRZ</span><span>Source Review</span></div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
-                    <p className="eyebrow">ENGINEERING DOCUMENTATION · SIGNAL PROCESSING HARDWARE</p>
-                    <h3>ADP201P4 Signal Processing Module</h3>
-                    <p>Source-based technical documentation for a PCI signal-processing module built around four ADSP-TS201S processors, including system architecture, ADM interface, and external connectors.</p>
-                    <div className="featured-project-tags">
-                      <span>Hardware Architecture</span>
-                      <span>DSP</span>
-                      <span>PCI</span>
-                      <span>Technical Manual</span>
-                    </div>
+                    <p className="eyebrow">ORACLE DATABASE · DIMENSIONAL MODELING · OLAP</p>
+                    <h3>Oracle Global11 — Data Model &amp; OLAP Architecture</h3>
+                    <p>Documentation of a historical Oracle Global 11g environment and its relational and dimensional design work, kept separate from the Territory database project.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> database developers, data architects and specialists reviewing analytical data structures.</li>
+                      <li><strong>Problem:</strong> describe relational schema work and the design of dimensions, hierarchies, cubes and measures.</li>
+                      <li><strong>Inputs and verification:</strong> SQL, Data Modeler artefacts and DMRS metadata; design documentation is distinguished from proof of runtime deployment.</li>
+                      <li><strong>Outcome:</strong> structured data-model documentation, dimensional design history and Cube_1111 specification.</li>
+                    </ul>
+                    <div className="featured-project-tags"><span>Oracle 11g</span><span>SQL Developer Data Modeler</span><span>OLAP</span><span>DMRS</span><span>SQL</span></div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html" target="_blank" rel="noreferrer">Cube_1111 specification ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">HARDWARE · DSP · FPGA · TECHNICAL MANUAL</p>
+                    <h3>ADP201P4 — Signal Processing Module</h3>
+                    <p>Source-based hardware documentation for a PCI signal-processing module built around four ADSP-TS201S processors, including its system architecture, ADM interface and external connectors.</p>
+                    <ul className="case-study-context">
+                      <li><strong>Audience:</strong> hardware engineers, system integrators and technical specialists consulting the module documentation.</li>
+                      <li><strong>Problem:</strong> organize hardware characteristics and interface details into a navigable technical reference.</li>
+                      <li><strong>Inputs and verification:</strong> the supplied technical description and operating manual; configuration-dependent details are called out for confirmation.</li>
+                      <li><strong>Outcome:</strong> modular documentation for system architecture, ADM interface and external connectors.</li>
+                    </ul>
+                    <div className="featured-project-tags"><span>DSP</span><span>ADSP-TS201S</span><span>FPGA</span><span>PCI</span><span>Hardware Interfaces</span></div>
                   </div>
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/adp201p4-hardware-spec" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
+              </div>
+
+              <div className="additional-work">
+                <p className="eyebrow">ADDITIONAL WORK</p>
+                <h3>More documentation and engineering samples</h3>
+                <p>Additional projects remain available without competing with the six primary case studies.</p>
+                <div className="additional-work-links">
+                  <a href="https://ekatmoz88-alt.github.io/ss-tmk-specification/" target="_blank" rel="noreferrer">SS-TMK · monitoring system and integration API ↗</a>
+                  <a href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">VIWI / VSM · sanitized real-project architecture ↗</a>
+                  <a href="https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/" target="_blank" rel="noreferrer">Cobalt UI · C++ component documentation ↗</a>
+                  <a href="https://ekatmoz88-alt.github.io/fintech-docs-demo/" target="_blank" rel="noreferrer">Fintech Operations · anonymized operational workflows ↗</a>
+                  <a href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Technical Writing Workflows · documentation QA automation ↗</a>
+                  <a href="https://ekatmoz88-alt.github.io/interference-coatings-analysis-synthesis/" target="_blank" rel="noreferrer">Interference Coatings · scientific and engineering documentation ↗</a>
+                </div>
+                <p className="project-note">The embedded C# / SQLite review belongs to the Deshifrator documentation track. It is not a separate product or a part of the Territory Oracle database project.</p>
+              </div>
+
+              <div className="portfolio-method-note">
+                <strong>How the work is documented:</strong> each case identifies its audience, problem, source materials, verification approach and deliverables. Engineering collaboration is described only where project records support it. No support-ticket reductions, onboarding improvements or other business metrics are claimed without evidence.
               </div>
             </section>
 
