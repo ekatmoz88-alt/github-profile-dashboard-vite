@@ -39,9 +39,9 @@ A documentation set may include overview and scope, concepts and terminology, ar
 5. Keep navigation and cross-references current.
 6. Mark deprecated and historical material explicitly.
 
-## Traceability
+## Source relationships
 
-Where practical, connect documentation pages to source artifacts, specification versions, diagrams, or review records. A link should clarify what the source supports without overstating its evidential value.
+Link documentation pages to relevant source artifacts, specification versions, diagrams, and review records where useful. The purpose and evidential scope of each source should be clear. See [Documentation Quality Assurance](documentation-quality-assurance.md) for the evidence and traceability model.
 
 ## Review checklist
 
