@@ -383,21 +383,21 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ORACLE DATABASE · OLAP · DOCS-AS-CODE</p>
-                    <h3>GLOBAL11 — Oracle Data Architecture &amp; OLAP</h3>
-                    <p>Conceptual Oracle data-model review covering claim-management entities, B-tree and bitmap index strategy, monthly history partitioning, materialized-view refresh constraints, OLAP fact grain, and draft REST/SOAP contracts. The documentation clearly separates design proposals from verified database behavior.</p>
+                    <h3>Oracle Global11 — Data Model &amp; OLAP Architecture</h3>
+                    <p>Historical Oracle Global 11g environment deployed and operated on an office server; deployment work was carried out in collaboration with Philip Stoyanov. Documentation covers relational schema preparation and changes, Oracle SQL Developer Data Modeler dimensional design (role-playing time dimensions, level-based and ragged hierarchies, dimension usage, cubes and measures), and the Oracle Analytic Workspace export workflow. The documented design is kept distinct from evidence of an Analytic Workspace runtime deployment.</p>
                     <div className="featured-project-tags">
-                      <span>Oracle SQL</span>
-                      <span>OLTP / OLAP</span>
-                      <span>Partitioning</span>
-                      <span>Materialized Views</span>
-                      <span>OpenAPI 3.1</span>
-                      <span>SOAP / XSD</span>
+                      <span>Oracle Global 11g</span>
+                      <span>SQL Developer Data Modeler</span>
+                      <span>Dimensional Modeling</span>
+                      <span>Oracle OLAP</span>
+                      <span>DMRS Metadata</span>
+                      <span>SQL</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/global11-olap/" target="_blank" rel="noreferrer">Published documentation hub ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">English documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/tree/main/docs/global11-olap" target="_blank" rel="noreferrer">Documentation source ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/" target="_blank" rel="noreferrer">Published Global11 documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.html" target="_blank" rel="noreferrer">Data Modeler design history ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html" target="_blank" rel="noreferrer">Cube_1111 specification ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/global11-demo-data-platform" target="_blank" rel="noreferrer">GLOBAL11 project repository ↗</a>
                   </div>
                 </article>
