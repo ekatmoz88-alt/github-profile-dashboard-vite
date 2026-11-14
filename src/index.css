@@ -330,3 +330,56 @@ h1, h2 { font-family: 'Inter', sans-serif; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Portfolio navigation and case-study hierarchy */
+.topbar-right { gap: 20px; }
+.brand-mark {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: -.4px;
+}
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.topbar-nav a {
+  color: #586b80;
+  font-size: 11px;
+  font-weight: 600;
+  transition: color .15s ease;
+}
+.topbar-nav a:hover { color: var(--blue); }
+.refresh-button { white-space: nowrap; }
+.featured-projects-heading h2 {
+  font-size: clamp(21px, 2.4vw, 26px);
+  letter-spacing: -.55px;
+}
+.featured-project-grid { gap: 14px; }
+.featured-project {
+  align-items: flex-start;
+  border-radius: 10px;
+}
+.featured-project-copy { flex: 1; }
+.featured-project-actions { max-width: 270px; }
+.featured-project-link,
+.featured-project-secondary {
+  line-height: 1.45;
+}
+#methodology-title,
+#selected-work,
+#repository-index { scroll-margin-top: 88px; }
+@media (max-width: 760px) {
+  .topbar-nav { gap: 12px; }
+  .topbar-nav a { font-size: 10px; }
+  .topbar-right { gap: 12px; }
+}
+@media (max-width: 620px) {
+  .topbar-nav { display: none; }
+  .topbar-right { gap: 0; }
+  .refresh-button { margin-left: 0; }
+  .brand { font-size: 14px; }
+  .brand-mark { width: 29px; height: 29px; }
+  .featured-project-actions { max-width: none; }
+}
