@@ -311,19 +311,23 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="brand" href="https://github.com" target="_blank" rel="noreferrer">
-          <span className="brand-mark">⌘</span> GitHub Insights
+        <a className="brand" href="#top" aria-label="Ekaterina Motsar — portfolio">
+          <span className="brand-mark">KM</span> Ekaterina Motsar
         </a>
         <div className="topbar-right">
-          <span className="live-dot" /> Live public data
+          <nav className="topbar-nav" aria-label="Primary navigation">
+            <a href="#methodology-title">Methodology</a>
+            <a href="#selected-work">Selected work</a>
+            <a href="#repository-index">Repositories</a>
+          </nav>
           <button className="refresh-button" onClick={() => {
             const controller = new AbortController();
             loadDashboard(controller.signal);
-          }}>↻ Refresh</button>
+          }}>↻ Refresh data</button>
         </div>
       </header>
 
-      <main className="dashboard">
+      <main className="dashboard" id="top">
         <section className="hero">
           <div className="hero-copy">
             <p className="eyebrow">TECHNICAL WRITING · API DOCUMENTATION · DOCS-AS-CODE</p>
@@ -361,11 +365,11 @@ export default function App() {
 
             <MethodologySection />
 
-            <section className="featured-projects" aria-label="Featured portfolio projects">
+            <section className="featured-projects" id="selected-work" aria-label="Featured portfolio projects">
               <div className="featured-projects-heading">
                 <p className="eyebrow">SELECTED WORK</p>
-                <h2>Featured technical documentation projects</h2>
-                <p>Selected technical writing case studies covering API documentation, enterprise systems, desktop software, database architecture and source-based analysis. The repository index below omits legacy copies and parallel variants.</p>
+                <h2>Selected documentation case studies</h2>
+                <p>Examples of technical analysis, documentation architecture, API and system documentation, and source-based engineering reviews. Each case links to its published materials and supporting repository.</p>
               </div>
               <div className="featured-project-grid">
                 <article className="featured-project panel">
@@ -549,7 +553,7 @@ export default function App() {
               <article className="stat-card"><span className="stat-icon">◷</span><span className="stat-label">Public events</span><strong>{formatNumber(events.length)}</strong><small>Recent events returned by GitHub</small></article>
             </section>
 
-            <section className="content-grid">
+            <section className="content-grid" id="repository-index">
               <div className="panel repositories-panel">
                 <div className="panel-heading">
                   <div><p className="eyebrow">FULL ACCOUNT INDEX</p><h2>Additional repositories <span>{repositories.length}</span></h2></div>
