@@ -1,64 +1,104 @@
-# GitHub Portfolio Dashboard
+# Портфолио технической документации
 
 [English](README.md) | [Русский](README.ru.md)
 
-**Публичный дашборд:** https://github-profile-dashboard-vite.vercel.app/  
+**Главная страница портфолио:** https://github-profile-dashboard-vite.vercel.app/  
 **GitHub Pages:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/  
-**Двуязычный реестр и аудит:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
+**Профиль GitHub:** https://github.com/ekatmoz88-alt
 
-## Назначение
+Сфокусированное портфолио для ролей Senior Technical Writer, API Documentation и Developer Documentation. Основная витрина включает шесть кейсов; остальные работы доступны в дополнительном каталоге.
 
-Дашборд показывает отобранные кейсы технического письма и динамический список публичных репозиториев GitHub-аккаунта. Каждый кейс сохраняет границы исходного проекта и ведёт к соответствующей документации или репозиторию.
+## Основные кейсы
 
-## Подсчёт проектов и репозиториев
+Основная витрина намеренно ограничена шестью примерами. Для каждого доступны прямая ссылка на опубликованную документацию и исходный репозиторий.
 
-- **8 избранных карточек** — отобранные портфельные кейсы, а не полный список репозиториев.
-- **24 публичных репозитория** — динамический индекс GitHub API.
-- **2 приватных репозитория** — не отображаются в публичном индексе.
-- Встроенный обзор C# / SQLite — компонентный анализ в направлении Deshifrator, а не отдельный репозиторий.
+1. **[Orders API Documentation](https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/)** — REST API Reference для разработчиков, OpenAPI 3.1, схемы запросов и ответов, валидация.
+2. **[UMMS — документация SOAP-интеграции](https://ekatmoz88-alt.github.io/umms-docs/)** — самостоятельный исторический проект: SOAP-операции, клиентские сценарии, локальное хранение досье и границы интеграции.
+3. **[ППО «Территория» — архитектура системы и данных](https://ekatmoz88-alt.github.io/territory-docs/)** — документация информационной системы: Oracle, функциональные области, API-операции и сопоставление исходного кода со структурами БД.
+4. **[Дешифратор — документация приложения и компонентов](https://ekatmoz88-alt.github.io/deshifrator-docs/)** — анализ исходного кода и документация компонентов desktop-приложения, файлового обмена, MRZ, зависимостей и отдельных аспектов C# / SQLite.
+5. **[Oracle Global11 — модель данных и OLAP-архитектура](https://ekatmoz88-alt.github.io/global11-demo-data-platform/)** — отдельное направление Oracle Global 11g: реляционная и многомерная модели, иерархии, кубы, меры и метаданные DMRS.
+6. **[ADP201P4 — модуль цифровой обработки сигналов](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/)** — техническая документация на основе руководства по эксплуатации: DSP-архитектура, интерфейс ADM и внешние разъёмы.
 
-Реестр фиксирует срез инвентаризации, языки документации, границы проектов, теги и несоответствия метаданных. Список публичных репозиториев в самом дашборде загружается динамически.
+Каждый кейс раскрывает целевую аудиторию, решаемую задачу, исходные материалы, способ проверки и созданные документационные артефакты. См. [шаблон описания кейса](CASE-STUDY-TEMPLATE.md).
 
-## Избранные направления
+## Дополнительные работы
 
-- [ППО «Территория» и связанная документация ПО](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных систем. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
-- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — историческая среда Oracle Global 11g, развёрнутая и эксплуатировавшаяся на офисном сервере. Документация охватывает подготовку и изменения реляционной схемы, размерное проектирование в Oracle SQL Developer Data Modeler, ролевые временные измерения, level-based и ragged hierarchies, использование измерений в кубах, меры, метаданные DMRS и процесс экспорта в Oracle Analytic Workspace. [Опубликованная документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [История Data Modeler design](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.ru.html) · [Спецификация Cube_1111](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).
-- [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference, OpenAPI 3.1 и Docs-as-Code validation.
-- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — документация архитектурных концепций service mapping, валидации и генерации кода; публичная версия очищена от ограниченных проектных сведений.
-- Enterprise system architecture и документация нескольких независимых систем.
-- C++ UI component documentation.
-- Fintech workflows и security documentation.
-- Docs-as-Code и автоматизация QA.
-- Hardware documentation.
+Эти проекты остаются доступными, но не перегружают основную витрину:
 
-## Технологии
+- [СС ТМК — система мониторинга и интеграционный API](https://ekatmoz88-alt.github.io/ss-tmk-specification/)
+- [VIWI / VSM — обезличенная архитектурная документация реального проекта](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/)
+- [Cobalt UI — документация C++-компонента](https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/)
+- [Fintech Operations — обезличенная документация операционных процессов](https://ekatmoz88-alt.github.io/fintech-docs-demo/)
+- [Technical Writing Workflows — автоматизация контроля качества документации](https://ekatmoz88-alt.github.io/technical-writing-workflows/)
+- [Interference Coatings — научно-техническая документация](https://ekatmoz88-alt.github.io/interference-coatings-analysis-synthesis/)
 
-React 18 · Vite 6 · JavaScript · GitHub REST API · GitHub Actions · GitHub Pages · Vercel.
+Встроенный анализ C# / SQLite относится к документационному направлению «Дешифратор». Это не отдельный продукт и не часть Oracle-проекта «Территория».
 
-## Запуск локально
+## Инженерия документации
+
+Портфолио демонстрирует документацию как сопровождаемый инженерный продукт:
+
+- **Контроль версий:** история Git, небольшие тематические коммиты и проверяемые Pull Requests.
+- **Подготовка контента:** Markdown, YAML, XML и OpenAPI.
+- **Информационная архитектура:** навигация по аудиториям и задачам, границы систем, связи обзоров, архитектуры, инструкций и справочников.
+- **Техническая проверка:** сопоставление с доступными проектными материалами, спецификациями и изученными фрагментами исходного кода.
+- **Контроль качества:** проверка OpenAPI, правила Spectral, Markdown lint, проверка ссылок и сборка документации там, где эти проверки настроены.
+- **Диаграммы:** редактируемые исходники и синхронизация визуального представления с каноническим описанием.
+- **Публикация:** GitHub Actions, GitHub Pages, VitePress и Vercel в зависимости от репозитория.
+
+Правила подготовки, проверки, рецензирования, управления изменениями и публикации описаны в [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Контекст кейсов и профессиональный вклад
+
+Каждый кейс должен объяснять:
+
+- **Аудитория:** кто использует документацию.
+- **Задача:** какую информационную или рабочую проблему требовалось решить.
+- **Исходные данные:** исходный код, спецификации, проектные материалы, метаданные БД или руководства.
+- **Проверка:** как проверялись технические утверждения и примеры, что осталось неподтверждённым.
+- **Результаты:** руководства, API Reference, архитектурные документы, диаграммы, модели данных, спецификации или документационные сайты.
+- **Практическая ценность:** подтверждённое применение документации и улучшения процесса, если они зафиксированы.
+
+Сотрудничество с инженерами и экспертами описывается только при наличии подтверждений в проектных материалах. Прямые консультации и рецензирование не подменяются проверкой по исходному коду. Неподтверждённые интервью, согласования и sign-off не заявляются.
+
+Количественные бизнес-эффекты — например, сокращение обращений в поддержку, ускорение адаптации или повышение усвоения контента — указываются только при наличии достоверных измерений. Если метрик нет, показываются проверяемые артефакты и улучшения процесса без выдуманных процентов и причинно-следственных утверждений.
+
+## Границы проектов и доказательность
+
+Витрина объединяет ссылки на реальные исторические и текущие направления работы, но не представляет их одной программной системой:
+
+- UMMS — самостоятельный проект.
+- ППО «Территория» и «Дешифратор» сохраняют отдельные системные и прикладные границы.
+- Oracle Global11 — отдельный проект, не часть Oracle-базы «Территории».
+- VIWI / VSM — реальный проект, описанный в обезличенной логической архитектуре.
+- Документация ADP201P4 основана на предоставленном техническом руководстве; зависящие от конфигурации сведения отмечаются для дополнительной проверки.
+
+Публичные материалы обезличиваются при необходимости. Конфиденциальный исходный код, учётные данные, персональные данные, секреты production-среды и документы с ограниченным доступом не публикуются. Подтверждённые факты, аналитические реконструкции и открытые вопросы разделяются.
+
+## Локальный запуск
 
 Требования: Node.js 24 и npm.
 
 ```bash
 npm ci
 npm run dev
+```
+
+Сборка и локальный просмотр production-версии:
+
+```bash
 npm run build
 npm run preview
 ```
 
-## Избранная архитектурная документация
+## Публикация
 
-- [Обмен данными и администрирование — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md)
-- [Data exchange and administration — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md)
+Дашборд опубликован на [Vercel](https://github-profile-dashboard-vite.vercel.app/) и GitHub Pages. GitHub Actions собирает и публикует версию для GitHub Pages. У каждого основного проекта собственные репозиторий документации и целевая площадка публикации.
 
-## Границы и доказательность
+## Технологии
 
-Дашборд — индекс портфолио, а не заявление о том, что автор разработал все перечисленные системы. Описания различают документационные кейсы, анализ исходного кода, демонстрационные модели и исторические системы. Общая навигация не означает общую исполняемую архитектуру. Факты развёртывания системы не следует трактовать как доказательство развёртывания Oracle Analytic Workspace runtime.
+React 18 · Vite 6 · JavaScript · GitHub REST API · Git · GitHub Actions · GitHub Pages · Vercel · Markdown · OpenAPI · Mermaid
 
 ## Теги
 
-`portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
-
-## Карта Enterprise Documentation
-
-В карточке Enterprise Systems Architecture добавлена ссылка на сводный [обзор Enterprise Technical Documentation](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/) с модулем диаграмм C4, UML Sequence и BPMN 2.0. В обзоре отдельно отмечены подтверждённые исходниками материалы, демонстрационные модели и аналитические реконструкции.
+`technical-writing` · `api-documentation` · `developer-documentation` · `docs-as-code` · `information-architecture` · `enterprise-documentation` · `en-ru`
