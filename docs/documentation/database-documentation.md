@@ -35,13 +35,15 @@ Explain analytical meaning only when supported by metadata, design artifacts, SQ
 
 Record object names, descriptions, data types, identifiers, flags, and relationships as represented in the source. Explain vendor-specific flags only when a legend or authoritative reference supports the interpretation.
 
-## Verification
+## Database-specific review
 
-- Compare documentation with DDL, data dictionary views, model files, or exported metadata.
-- Check declared keys and relationships.
+- Compare documented objects with DDL, data dictionary views, model files, or exported metadata.
+- Check declared keys and relationships; do not treat indexes as declared foreign-key constraints.
 - Validate object counts against a stated extraction scope.
 - Separate observed metadata from inferred semantics.
 - Record extraction date, source environment, and tool version when relevant.
 - Exclude credentials, sensitive records, and restricted production data.
+
+For general evidence classification, verification records, and release checks, see [Documentation Quality Assurance](documentation-quality-assurance.md).
 
 A schema export demonstrates declared structure, not necessarily data quality, runtime performance, or business meaning.
