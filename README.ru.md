@@ -8,7 +8,7 @@
 
 ## Назначение
 
-Дашборд показывает выбранные кейсы технического письма и динамический список публичных репозиториев GitHub-аккаунта.
+Дашборд показывает отобранные кейсы технического письма и динамический список публичных репозиториев GitHub-аккаунта. Каждый кейс сохраняет границы исходного проекта и ведёт к соответствующей документации или репозиторию.
 
 ## Подсчёт проектов и репозиториев
 
@@ -21,9 +21,10 @@
 
 ## Избранные направления
 
-- [ППО «Территория» и АРМ «Дискриптор»](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных систем. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
-- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — среда Oracle Global 11g, развёрнутая и эксплуатировавшаяся на офисном сервере Документация охватывает изменения реляционной схемы, размерное проектирование в SQL Developer Data Modeler, ролевые временные измерения, level-based и ragged hierarchies, кубы, меры, метаданные DMRS и экспорт в Oracle AW. [Опубликованная документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [История Data Modeler design](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.ru.html) · [Спецификация Cube_1111](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).\n- API documentation и OpenAPI.
-- [VIWI / VSM — Sanitized Architecture Study](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — независимая демонстрационная модель общих принципов service mapping, валидации и генерации кода; не является подтверждённой архитектурой продукта.
+- [ППО «Территория» и связанная документация ПО](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных систем. [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
+- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — историческая среда Oracle Global 11g, развёрнутая и эксплуатировавшаяся на офисном сервере. Документация охватывает подготовку и изменения реляционной схемы, размерное проектирование в Oracle SQL Developer Data Modeler, ролевые временные измерения, level-based и ragged hierarchies, использование измерений в кубах, меры, метаданные DMRS и процесс экспорта в Oracle Analytic Workspace. [Опубликованная документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [История Data Modeler design](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.ru.html) · [Спецификация Cube_1111](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).
+- [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference, OpenAPI 3.1 и Docs-as-Code validation.
+- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — документация архитектурных концепций service mapping, валидации и генерации кода; публичная версия очищена от ограниченных проектных сведений.
 - Enterprise system architecture и документация нескольких независимых систем.
 - C++ UI component documentation.
 - Fintech workflows и security documentation.
@@ -52,12 +53,11 @@ npm run preview
 
 ## Границы и доказательность
 
-Дашборд — индекс портфолио, а не заявление о том, что автор разработал все перечисленные системы. Описания различают документационные кейсы, анализ исходного кода, демонстрационные проекты и исторические системы. Общая навигация не означает общую исполняемую архитектуру.
+Дашборд — индекс портфолио, а не заявление о том, что автор разработал все перечисленные системы. Описания различают документационные кейсы, анализ исходного кода, демонстрационные модели и исторические системы. Общая навигация не означает общую исполняемую архитектуру. Факты развёртывания системы не следует трактовать как доказательство развёртывания Oracle Analytic Workspace runtime.
 
 ## Теги
 
 `portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
-
 
 ## Карта Enterprise Documentation
 
