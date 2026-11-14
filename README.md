@@ -2,48 +2,78 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
-A public portfolio dashboard for real technical writing and documentation engineering projects.
+**Portfolio dashboard:** https://github-profile-dashboard-vite.vercel.app/  
+**GitHub Pages:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/  
+**GitHub profile:** https://github.com/ekatmoz88-alt
 
-**Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
-**GitHub profile:** https://github.com/ekatmoz88-alt  
-**Bilingual repository registry and audit:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
+A focused portfolio for Senior Technical Writer, API Documentation and Developer Documentation roles. It presents six selected case studies, with additional work available separately.
 
+## Selected case studies
 
-## Purpose
+The main portfolio is intentionally limited to six examples. Each case provides direct access to published documentation and its source repository.
 
-The dashboard presents selected documentation case studies across API documentation, enterprise information systems, desktop applications, database architecture and source-based technical analysis.
+1. **[Orders API Documentation](https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/openapi/)** — developer-facing REST API reference, OpenAPI 3.1 schemas, request/response models and validation.
+2. **[UMMS — SOAP Integration Documentation](https://ekatmoz88-alt.github.io/umms-docs/)** — an independent historical project covering SOAP operations, client workflows, local dossier storage and integration boundaries.
+3. **[ППО «Территория» — System & Data Architecture](https://ekatmoz88-alt.github.io/territory-docs/)** — enterprise system documentation covering Oracle structures, functional domains, API operations and source-to-database mapping.
+4. **[Deshifrator — Application & Component Documentation](https://ekatmoz88-alt.github.io/deshifrator-docs/)** — source-based documentation of desktop application components, file exchange, MRZ workflows, dependencies and selected C# / SQLite analysis.
+5. **[Oracle Global11 — Data Model & OLAP Architecture](https://ekatmoz88-alt.github.io/global11-demo-data-platform/)** — a separate Oracle Global 11g workstream covering relational and dimensional models, hierarchies, cubes, measures and DMRS metadata.
+6. **[ADP201P4 — Signal Processing Module](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/)** — hardware documentation based on the technical description and operating manual, including DSP architecture, ADM interface and connectors.
 
-Each project remains an independent workstream. The dashboard links to the corresponding public documentation site, repository or review artifact; it does not combine the underlying systems into one architecture.
+For every case, the portfolio identifies the intended audience, problem, available source materials, verification approach and resulting documentation artefacts. See the [case-study template](CASE-STUDY-TEMPLATE.md).
 
-## Featured work
+## Additional work
 
-The dashboard presents **8 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
+The following projects remain accessible without expanding the primary showcase:
 
-- [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
-- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — documentation of the real VIWI/VSM project, covering service mapping, validation and code-generation concepts. The public version is sanitized to protect restricted project details.
-- [ППО «Территория» и «Дешифратор» — unified documentation project](https://github.com/ekatmoz88-alt/territory-descriptor-unified) · [published site](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) — one repository containing the Territory system overview, database/API materials, Deshifrator workstation architecture (historical source label: ARM Descriptor), software-component reviews, selected C# source fragments, and UMMS SOAP documentation. The consolidated materials retain section-level boundaries; the mapping between ПОМС / ПОСС and ModuleMobile / ModuleStationary remains under verification. [Interactive EN/RU architecture catalogue](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [Canonical Mermaid source](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md) · [Detailed component maps](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md). The primary catalogue contains 10 Mermaid diagrams; the companion maps contain 7 additional component-level diagrams.
-- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — Oracle Global 11g environment deployed and operated on an office server Documentation covers relational schema changes, SQL Developer Data Modeler dimensional design, role-playing time dimensions, level-based and ragged hierarchies, cubes, measures, DMRS metadata, and the Oracle AW export workflow. [Published documentation](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [Data Modeler design history](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.html) · [Cube_1111 specification](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).
-- [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — source-based C++ component documentation.
-- [Fintech Operations Documentation](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — anonymized documentation of a real crypto-onramp operator-console project, including workflows, data classification and audit logging.
-- [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — automated OpenAPI, Markdown and link-quality checks.
-- [ADP201P4 Hardware Documentation](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/) — source-based signal-processing module architecture and interface documentation.
+- [SS-TMK — monitoring system and integration API](https://ekatmoz88-alt.github.io/ss-tmk-specification/)
+- [VIWI / VSM — sanitized architecture documentation for a real project](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/)
+- [Cobalt UI — C++ component documentation](https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/)
+- [Fintech Operations — anonymized operational workflows](https://ekatmoz88-alt.github.io/fintech-docs-demo/)
+- [Technical Writing Workflows — documentation QA automation](https://ekatmoz88-alt.github.io/technical-writing-workflows/)
+- [Interference Coatings — scientific and engineering documentation](https://ekatmoz88-alt.github.io/interference-coatings-analysis-synthesis/)
 
-## Dashboard behavior
+The embedded C# / SQLite review belongs to the Deshifrator documentation track. It is not a separate product or part of the Territory Oracle database project.
 
-- Public GitHub profile information and repository activity are retrieved from the GitHub REST API.
-- Featured project descriptions and their links are curated in the dashboard source.
-- The additional repository index hides unfinished work and duplicate/legacy repositories; it is not a complete account inventory.
-- The standalone C# / SQLite review documents the DbStationary data-access layer in the Deshifrator track. It is separate from PPO Territory's Oracle database and the Global11 demo data platform.
-- Public API rate limits may temporarily affect live profile and activity data.
+## Documentation engineering
 
-## Technology
+The portfolio demonstrates documentation as an engineered, maintainable product:
 
-- React 18
-- Vite 6
-- JavaScript
-- GitHub REST API
-- GitHub Actions
-- Vercel and GitHub Pages
+- **Version control:** Git history, focused commits and reviewable pull requests.
+- **Authoring:** Markdown, YAML, XML and OpenAPI.
+- **Information architecture:** audience-oriented navigation, clear system boundaries and links between overview, architecture, procedures and reference material.
+- **Technical review:** comparison with available project records, specifications and inspected source code.
+- **Quality checks:** OpenAPI validation, Spectral rules, Markdown linting, link checks and documentation builds where configured.
+- **Diagrams:** editable source where available, with rendered diagrams kept aligned with canonical descriptions.
+- **Publishing:** GitHub Actions, GitHub Pages, VitePress and Vercel, depending on the repository.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the authoring, review, change-management and publishing workflow.
+
+## Case-study context and professional contribution
+
+Each case should explain:
+
+- **Audience:** who uses the documentation.
+- **Problem:** what information or workflow needed clarification.
+- **Inputs:** source code, specifications, project records, database metadata or manuals.
+- **Verification:** how technical claims and examples were checked, and what remains unverified.
+- **Deliverables:** guides, API references, architecture documents, diagrams, data models, specifications or documentation sites.
+- **Outcome:** the concrete documentation result and its practical use, where supported by evidence.
+
+Engineering collaboration is described only when project records support it. The portfolio distinguishes direct consultation or review from source-based technical verification. It does not invent stakeholder interviews, approval cycles or engineering sign-off.
+
+Quantitative business outcomes—such as fewer support requests, faster onboarding or higher content comprehension—are included only when reliable measurements exist. Otherwise, the portfolio reports verifiable deliverables and process improvements without fabricating percentages or causal claims.
+
+## Project boundaries and evidence
+
+The featured projects represent real historical or current workstreams, but they are not one combined software system:
+
+- UMMS is an independent project.
+- ППО «Территория» and Deshifrator retain separate system and application boundaries.
+- Oracle Global11 is separate from the Territory Oracle database.
+- VIWI / VSM is a real project described in a sanitized logical architecture.
+- ADP201P4 documentation is based on the supplied hardware manual; configuration-dependent details are identified for confirmation.
+
+Public materials are sanitized where necessary. Confidential source code, credentials, personal data, production secrets and restricted documents are not published. Documented facts, analytical reconstructions and unresolved questions are labelled separately.
 
 ## Run locally
 
@@ -54,7 +84,7 @@ npm ci
 npm run dev
 ```
 
-Create a production build and preview it locally:
+Create and preview a production build:
 
 ```bash
 npm run build
@@ -63,23 +93,12 @@ npm run preview
 
 ## Deployment
 
-The live dashboard is deployed to Vercel at the domain root: https://github-profile-dashboard-vite.vercel.app/. The repository includes a GitHub Actions workflow that builds and deploys the Vite application to GitHub Pages; the same dashboard is also deployed to Vercel. The other portfolio projects keep their own independent GitHub Pages sites.
+The dashboard is deployed to [Vercel](https://github-profile-dashboard-vite.vercel.app/) and GitHub Pages. The repository's GitHub Actions workflow builds and publishes the GitHub Pages version. Each featured project maintains its own documentation repository and publication target.
 
-## Featured architecture documentation
+## Technology
 
-- [Data exchange and administration — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md)
-- [Обмен данными и администрирование — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md)
-
-## Evidence and scope
-
-All featured cards refer to real projects and workstreams; system projects were deployed in their respective server environments. The dashboard identifies the author's documentation, analysis and source-review contribution without implying authorship of the underlying software where that was not the role. Historical deployment facts are retained; public descriptions are anonymized where required, and technical findings are tied to project materials and inspected source evidence.
-
+React 18 · Vite 6 · JavaScript · GitHub REST API · Git · GitHub Actions · GitHub Pages · Vercel · Markdown · OpenAPI · Mermaid
 
 ## Tags
 
-`portfolio-dashboard` · `react` · `vite` · `github-api` · `technical-writing` · `repository-audit` · `en-ru`
-
-
-## Enterprise documentation capability map
-
-The featured Enterprise Systems Architecture card also links to the cross-repository [Enterprise Technical Documentation overview](https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/), including the C4, UML Sequence and BPMN 2.0 diagram module. The map distinguishes source-backed system documentation from design artefacts and analytical models.
+`technical-writing` · `api-documentation` · `developer-documentation` · `docs-as-code` · `information-architecture` · `enterprise-documentation` · `en-ru`
