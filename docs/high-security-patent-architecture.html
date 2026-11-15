@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-Security Work Patent · System Architecture Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{font-family:'DM Sans',sans-serif;color:#202b3c;background:#f5f7fa;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#202b3c;--heading:#17283d;--muted:#66758a;--line:#e1e6ed;--blue:#1769aa;--blue-soft:#eaf3fb;--surface:#fff}
+*{box-sizing:border-box}body{margin:0;min-width:320px;background:#f5f7fa;color:var(--ink);font:15px/1.65 'DM Sans',sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.topbar{min-height:68px;padding:12px max(5vw,calc((100vw - 1240px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);background:#fff}
+.brand{display:flex;align-items:center;gap:10px;font:700 16px 'Space Grotesk',sans-serif;color:var(--heading)}.brand-mark{display:grid;place-items:center;width:31px;height:31px;border-radius:7px;background:var(--blue-soft);color:var(--blue);font-size:18px}
+.top-links{display:flex;gap:14px;flex-wrap:wrap;font-size:12px}
+main{max-width:1180px;margin:0 auto;padding:42px 28px 56px}
+.eyebrow{margin:0 0 8px;color:#397da9;font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;color:var(--heading)}h1{font-size:clamp(29px,4vw,42px);line-height:1.15;letter-spacing:-1.2px;margin:0 0 12px}h2{font-size:20px;line-height:1.35;margin:0 0 13px}h3{font-size:16px;margin:0 0 10px}
+.hero{margin-bottom:20px}.lead{max-width:900px;color:var(--muted);font-size:15px;margin:0 0 15px}
+.meta{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 22px}.pill{padding:5px 8px;border:1px solid #d8e5f0;border-radius:5px;background:#fff;color:#52677d;font-size:10px}
+.panel{margin:14px 0;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:9px;box-shadow:0 2px 8px #23354a08}
+.notice{border-left:3px solid var(--blue);background:var(--blue-soft);color:#42536a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid .panel{margin:0}
+ul,ol{padding-left:22px}li{padding:4px 0}
+.diagram-wrap{overflow-x:auto;padding:12px;border:1px solid var(--line);border-radius:7px;background:#fff}.diagram-wrap svg{display:block;width:100%;min-width:760px;height:auto}
+.diagram-note,.muted{color:var(--muted);font-size:12px;line-height:1.6}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin:16px 0}
+.node{padding:14px;border:1px solid #d8e5f0;border-radius:7px;background:#f8fbfe;text-align:center;font-weight:700;color:#285477}
+.arrow{color:#397da9;font-size:20px;text-align:center}
+.footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:#8793a3;font-size:11px}
+@media(max-width:700px){main{padding:28px 16px 42px}.panel{padding:16px}.topbar{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.diagram-wrap svg{min-width:760px}}
+</style></head>
+<body>
+<div class="topbar"><div class="brand"><span class="brand-mark">⌘</span><span>Technical Documentation Portfolio</span></div>
+<nav class="top-links"><a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/">Portfolio dashboard</a><a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html">Enterprise architecture catalogue</a><a href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite">GitHub repository</a></nav></div>
+<main>
+<header class="hero"><p class="eyebrow">SCIENTIFIC INSTRUMENTS · SYSTEM ANALYSIS · 2013</p>
+<h1>High-Security Work Patent<br>System Architecture Case Study</h1>
+<p class="lead">A 2013 pilot-project concept for a high-security identity and work-authorization card for foreign citizens in Saint Petersburg. The presentation identifies Ekaterina Motsar as the company's System Analyst and describes the proposed document, supporting information system, personalization process, integrations and operational model.</p>
+<div class="meta"><span class="pill">Scientific Instruments, Inc.</span><span class="pill">System Analyst</span><span class="pill">Pilot project concept</span><span class="pill">Enterprise integration</span><span class="pill">Hardware–software system</span></div></header>
+<section class="panel notice"><strong>Evidence and implementation status.</strong> This case study is based on a 2013 project presentation. It documents the proposed architecture and the author's stated role as System Analyst. The presentation does not establish that the pilot was fully implemented or entered production. The page therefore describes the concept and proposed system interactions, not a verified as-built deployment.</section>
+<section class="panel"><p class="eyebrow">01 · PROJECT SCOPE</p><h2>Proposed end-to-end system</h2>
+<p>The concept combined a high-security plastic identity card with an embedded dual-interface chip, application software, application and personalization infrastructure, dedicated readers and connections to external information systems.</p>
+<div class="grid">
+<div class="panel"><h3>Identity document</h3><ul><li>ID-1 plastic card based on laser-sensitive polycarbonate</li><li>Visual personalization on both sides by laser engraving</li><li>Embedded chip with contact and contactless interfaces</li><li>Proposed identity and work-authorization data set</li></ul></div>
+<div class="panel"><h3>Electronic applications</h3><ul><li>Structured personal and document data on the chip</li><li>Identity verification and data-reading scenarios</li><li>Proposed biometric capabilities: photograph and fingerprints</li><li>Payment application based on ПРО 100</li></ul></div>
+</div></section>
+<section class="panel"><p class="eyebrow">02 · SYSTEM CONTEXT</p><h2>Proposed process and participating systems</h2>
+<div class="flow" aria-label="Proposed card issuance flow"><div class="node">Application intake and card issuance point (ППВ)</div><div class="arrow">↔</div><div class="node">PPO Territory<br><small>Decision processing</small></div><div class="arrow">→</div><div class="node">Personalization centre</div></div>
+<p class="muted">The 2013 presentation describes the following sequence: the intake point submits applicant data to PPO Territory for a decision on issuance or refusal; PPO Territory then sends the approved card data to the personalization centre; the finished card is returned to the intake point for delivery to the applicant.</p>
+<div class="diagram-wrap"><svg viewBox="0 0 1040 360" role="img" aria-label="Conceptual system context showing applicant, intake point, PPO Territory, personalization centre, external federal systems, card readers and authorized agencies.">
+<defs><marker id="patent-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6" fill="none" stroke="#397da9" stroke-width="1.5"/></marker></defs>
+<g font-family="DM Sans,sans-serif" text-anchor="middle">
+<rect x="20" y="135" width="145" height="68" rx="8" fill="#eaf3fb" stroke="#8db7d7"/><text x="92" y="164" font-size="14" font-weight="700" fill="#203b55">Applicant</text><text x="92" y="184" font-size="11" fill="#52677d">Identity capture</text>
+<rect x="215" y="135" width="175" height="68" rx="8" fill="#f2f6fa" stroke="#9aabba"/><text x="302" y="164" font-size="14" font-weight="700" fill="#203b55">ППВ</text><text x="302" y="184" font-size="11" fill="#52677d">Intake / card issue</text>
+<rect x="455" y="135" width="180" height="68" rx="8" fill="#eaf3fb" stroke="#8db7d7"/><text x="545" y="164" font-size="14" font-weight="700" fill="#203b55">ППО «Территория»</text><text x="545" y="184" font-size="11" fill="#52677d">Decision processing</text>
+<rect x="700" y="135" width="175" height="68" rx="8" fill="#f2f6fa" stroke="#9aabba"/><text x="787" y="164" font-size="14" font-weight="700" fill="#203b55">Personalization</text><text x="787" y="184" font-size="11" fill="#52677d">Card production</text>
+<rect x="900" y="135" width="125" height="68" rx="8" fill="#edf6f1" stroke="#91bda6"/><text x="962" y="164" font-size="14" font-weight="700" fill="#285b42">Cardholder</text><text x="962" y="184" font-size="11" fill="#52677d">Issued card</text>
+<rect x="455" y="20" width="420" height="62" rx="8" fill="#fff8e8" stroke="#dfc68a"/><text x="665" y="46" font-size="13" font-weight="700" fill="#6f5728">External federal / ведомственные systems</text><text x="665" y="65" font-size="11" fill="#806b43">Interfaces and protected information exchange</text>
+<rect x="215" y="265" width="300" height="68" rx="8" fill="#f2f6fa" stroke="#9aabba"/><text x="365" y="293" font-size="13" font-weight="700" fill="#203b55">Readers and mobile terminals</text><text x="365" y="313" font-size="11" fill="#52677d">Chip / biometric data access</text>
+<rect x="600" y="265" width="275" height="68" rx="8" fill="#f2f6fa" stroke="#9aabba"/><text x="737" y="293" font-size="13" font-weight="700" fill="#203b55">Authorized agencies</text><text x="737" y="313" font-size="11" fill="#52677d">FMS / МВД and other users</text>
+</g>
+<g fill="none" stroke="#397da9" stroke-width="2" marker-end="url(#patent-arrow)"><path d="M165 169 H210"/><path d="M390 169 H450"/><path d="M635 169 H695"/><path d="M875 169 H895"/><path d="M545 130 V88"/><path d="M665 88 V130"/><path d="M302 208 V260"/><path d="M515 299 H595"/><path d="M787 208 V260"/></g>
+</svg></div>
+<p class="diagram-note">Conceptual portfolio reconstruction from the presentation's process description and subsystem inventory. It is not a source-authored deployment diagram and does not imply that every connection shown was implemented.</p>
+</section>
+<section class="panel"><p class="eyebrow">03 · ARCHITECTURAL DOMAINS</p><h2>Subsystems and cross-cutting concerns</h2>
+<div class="grid">
+<div class="panel"><h3>Personalization infrastructure</h3><ul><li>Automated applicant photography</li><li>Laser graphic personalization and demetallization</li><li>Chip encoding and electronic application personalization</li><li>Quality control and card production equipment</li></ul></div>
+<div class="panel"><h3>Security and trust services</h3><ul><li>HSM cryptographic services</li><li>Key management for PIN envelopes and card personalization</li><li>Administration and authorization modules</li><li>Protected communications via VIP-Net</li></ul></div>
+<div class="panel"><h3>Card reading and field operations</h3><ul><li>Contact and contactless chip readers</li><li>Specialized autonomous readers</li><li>Mobile terminals with network connectivity</li><li>Proposed fingerprint capture and comparison</li></ul></div>
+<div class="panel"><h3>External applications and services</h3><ul><li>Federal-level information exchange</li><li>Payment application ПРО 100</li><li>Proposed electronic public-service access</li><li>Potential links to tax, healthcare and transport services</li></ul></div>
+</div></section>
+<section class="panel"><p class="eyebrow">04 · SYSTEM ANALYSIS CONTRIBUTION</p><h2>Analytical scope evidenced by the presentation</h2>
+<ul><li>Analysis of the end-to-end issuance and circulation process for a secure identity document.</li><li>Identification of participating organizations, systems, hardware devices and operational roles.</li><li>Decomposition of the proposed solution into information-system, personalization, security, payment and field-reading domains.</li><li>Analysis of data sets stored visually on the card and electronically in the chip.</li><li>Definition of interaction scenarios between intake points, PPO Territory, the personalization centre and external agencies.</li><li>Identification of project workstreams and unresolved decisions concerning requirements, delivery organization, funding, stakeholders and external agreements.</li></ul>
+</section>
+<section class="panel"><p class="eyebrow">05 · RELATED SYSTEM BOUNDARY</p><h2>PPO Territory as a participating information system</h2>
+<p>PPO «Territory» appears in the pilot-project presentation as an existing information system participating in the proposed issuance workflow. It is not the name of this 2013 pilot project. The separate PPO Territory / Rexoft documentation case covers the system's own software, modules and database architecture.</p>
+<p><a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/">Open the separate PPO Territory documentation hub ↗</a></p>
+</section>
+<section class="panel notice"><strong>Project status.</strong> The source presentation describes a pilot-project proposal and preliminary system design. It lists required work and open organizational and technical questions; it does not provide evidence of completed implementation, production operation or final acceptance.</section>
+<footer class="footer">Source basis: 2013 Scientific Instruments presentation, slides 1–29. Contact details from the original slides are intentionally not reproduced. This portfolio case study summarizes the proposed architecture and preserves the distinction between the pilot project and the participating PPO Territory system.</footer>
+</main></body></html>
