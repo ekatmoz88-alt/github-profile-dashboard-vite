@@ -56,6 +56,64 @@ const diagrams = [
 
 const diagramBase = 'https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/documentation/diagrams/';
 
+const methodologyResources = [
+  {
+    title: 'Documentation standards',
+    description: 'Standards, style guides, formats and specification references.',
+    file: 'documentation-standards.md',
+  },
+  {
+    title: 'Information architecture',
+    description: 'Audience analysis, content models, navigation and information structure.',
+    file: 'information-architecture.md',
+  },
+  {
+    title: 'API documentation design',
+    description: 'REST, OpenAPI, SOAP, WSDL, XML Schema and API reference design.',
+    file: 'api-documentation-design.md',
+  },
+  {
+    title: 'Database documentation',
+    description: 'Relational models, schemas, data dictionaries and database evidence.',
+    file: 'database-documentation.md',
+  },
+  {
+    title: 'Architecture documentation',
+    description: 'System context, components, interfaces, deployment and architecture views.',
+    file: 'architecture-documentation.md',
+  },
+  {
+    title: 'User documentation',
+    description: 'Task-oriented procedures, user guidance and operational instructions.',
+    file: 'user-documentation.md',
+  },
+  {
+    title: 'Docs-as-Code workflow',
+    description: 'Version control, review, validation, CI and publication.',
+    file: 'docs-as-code-workflow.md',
+  },
+  {
+    title: 'Content reuse',
+    description: 'Modular content, reusable components and single-sourcing practices.',
+    file: 'content-reuse-and-single-sourcing.md',
+  },
+  {
+    title: 'Documentation quality assurance',
+    description: 'Technical verification, editorial review and quality controls.',
+    file: 'documentation-quality-assurance.md',
+  },
+  {
+    title: 'Project evidence',
+    description: 'Traceability between claims, source artifacts and documented conclusions.',
+    file: 'project-evidence.md',
+  },
+  {
+    title: 'References',
+    description: 'Official standards, specifications and technical reference sources.',
+    file: 'references.md',
+  },
+];
+
 const principles = [
   'Evidence-based content',
   'Audience-oriented structure',
@@ -123,6 +181,33 @@ export default function MethodologySection() {
               <strong>{diagram.title}</strong>
               <span>{diagram.description}</span>
               <em>View Mermaid diagram ↗</em>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className="methodology-diagrams">
+        <div className="methodology-diagrams-heading">
+          <p className="eyebrow">METHODOLOGY LIBRARY</p>
+          <h3>Guidelines and engineering practices</h3>
+        </div>
+        <div className="methodology-diagram-links">
+          <a className="methodology-diagram-link" href="https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/documentation/README.md" target="_blank" rel="noreferrer">
+            <strong>Engineering methodology</strong>
+            <span>Overall process, lifecycle stages, principles and documentation scope.</span>
+            <em>Read overview ↗</em>
+          </a>
+          {methodologyResources.map((resource) => (
+            <a
+              className="methodology-diagram-link"
+              href={`https://github.com/ekatmoz88-alt/github-profile-dashboard-vite/blob/main/docs/documentation/${resource.file}`}
+              target="_blank"
+              rel="noreferrer"
+              key={resource.file}
+            >
+              <strong>{resource.title}</strong>
+              <span>{resource.description}</span>
+              <em>Open guideline ↗</em>
             </a>
           ))}
         </div>
