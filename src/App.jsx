@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import MethodologySection from './MethodologySection.jsx';
 
 const USERNAME = 'ekatmoz88-alt';
@@ -622,6 +623,7 @@ export default function App() {
           <span>Public data · Refresh to update</span>
         </footer>
       </main>
+      <SpeedInsights />
     </div>
   );
 }
