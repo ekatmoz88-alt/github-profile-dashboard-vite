@@ -411,6 +411,26 @@ export default function App() {
 
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">SYSTEM ANALYSIS · SECURE IDENTITY · ENTERPRISE INTEGRATION</p>
+                    <h3>High-Security Work Patent — System Architecture (2013)</h3>
+                    <p>Historical pilot-project concept developed at Scientific Instruments, Inc. The 2013 presentation identifies Ekaterina Motsar as System Analyst and outlines a secure identity-card ecosystem spanning PPO Territory, intake points, a personalization centre, chip readers, biometric capabilities, cryptographic services and a payment application.</p>
+                    <p className="project-note">The case documents the proposed architecture and analytical scope. It does not claim that the pilot reached production. PPO Territory is shown as a participating information system, not as the name of this project.</p>
+                    <div className="featured-project-tags">
+                      <span>System Analysis</span>
+                      <span>Enterprise Integration</span>
+                      <span>Smart Cards</span>
+                      <span>Identity &amp; Security</span>
+                      <span>Hardware–Software Architecture</span>
+                      <span>2013 Pilot Concept</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/high-security-patent-architecture.html" target="_blank" rel="noreferrer">Open architecture case study ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
                     <h3>Enterprise Systems Architecture — Territory, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
