@@ -9,7 +9,7 @@ flowchart LR
     C --> D["Verify<br/>Review accuracy and quality"]
     D -->|"Findings or gaps"| A
     D -->|"Structural changes"| B
-    D -->|"Approved content"| E["Publish and maintain"]
+    D -->|"Approved content"| E["Publish and maintain<br/>Release and maintain documentation"]
 ```
 
 ## Stage outputs
@@ -20,5 +20,6 @@ flowchart LR
 | Architect | Information model, navigation, document types, terminology |
 | Document | API references, architecture descriptions, data models, guides |
 | Verify | Review findings, validation results, traceability, release readiness |
+| Publish and maintain | Published documentation, version history, maintenance records |
 
 **Evidence boundary:** completion of a stage is established by its artifacts and review records, not by the diagram itself.
