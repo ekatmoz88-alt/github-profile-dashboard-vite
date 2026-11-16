@@ -2,11 +2,13 @@
 
 ## Engineering Methodology for Complex Software Systems
 
-Technical documentation is an engineering discipline connecting system analysis, information architecture, technical content development, and quality assurance.
+Technical documentation is an engineering discipline connecting system analysis, information architecture, technical content development, quality assurance, and publication.
 
-The methodology follows four iterative stages:
+The methodology uses five connected stages:
 
-**Analyze → Architect → Document → Verify**
+**Analyze → Architect → Document → Verify → Publish and maintain**
+
+The stages form an iterative lifecycle, not a one-way sequence. Verification findings may return work to analysis, architecture, or content development; published documentation remains subject to maintenance.
 
 It is intended to make complex software systems understandable, navigable, verifiable, and maintainable through structured technical information.
 
@@ -18,8 +20,9 @@ It is intended to make complex software systems understandable, navigable, verif
 | **Architect** | Define audiences, information structure, document types, terminology, navigation, and content relationships. | Information architecture, content model, navigation, templates |
 | **Document** | Develop accurate, task-oriented architecture, API, database, integration, user, and administrator documentation. | Structured documentation, specifications, diagrams, guides |
 | **Verify** | Review technical accuracy, completeness, consistency, usability, and publication quality. | Review findings, validation records, approved content |
+| **Publish and maintain** | Release approved documentation, manage versions, monitor publication, and update content as systems change. | Published documentation, version history, maintenance records |
 
-The stages are iterative. Verification findings may require further analysis or changes to the documentation architecture.
+Verification findings may require further analysis, changes to the documentation architecture, or revisions to the content. Publication follows approval; maintenance continues throughout the documentation lifecycle.
 
 ## Core principles
 
