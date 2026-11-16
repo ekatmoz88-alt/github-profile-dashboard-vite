@@ -4,8 +4,8 @@ This workflow shows a typical Git-based documentation delivery pipeline. Exact c
 
 ```mermaid
 flowchart TD
-    A["Author source files<br/>Markdown / OpenAPI / diagrams"] --> B["Commit changes"]
-    B --> C["Open pull request"]
+    A["Author source files<br/>Markdown / OpenAPI / diagrams"] --> B["Commit and push changes"]
+    B --> C["Open or update pull request"]
     C --> D["Automated checks"]
     D --> D1["Lint and style"]
     D --> D2["Specification validation"]
@@ -13,7 +13,7 @@ flowchart TD
     D1 --> E{"Checks pass?"}
     D2 --> E
     D3 --> E
-    E -->|"No"| F["Fix and update changes"]
+    E -->|"No"| F["Fix and update source files"]
     F --> B
     E -->|"Yes"| G["Technical and editorial review"]
     G --> H{"Approved?"}
