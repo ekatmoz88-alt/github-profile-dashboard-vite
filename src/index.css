@@ -383,3 +383,17 @@ h1, h2 { font-family: 'Inter', sans-serif; }
   .brand-mark { width: 29px; height: 29px; }
   .featured-project-actions { max-width: none; }
 }
+
+/* Review-status labels used by the embedded SQLite source audit */
+.sqlite-review-pending {
+  display: inline-block;
+  max-width: 100%;
+  padding: 3px 7px;
+  border: 1px solid #d8e3ed;
+  border-radius: 5px;
+  background: #f5f8fb;
+  color: #52677d;
+  font-size: 10px;
+  line-height: 1.45;
+  white-space: normal;
+}
