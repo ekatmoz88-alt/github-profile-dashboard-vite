@@ -17,7 +17,7 @@ Each project remains an independent workstream. The dashboard links to the corre
 
 ## Featured work
 
-The dashboard presents **8 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
+The dashboard presents **9 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
 - [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — documentation of the real VIWI/VSM project, covering service mapping, validation and code-generation concepts. The public version is sanitized to protect restricted project details.
