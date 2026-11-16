@@ -432,14 +432,14 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
-                    <h3>Enterprise Systems Architecture — Territory, Deshifrator &amp; UMMS</h3>
-                    <p className="featured-project-description">One documentation hub, several systems — and a clear line between them. This case brings together architecture materials for PPO Territory, the Deshifrator desktop suite and the related UMMS SOAP interface without treating them as one application.</p>
+                    <h3>Territory Enterprise System — Architecture &amp; Documentation</h3>
+                    <p className="featured-project-description">Architecture documentation for one enterprise project operating in a unified runtime environment. The materials bring together PPO Territory, Deshifrator and UMMS as connected functional and technical components, while making each component’s responsibilities, data structures and interfaces explicit.</p>
                     <ul className="featured-project-bullets">
-                      <li><strong>PPO Territory:</strong> functional and deployment views, Oracle data structures, API models, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 7 component maps.</li>
-                      <li><strong>Deshifrator:</strong> the WPF/.NET desktop suite, selected C# components, file exchange and its SQLite data-access layer. The SQLite findings are based on inspected source excerpts, not a full runtime audit.</li>
-                      <li><strong>UMMS:</strong> a separate SOAP API/client boundary and local dossier workflows. Some relationships between named modules remain unresolved and are not presented as confirmed.</li>
+                      <li><strong>Core platform — PPO Territory:</strong> functional and deployment views, Oracle data model, API, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 7 component maps.</li>
+                      <li><strong>Desktop and data-processing components — Deshifrator:</strong> WPF/.NET components, selected C# implementation details, file exchange and the SQLite data-access layer. The SQLite findings are based on inspected source excerpts, not a full runtime audit.</li>
+                      <li><strong>Integration workflows — UMMS:</strong> SOAP API/client interactions and local dossier processes within the same project runtime. Relationships between modules that could not be verified remain explicitly qualified.</li>
                     </ul>
-                    <p className="project-note">The diagrams explain logical structure and documented deployment options, not every installation’s physical topology. Oracle materials for PPO Territory, SQLite materials for Deshifrator and the separate Oracle Global11 project remain distinct evidence domains.</p>
+                    <p className="project-note">The components belong to one project and share its runtime environment; their distinct technologies and data models are documented without implying separate systems. Diagrams describe the logical architecture and documented deployment options, not the physical topology of every installation. Oracle, SQLite and SOAP materials provide evidence for different components; the separate Oracle Global11 project is not part of this case.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
