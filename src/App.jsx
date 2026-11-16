@@ -376,7 +376,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">REST API · OPENAPI 3.1</p>
                     <h3>Orders API Documentation</h3>
-                    <p>Docs-as-Code portfolio example for a REST API, with OpenAPI 3.1 specification, endpoint descriptions, request and response schemas, and error responses.</p>
+                    <p>Documentation for a deployed Orders REST API implemented as a Supabase Edge Function with PostgreSQL and Supabase Auth. Covers OpenAPI 3.1, GET/POST order operations, request and response schemas, RFC 9457 problem responses, Bearer-token authentication and owner-scoped PostgreSQL Row Level Security.</p>
                     <div className="featured-project-tags">
                       <span>REST API</span>
                       <span>OpenAPI 3.1</span>
@@ -391,7 +391,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ORACLE DATABASE · OLAP · DOCS-AS-CODE</p>
                     <h3>Oracle Global11 — Data Model &amp; OLAP Architecture</h3>
-                    <p>Historical Oracle Global 11g environment deployed and operated on an office server; Documentation covers relational schema preparation and changes, Oracle SQL Developer Data Modeler dimensional design (role-playing time dimensions, level-based and ragged hierarchies, dimension usage, cubes and measures), and the Oracle Analytic Workspace export workflow. The documented design is kept distinct from evidence of an Analytic Workspace runtime deployment.</p>
+                    <p>Historical Oracle Global 11g relational environment deployed and operated on an office server; its current state was not rechecked. Documentation covers schema changes, the data dictionary and SQL Developer Data Modeler dimensional design. Extracted Cube_1111 metadata records UNITS FACT, three Time roles (Order_Month, Shipped_month, Delivery_month), measures MSR_1, MSR_2 and CALC_MSR1, SUM aggregation and AGGREGATE CUBE_1111. PRICE FACT appears in raw logs, but active membership is unconfirmed. Analytic Workspace creation/execution and technical validation remain pending; the design artefacts are not evidence of a deployed AW runtime.</p>
                     <div className="featured-project-tags">
                       <span>Oracle Global 11g</span>
                       <span>SQL Developer Data Modeler</span>
@@ -434,11 +434,12 @@ export default function App() {
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
                     <h3>Enterprise Systems Architecture — Territory, Deshifrator &amp; UMMS</h3>
                     <ul className="featured-project-bullets">
-                      <li>Maintained three related system boundaries: PPO Territory, Deshifrator and UMMS. ARM Descriptor is a historical label for the same Deshifrator project, not a separate product. Runtime boundaries are preserved where supported by project evidence.</li>
-                      <li>Aligned 10 primary Mermaid diagrams across the system landscape, PPO Territory functional domains and Oracle data model, deployment and external exchanges, Deshifrator workstation specification and application components/SQLite data access, and the UMMS SOAP boundary; the companion component maps add 7 detailed diagrams.</li>
-                      <li>Separated documented facts, logical reconstructions and unverified details; the catalogue records evidence gaps instead of inventing modules, topology or interface contracts.</li>
+                      <li>This repository is a documentation hub, not one executable product. PPO Territory and the Deshifrator desktop application suite are distinct application/runtime boundaries; UMMS is a related but separate system boundary.</li>
+                      <li>PPO Territory materials cover functional architecture, deployment alternatives, Oracle data and API models, access control and external exchanges. The 401-table Oracle inventory and seven exchange directions are source-reported. The architecture catalogue contains 10 primary Mermaid diagrams; companion component maps add 7 diagrams.</li>
+                      <li>The Deshifrator track documents the WPF/.NET Framework 4.5 application suite (ModuleMobile, ModuleStationary and Printer/PassportPaint), selected C# components, file exchange and the SQLite data-access layer. The SQLite review is source-based and limited to inspected excerpts; it is not a runtime or full-source audit.</li>
+                      <li>UMMS documentation covers a separate SOAP API/client boundary and local dossier workflows. Evidence notes distinguish documented facts, inspected source, logical reconstruction and unresolved relationships; ПОМС / ПОСС mapping to ModuleMobile / ModuleStationary remains unverified.</li>
                     </ul>
-                    <p className="project-note">The 401-table Oracle inventory and seven exchange directions are source-reported. The systems were deployed and operated in server environments, including office infrastructure. The logical diagrams document real project architecture; they do not reconstruct the physical topology of every individual installation. API routes and operations belonged to the deployed systems; restricted runtime configuration is not published.</p>
+                    <p className="project-note">The diagrams describe logical architecture and documented deployment alternatives; they do not reconstruct every installation's physical topology. PPO Territory's Oracle materials, Deshifrator's SQLite layer and the independent Global11 Oracle project are separate evidence domains. Restricted runtime configuration and production data are not published.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
@@ -449,7 +450,8 @@ export default function App() {
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · C4 / UML / BPMN ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · evidence overview ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/diagrams/" target="_blank" rel="noreferrer">Interactive C4 / UML diagram module ↗</a>
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">English documentation ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
@@ -462,7 +464,10 @@ export default function App() {
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Unified GitHub repository ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Deshifrator desktop application documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/umms-docs/" target="_blank" rel="noreferrer">UMMS SOAP documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">C# / SQLite source review ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Documentation hub repository ↗</a>
                   </div>
                 </article>
 
@@ -476,12 +481,12 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ARCHITECTURE STUDY · SERVICE MAPPING &amp; CODE GENERATION</p>
                     <h3>VIWI / VSM — Sanitized Architecture Study</h3>
-                    <p>An independently authored, technology-neutral demonstration of declarative mapping, model validation, transformation and code-generation concepts. It is not an as-built product architecture and contains no confidential source material.</p>
+                    <p>Sanitized architecture documentation of the real VIWI/VSM project, based on project materials. It describes declarative mapping models being checked, normalized and transformed into software artefacts, with architecture, generation-pipeline, mapping-data-flow and quality-gate views. Restricted identifiers and confidential source, manuals and configuration details are omitted; the diagrams are logical views, not a reconstruction of every installation.</p>
                     <div className="featured-project-tags">
                       <span>Architecture Documentation</span>
                       <span>Mermaid</span>
                       <span>Code Generation</span>
-                      <span>Sanitized Demo</span>
+                      <span>Sanitized Project Documentation</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
@@ -494,7 +499,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">C++ · UI NAVIGATION COMPONENT</p>
                     <h3>Cobalt UI Navigation</h3>
-                    <p>Source-based technical documentation for a C++ UI navigation component, covering architecture, native interface abstraction, NavItem lifecycle, focus management, callbacks, queued updates, and compatibility fallback behavior.</p>
+                    <p>Source-based documentation of a C++ UI navigation wrapper around native operations. It covers the Starboard function-pointer interface and local fallback paths, NavItem lifecycle, focus and callbacks, container geometry, queued/batch updates and version-dependent compatibility. Findings are limited to supplied C++ source excerpts and GYP configuration; platform-specific behavior and threading guarantees are not generalized beyond that evidence.</p>
                     <div className="featured-project-tags">
                       <span>C++</span>
                       <span>UI Architecture</span>
@@ -512,7 +517,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">FINTECH · OPERATIONAL WORKFLOWS &amp; SECURITY</p>
                     <h3>Fintech Operations Documentation</h3>
-                    <p>Anonymized technical documentation for a real crypto-onramp operator-console project, covering KYC and onboarding journeys, operator workflows, PII classification, and audit logging.</p>
+                    <p>Anonymized documentation of a real crypto-onramp operator-console project that was deployed and operated in its project environment; the current environment was not rechecked. Public artifacts cover user and operator KYC/onboarding journeys, operational procedures, PII sensitivity, masking, access and retention rules, and audit-log fields and prohibited data. No customer records or personal data are published.</p>
                     <div className="featured-project-tags">
                       <span>Operational Workflows</span>
                       <span>Data Classification</span>
@@ -530,7 +535,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">DOCS-AS-CODE · CI QUALITY AUTOMATION</p>
                     <h3>Technical Writing Workflows</h3>
-                    <p>A documentation pipeline demonstrating automated OpenAPI validation with Spectral, Markdown linting, and link checking with Lychee in GitHub Actions.</p>
+                    <p>A Docs-as-Code quality workflow used to validate an anonymized Tasks API contract and Markdown documentation. GitHub Actions runs Spectral OpenAPI validation, markdownlint and Lychee link checks on pushes and pull requests targeting main or master. The workflow validates documentation artefacts; it does not deploy the API service.</p>
                     <div className="featured-project-tags">
                       <span>Spectral</span>
                       <span>markdownlint</span>
@@ -548,7 +553,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENGINEERING DOCUMENTATION · SIGNAL PROCESSING HARDWARE</p>
                     <h3>ADP201P4 Signal Processing Module</h3>
-                    <p>Source-based technical documentation for a PCI signal-processing module built around four ADSP-TS201S processors, including system architecture, ADM interface, and external connectors.</p>
+                    <p>Source-based documentation of the ADP201P4 PCI signal-processing module, built around four ADSP-TS201S TigerSHARC processors. The manual specifies a 64-bit/66 MHz PCI host interface, 100 MHz system-bus clock, four 128 MB SDRAM banks, four external TigerSHARC links and an FPGA-controlled ADMPRO/ADM interface. Board-dependent flash and PIOX configurations are qualified rather than assumed; firmware and optional daughterboard details remain outside the verified scope.</p>
                     <div className="featured-project-tags">
                       <span>Hardware Architecture</span>
                       <span>DSP</span>
