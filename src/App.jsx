@@ -427,49 +427,11 @@ export default function App() {
                     </div>
                   </div>
                   <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/high-security-patent-architecture.html" target="_blank" rel="noreferrer">Open architecture case study ↗</a>
-                  </div>
-                </article>
-
-                <article className="featured-project panel">
-                  <div className="featured-project-copy">
-                    <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
-                    <h3>Territory Enterprise System — Architecture &amp; Documentation</h3>
-                    <p className="featured-project-description">Architecture documentation for one enterprise project operating in a unified runtime environment. The materials bring together PPO Territory, Deshifrator and UMMS as connected functional and technical components, while making each component’s responsibilities, data structures and interfaces explicit.</p>
-                    <ul className="featured-project-bullets">
-                      <li><strong>Core platform — PPO Territory:</strong> functional and deployment views, Oracle data model, API, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 7 component maps.</li>
-                      <li><strong>Desktop and data-processing components — Deshifrator:</strong> WPF/.NET components, selected C# implementation details, file exchange and the SQLite data-access layer. The SQLite findings are based on inspected source excerpts, not a full runtime audit.</li>
-                      <li><strong>Integration workflows — UMMS:</strong> SOAP API/client interactions and local dossier processes within the same project runtime. Relationships between modules that could not be verified remain explicitly qualified.</li>
-                    </ul>
-                    <p className="project-note">The components belong to one project and share its runtime environment; their distinct technologies and data models are documented without implying separate systems. Diagrams describe the logical architecture and documented deployment options, not the physical topology of every installation. Oracle, SQLite and SOAP materials provide evidence for different components; the separate Oracle Global11 project is not part of this case.</p>
-                    <div className="featured-project-tags">
-                      <span>Enterprise Architecture</span>
-                      <span>Data Architecture</span>
-                      <span>Oracle / SQLite</span>
-                      <span>SOAP / XML / API</span>
-                      <span>Evidence &amp; Governance</span>
-                      <span>Mermaid / Docs-as-Code</span>
-                    </div>
-                  </div>
-                  <div className="featured-project-actions">
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/" target="_blank" rel="noreferrer">Enterprise documentation capability map · evidence overview ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/technical-writing-portfolio/enterprise-documentation/diagrams/" target="_blank" rel="noreferrer">Interactive C4 / UML diagram module ↗</a>
-                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Unified documentation hub ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md" target="_blank" rel="noreferrer">English documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive architecture catalogue · 10 diagrams ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md" target="_blank" rel="noreferrer">Canonical Mermaid source (Markdown) ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md" target="_blank" rel="noreferrer">Контекст системы и границы · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.en.md" target="_blank" rel="noreferrer">Data exchange and administration · English ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/data-exchange-and-administration.ru.md" target="_blank" rel="noreferrer">Обмен данными и администрирование · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.en.md" target="_blank" rel="noreferrer">Access control · English ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/access-control.ru.md" target="_blank" rel="noreferrer">Права доступа · Русский ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/component-maps.md" target="_blank" rel="noreferrer">Detailed component maps ↗</a>
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Documentation hub ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive EN/RU architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/reference-systems/README.md" target="_blank" rel="noreferrer">Supplementary source systems ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/deshifrator-docs" target="_blank" rel="noreferrer">Deshifrator desktop application documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Deshifrator desktop application documentation ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/umms-docs/" target="_blank" rel="noreferrer">UMMS SOAP documentation ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">C# / SQLite source review ↗</a>
-                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/territory-descriptor-unified" target="_blank" rel="noreferrer">Documentation hub repository ↗</a>
                   </div>
                 </article>
 
