@@ -456,6 +456,7 @@ export default function App() {
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive EN/RU architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Deshifrator desktop application documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">Deshifrator workstation specification ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/umms-docs/" target="_blank" rel="noreferrer">UMMS SOAP documentation ↗</a>
                   </div>
                 </article>
