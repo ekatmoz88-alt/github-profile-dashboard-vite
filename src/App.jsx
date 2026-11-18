@@ -29,6 +29,7 @@ const FEATURED_REPOSITORIES = new Set([
   'territory-descriptor-unified',
   'technical-writing-workflows',
   'ss-tmk-specification',
+  'sois-onboard-interface-architecture',
   'viwi-vsm-architecture',
   'deshifrator-docs',
   'technical-writing-portfolio',
@@ -482,6 +483,26 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/viwi-vsm-architecture/" target="_blank" rel="noreferrer">Architecture study ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/viwi-vsm-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">SPACECRAFT SYSTEMS · CCSDS SOIS · INTERFACE ARCHITECTURE</p>
+                    <h3>SOIS Onboard Interface Architecture</h3>
+                    <p>A demonstration system-analysis study of the CCSDS Spacecraft Onboard Interface Services (SOIS) architecture. It organises onboard interface services into architectural layers and service groups, and examines subnetwork services, interface topologies and QoS traffic classes. The documentation distinguishes analytical models from normative definitions that require verification against the applicable CCSDS standards.</p>
+                    <div className="featured-project-tags">
+                      <span>CCSDS SOIS</span>
+                      <span>System Analysis</span>
+                      <span>Interface Architecture</span>
+                      <span>QoS</span>
+                      <span>MkDocs</span>
+                      <span>Mermaid</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/" target="_blank" rel="noreferrer">Project documentation ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/sois-onboard-interface-architecture" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
