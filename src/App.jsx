@@ -28,6 +28,7 @@ const FEATURED_REPOSITORIES = new Set([
   'global11-demo-data-platform',
   'territory-descriptor-unified',
   'technical-writing-workflows',
+  'ss-tmk-specification',
   'viwi-vsm-architecture',
   'deshifrator-docs',
   'technical-writing-portfolio',
@@ -535,6 +536,26 @@ export default function App() {
                   <div className="featured-project-actions">
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/technical-writing-workflows/" target="_blank" rel="noreferrer">Published documentation ↗</a>
                     <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/technical-writing-workflows" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">TRANSPORT SECURITY · SYSTEM &amp; API SPECIFICATION</p>
+                    <h3>SS-TMK — Technical Monitoring System</h3>
+                    <p>Technical documentation for an object-level monitoring system used to integrate an operator console with transport-infrastructure security systems. The specification describes data collection, event preprocessing and the integration interface for exchanging aggregated information with upper-level systems.</p>
+                    <p className="project-note">The materials distinguish the XML/WSDL-based integration API from the separately documented MCP gateway adapter and its Oracle OSDM metadata parsing.</p>
+                    <div className="featured-project-tags">
+                      <span>System Specification</span>
+                      <span>SOAP / XML / WSDL</span>
+                      <span>Integration Gateway</span>
+                      <span>Transport Security</span>
+                      <span>MCP Adapter</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/ss-tmk-specification/" target="_blank" rel="noreferrer">Published specification ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/ss-tmk-specification" target="_blank" rel="noreferrer">GitHub repository ↗</a>
                   </div>
                 </article>
 
