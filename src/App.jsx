@@ -378,6 +378,32 @@ export default function App() {
               <div className="featured-project-grid">
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
+                    <p className="eyebrow">SYSTEM ANALYSIS · C4 ARCHITECTURE · MCP INTEGRATION</p>
+                    <h3>QuietGridLabs C4 Editor — Independent Product Project</h3>
+                    <p>Independently designed and developed a browser-based architecture workspace that brings C4 modeling, element-level technical documentation and diagram artifacts into one portable project. The work demonstrates a systems-analysis approach: decomposing a software system across four C4 levels, defining component responsibilities and relationships, documenting interfaces and data structures, and tracing how architecture information is stored, validated, searched and exposed to AI-assisted workflows.</p>
+                    <p>The editor supports visual C4 modeling, Markdown documentation, PlantUML sequence diagrams, structured ER models, validated JSON/ZIP import and export, local-first persistence, optional Supabase cloud storage and an MCP server. End-to-end MCP use was exercised from Cline: <code>list_projects</code> discovered the cloud project and <code>search_project</code> returned matches in model elements and Markdown documentation. Search checks covered <code>PaymentService</code> (2 matches), <code>Mainframe Banking System</code> (2 matches) and <code>OAuth 2.0</code> (0 matches). The search operation was read-only; no project update was applied.</p>
+                    <div className="featured-project-tags">
+                      <span>System Analysis</span>
+                      <span>C4 Architecture</span>
+                      <span>Requirements &amp; Model Decomposition</span>
+                      <span>React · React Flow</span>
+                      <span>PlantUML · ER Modeling</span>
+                      <span>Supabase · PostgreSQL RLS</span>
+                      <span>MCP · Cline</span>
+                      <span>GitHub Actions</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/quietgridlabs-c4-editor/" target="_blank" rel="noreferrer">Open live C4 Editor ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/actions/workflows/ci.yml" target="_blank" rel="noreferrer">CI tests and build results ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/blob/main/docs/portfolio/project-profile.md" target="_blank" rel="noreferrer">Project profile · RU / EN ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/blob/main/docs/architecture/overview.md" target="_blank" rel="noreferrer">Editor architecture ↗</a>
+                  </div>
+                </article>
+
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
                     <p className="eyebrow">REST API · OPENAPI 3.1</p>
                     <h3>Orders API Documentation</h3>
                     <p>An Orders API is where application logic, access rules and data contracts meet. This case documents a deployed Supabase Edge Function backed by PostgreSQL and Supabase Auth, from its OpenAPI 3.1 operations and error responses to Bearer authentication and owner-scoped row-level security.</p>
