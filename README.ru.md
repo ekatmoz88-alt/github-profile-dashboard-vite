@@ -21,23 +21,19 @@
 
 ## Избранные проекты
 
-Дашборд содержит **11 основных карточек**. Это курируемые кейсы, а не число всех репозиториев. Дополнительный индекс репозиториев загружается динамически через GitHub API.
+Дашборд содержит **11 основных карточек**. Это курируемые кейсы, а не число всех репозиториев. Дополнительный индекс загружается динамически через GitHub API.
 
-- [ППО «Территория» и связанная документация ПО](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый проектный контур и навигационный репозиторий с сохранением границ систем, приложений, подсистем и модулей. [Опубликованный портал](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) · [Архив ППО «Территория»](https://ekatmoz88-alt.github.io/ppo-territory-archive/) · [Документация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/deshifrator-docs/) · [Спецификация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/descriptor-arm-spec/) · [УММС / SOAP](https://ekatmoz88-alt.github.io/umms-docs/) · [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
-- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — историческая среда Oracle Global 11g, развёрнутая и эксплуатировавшаяся на офисном сервере. Документация охватывает подготовку и изменения реляционной схемы, размерное проектирование в Oracle SQL Developer Data Modeler, ролевые временные измерения, level-based и ragged hierarchies, использование измерений в кубах, меры, метаданные DMRS и процесс экспорта в Oracle Analytic Workspace. [Опубликованная документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [История Data Modeler design](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.ru.html) · [Спецификация Cube_1111](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).
-- [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference, OpenAPI 3.1 и Docs-as-Code validation.
-- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — документация архитектурных концепций service mapping, валидации и генерации кода; публичная версия очищена от ограниченных проектных сведений.
-- Enterprise system architecture и документация нескольких независимых систем.
-- C++ UI component documentation.
-- Fintech workflows и security documentation.
-- Docs-as-Code и автоматизация QA.
-- Hardware documentation.
-
+- [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API, OpenAPI 3.1 и автоматизированные проверки Docs-as-Code.
+- [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — отдельный проект Oracle 11g: реляционная и размерная модели, OLAP, кубы и метаданные DMRS. [Документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/).
+- [High-Security Work Patent — System Architecture](https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/high-security-patent-architecture.html) — аналитический кейс предлагаемого пилотного проекта защищённой идентификационной карты. Материал описывает проектную концепцию, а не подтверждённую промышленную реализацию.
+- [ППО «Территория» / «Дешифратор» / UMMS](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый проектный контур документации с сохранением границ систем, приложений, подсистем и модулей. [Опубликованный портал](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) · [Архив ППО «Территория»](https://ekatmoz88-alt.github.io/ppo-territory-archive/) · [Документация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/deshifrator-docs/) · [Спецификация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/descriptor-arm-spec/) · [УММС / SOAP](https://ekatmoz88-alt.github.io/umms-docs/) · [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html).
+- [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — обезличенная документация архитектурных концепций service mapping, валидации и генерации кода.
+- [SOIS Onboard Interface Architecture](https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/) — демонстрационное исследование интерфейсных сервисов CCSDS SOIS; нормативные определения отмечены для дополнительной проверки по стандартам.
+- [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — документация C++ UI-компонента на основе исходного кода.
+- [Fintech Operations Documentation](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — обезличенная документация демонстрационной crypto-onramp операторской консоли, рабочих процессов и аудита.
 - [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — автоматизация проверок OpenAPI, Markdown и ссылок.
-- [ADP201P4 Hardware Documentation](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/) — документация аппаратного модуля и его интерфейсов.
-- [Fintech Operations Documentation](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — обезличенная документация операторской консоли, рабочих процессов и аудита.
-- [SOIS Onboard Interface Architecture](https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/) — демонстрационное исследование архитектуры интерфейсных сервисов CCSDS SOIS.
-- [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — документация C++ UI-компонента.
+- [SS-TMK — Technical Monitoring System](https://ekatmoz88-alt.github.io/ss-tmk-specification/) — спецификация системы мониторинга и интеграционного XML/WSDL-интерфейса; MCP gateway adapter описан отдельно от SOAP-контракта.
+- [ADP201P4 Hardware Documentation](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/) — документация аппаратного модуля обработки сигналов и его интерфейсов.
 
 ### Разделение проектных материалов
 
