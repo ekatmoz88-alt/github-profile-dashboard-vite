@@ -459,7 +459,7 @@ export default function App() {
                     <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/" target="_blank" rel="noreferrer">Documentation hub ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive EN/RU architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/territory/index.html" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
-                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">Deshifrator workstation specification ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/descriptor/" target="_blank" rel="noreferrer">Deshifrator workstation specification ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/deshifrator/index.html" target="_blank" rel="noreferrer">Deshifrator documentation ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/umms/index.html" target="_blank" rel="noreferrer">UMMS SOAP documentation ↗</a>
                   </div>
