@@ -437,13 +437,13 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENTERPRISE SYSTEMS · ARCHITECTURE DOCUMENTATION</p>
                     <h3>Territory Enterprise System — Architecture &amp; Documentation</h3>
-                    <p className="featured-project-description">Architecture documentation for one enterprise project operating in a unified runtime environment. The materials bring together PPO Territory, Deshifrator and UMMS as connected functional and technical components, while making each component’s responsibilities, data structures and interfaces explicit.</p>
+                    <p className="featured-project-description">Documentation for the unified project contour of PPO Territory, Deshifrator and UMMS. The materials are organized as one project portfolio while preserving the documented boundaries between systems, applications, subsystems and modules; the shared documentation structure does not imply that every component runs in one deployment.</p>
                     <ul className="featured-project-bullets">
                       <li><strong>Core platform — PPO Territory:</strong> functional and deployment views, Oracle data model, API, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 7 component maps.</li>
                       <li><strong>Desktop and data-processing components — Deshifrator:</strong> WPF/.NET components, selected C# implementation details, file exchange and the SQLite data-access layer. The SQLite findings are based on inspected source excerpts, not a full runtime audit.</li>
-                      <li><strong>Integration workflows — UMMS:</strong> SOAP API/client interactions and local dossier processes within the same project runtime. Relationships between modules that could not be verified remain explicitly qualified.</li>
+                      <li><strong>Integration workflows — UMMS:</strong> SOAP API/client interactions and local dossier processes within the unified project contour. Relationships between modules that could not be verified remain explicitly qualified.</li>
                     </ul>
-                    <p className="project-note">These materials are organized within one project contour while preserving the documented application and system boundaries. PPO Territory and the Deshifrator workstation are distinct application boundaries; UMMS is documented as a related system boundary. Diagrams describe the logical architecture and documented deployment options, not the physical topology of every installation. Oracle, SQLite and SOAP materials provide evidence for different parts of the documentation set; the separate Oracle Global11 project is not part of this case.</p>
+                    <p className="project-note">These materials are organized within one project contour while preserving the documented application and system boundaries. PPO Territory, Deshifrator and UMMS retain their documented system and application boundaries within the same project contour. Diagrams describe the logical architecture and documented deployment options, not the physical topology of every installation. Oracle, SQLite and SOAP materials provide evidence for different parts of the documentation set; the separate Oracle Global11 project is not part of this case.</p>
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
@@ -458,6 +458,7 @@ export default function App() {
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html" target="_blank" rel="noreferrer">Interactive EN/RU architecture catalogue · 10 diagrams ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/ppo-territory-archive/" target="_blank" rel="noreferrer">PPO Territory technical archive ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/descriptor-arm-spec/" target="_blank" rel="noreferrer">Deshifrator workstation specification ↗</a>
+                    <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/deshifrator-docs/" target="_blank" rel="noreferrer">Deshifrator documentation ↗</a>
                     <a className="featured-project-secondary" href="https://ekatmoz88-alt.github.io/umms-docs/" target="_blank" rel="noreferrer">UMMS SOAP documentation ↗</a>
                   </div>
                 </article>
