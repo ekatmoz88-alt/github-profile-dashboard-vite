@@ -17,7 +17,7 @@ Each project remains an independent workstream. The dashboard links to the corre
 
 ## Featured work
 
-The dashboard presents **10 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
+The dashboard presents **11 curated project cards**. The additional repository index excludes unfinished work, legacy copies, parallel variants and repositories already represented by featured case studies. Project cards use one primary documentation link where multiple labels previously pointed to the same page.
 
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference and OpenAPI 3.1, with Docs-as-Code validation.
 - [SOIS Onboard Interface Architecture](https://github.com/ekatmoz88-alt/sois-onboard-interface-architecture) · [project documentation](https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/) — demonstration system-analysis study of CCSDS SOIS onboard interface services, architecture layers, subnetwork services, topologies and QoS. Normative definitions are explicitly marked for standards verification.
