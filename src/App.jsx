@@ -25,6 +25,7 @@ const HIDDEN_REPOSITORIES = new Set([
   'url-dashboard',
 ]);
 const FEATURED_REPOSITORIES = new Set([
+  'quietgridlabs-c4-editor',
   'adp201p4-hardware-spec',
   'api-docs-portfolio-v2',
   'cobalt-ui-navigation-docs',
@@ -376,6 +377,32 @@ export default function App() {
                 <p>Examples of technical analysis, documentation architecture, API and system documentation, and source-based engineering reviews. Each case links to its published materials and supporting repository.</p>
               </div>
               <div className="featured-project-grid">
+                <article className="featured-project panel">
+                  <div className="featured-project-copy">
+                    <p className="eyebrow">SYSTEM ANALYSIS · C4 ARCHITECTURE · MCP INTEGRATION</p>
+                    <h3>QuietGridLabs C4 Editor — Independent Product Project</h3>
+                    <p>Independently designed and developed a browser-based architecture workspace that brings C4 modeling, element-level technical documentation and diagram artifacts into one portable project. The work demonstrates a systems-analysis approach: decomposing a software system across four C4 levels, defining component responsibilities and relationships, documenting interfaces and data structures, and tracing how architecture information is stored, validated, searched and exposed to AI-assisted workflows.</p>
+                    <p>The editor supports visual C4 modeling, Markdown documentation, PlantUML sequence diagrams, structured ER models, validated JSON/ZIP import and export, local-first persistence, optional Supabase cloud storage when deployment variables are configured, and an MCP server. The public GitHub Pages demo currently runs in local-only mode and displays “Cloud sync is not configured”; the cloud workflow was tested separately in a configured Supabase environment: Supabase authorization, cloud project creation, saving a new revision, loading the selected revision and restoring model elements, diagrams and relationships were verified; the restored project was <code>Internet Banking System</code>, revision 8. The MCP server connected to Cline with all four tools registered (<code>list_projects</code>, <code>read_project</code>, <code>search_project</code> and <code>apply_project_update</code>). Read-only MCP checks confirmed project discovery and search results for <code>PaymentService</code> (2 matches) and <code>Mainframe Banking System</code> (2 matches); <code>OAuth 2.0</code> returned no indexed matches. No MCP project update was executed.</p>
+                    <div className="featured-project-tags">
+                      <span>System Analysis</span>
+                      <span>C4 Architecture</span>
+                      <span>Requirements &amp; Model Decomposition</span>
+                      <span>React · React Flow</span>
+                      <span>PlantUML · ER Modeling</span>
+                      <span>Supabase · PostgreSQL RLS</span>
+                      <span>MCP · Cline</span>
+                      <span>GitHub Actions</span>
+                    </div>
+                  </div>
+                  <div className="featured-project-actions">
+                    <a className="featured-project-link" href="https://ekatmoz88-alt.github.io/quietgridlabs-c4-editor/" target="_blank" rel="noreferrer">Open live C4 Editor ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor" target="_blank" rel="noreferrer">GitHub repository ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/actions/workflows/ci.yml" target="_blank" rel="noreferrer">CI tests and build results ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/blob/main/docs/portfolio/project-profile.md" target="_blank" rel="noreferrer">Project profile · RU / EN ↗</a>
+                    <a className="featured-project-secondary" href="https://github.com/ekatmoz88-alt/quietgridlabs-c4-editor/blob/main/docs/architecture/overview.md" target="_blank" rel="noreferrer">Editor architecture ↗</a>
+                  </div>
+                </article>
+
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">REST API · OPENAPI 3.1</p>
