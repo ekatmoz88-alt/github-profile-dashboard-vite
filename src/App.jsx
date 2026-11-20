@@ -584,7 +584,7 @@ export default function App() {
                   <div className="featured-project-copy">
                     <p className="eyebrow">ENGINEERING DOCUMENTATION · SIGNAL PROCESSING HARDWARE</p>
                     <h3>ADP201P4 Signal Processing Module</h3>
-                    <p>A hardware manual is useful when it tells an engineer what is actually on the board and how the pieces connect. This case documents the ADP201P4 PCI signal-processing module, including its four TigerSHARC processors, memory banks, host interface and external links. Optional and board-dependent configurations are called out rather than presented as universal.</p>
+                    <p>A hardware manual is useful when it tells an engineer what is actually on the board and how the pieces connect. This case documents the ADP201P4 PCI signal-processing module, including its four TigerSHARC processors, memory banks, host interface and external links. The source manual belongs to the Cobalt / Oracle freelance project track, not PPO Territory or Global11. Optional and board-dependent configurations are called out rather than presented as universal.</p>
                     <div className="featured-project-tags">
                       <span>Hardware Architecture</span>
                       <span>DSP</span>
