@@ -494,11 +494,9 @@ export default function App() {
                     <p>A demonstration system-analysis study of the CCSDS Spacecraft Onboard Interface Services (SOIS) architecture. It organises onboard interface services into architectural layers and service groups, and examines subnetwork services, interface topologies and QoS traffic classes. The documentation distinguishes analytical models from normative definitions that require verification against the applicable CCSDS standards.</p>
                     <div className="featured-project-tags">
                       <span>CCSDS SOIS</span>
-                      <span>System Analysis</span>
                       <span>Interface Architecture</span>
                       <span>QoS</span>
                       <span>MkDocs</span>
-                      <span>Mermaid</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
@@ -515,7 +513,6 @@ export default function App() {
                     <div className="featured-project-tags">
                       <span>C++</span>
                       <span>UI Architecture</span>
-                      <span>API Reference</span>
                       <span>Source-based Documentation</span>
                     </div>
                   </div>
