@@ -12,6 +12,8 @@ const HIDDEN_REPOSITORIES = new Set([
   'deshifrator-docs',
   'deshifrator-docs-public',
   'github-profile-dashboard-vite-public',
+  'technical-docs-library',
+  'github-profile-dashboard-vite',
   'ppo-territory-archive',
   'territory-docs',
   'DMRS-Global',
