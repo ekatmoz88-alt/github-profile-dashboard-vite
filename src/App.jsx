@@ -425,7 +425,6 @@ export default function App() {
                       <span>Smart Cards</span>
                       <span>Identity &amp; Security</span>
                       <span>Hardware–Software Architecture</span>
-                      <span>2013 Pilot Concept</span>
                     </div>
                   </div>
                   <div className="featured-project-actions">
