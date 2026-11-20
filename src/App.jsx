@@ -25,6 +25,7 @@ const HIDDEN_REPOSITORIES = new Set([
   'url-dashboard',
 ]);
 const FEATURED_REPOSITORIES = new Set([
+  'quietgridlabs-c4-editor',
   'adp201p4-hardware-spec',
   'api-docs-portfolio-v2',
   'cobalt-ui-navigation-docs',
