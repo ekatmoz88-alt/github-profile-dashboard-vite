@@ -241,7 +241,7 @@ function SqliteArchitectureReview() {
       </article>
 
       <div className="sqlite-review-links">
-        <a href="https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/docs/sqlite-data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
+        <a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/deshifrator/data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
         <a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/descriptor/index.html" target="_blank" rel="noreferrer">Deshifrator · English workstation documentation ↗</a>
       </div>
       <p className="sqlite-disclaimer">
