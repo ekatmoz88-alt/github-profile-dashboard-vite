@@ -34,7 +34,7 @@ The dashboard presents **11 curated project cards**. The additional repository i
 - Public GitHub profile information and repository activity are retrieved from the GitHub REST API.
 - Featured project descriptions and their links are curated in the dashboard source.
 - The additional repository index hides unfinished work and duplicate/legacy repositories; it is not a complete account inventory.
-- The standalone C# / SQLite review documents the DbStationary data-access layer in the Deshifrator track. It is separate from PPO Territory's Oracle database and the Global11 demo data platform.
+- The standalone C# / SQLite review documents the DbStationary data-access layer in the Deshifrator track. It is separate from PPO Territory's Oracle database and the Global11 demo data platform. Global11 contains Oracle relational and dimensional modelling materials only; SQLite findings must not be attributed to Global11.
 - Public API rate limits may temporarily affect live profile and activity data.
 
 ## Technology
