@@ -447,7 +447,8 @@ export default function App() {
                     <div className="featured-project-tags">
                       <span>Enterprise Architecture</span>
                       <span>Data Architecture</span>
-                      <span>Oracle / SQLite</span>
+                      <span>Oracle · PPO Territory</span>
+                      <span>SQLite · Deshifrator</span>
                       <span>SOAP / XML / API</span>
                       <span>Evidence &amp; Governance</span>
                       <span>Mermaid / Docs-as-Code</span>
