@@ -440,7 +440,7 @@ export default function App() {
                     <h3>Territory Enterprise System — Architecture &amp; Documentation</h3>
                     <p className="featured-project-description">Documentation for the unified project contour of PPO Territory, Deshifrator and UMMS. The materials are organized as one project portfolio while preserving the documented boundaries between systems, applications, subsystems and modules; the shared documentation structure does not imply that every component runs in one deployment.</p>
                     <ul className="featured-project-bullets">
-                      <li><strong>Core platform — PPO Territory:</strong> functional and deployment views, Oracle data model, API, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 7 component maps.</li>
+                      <li><strong>Core platform — PPO Territory:</strong> functional and deployment views, Oracle data model, API, access control and external exchanges. The published inventory covers 401 tables; the architecture set includes 10 main diagrams and 10 component maps.</li>
                       <li><strong>Desktop and data-processing components — Deshifrator:</strong> WPF/.NET components, selected C# implementation details, file exchange and the SQLite data-access layer. The SQLite findings are based on inspected source excerpts, not a full runtime audit.</li>
                       <li><strong>Integration workflows — UMMS:</strong> SOAP API/client interactions and local dossier processes within the unified project contour. Relationships between modules that could not be verified remain explicitly qualified.</li>
                     </ul>
