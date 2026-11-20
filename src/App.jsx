@@ -9,6 +9,7 @@ const HIDDEN_REPOSITORIES = new Set([
   'api-docs-portfolio',
   'descriptor-arm-spec',
   'deshifrator',
+  'deshifrator-docs',
   'deshifrator-docs-public',
   'github-profile-dashboard-vite-public',
   'ppo-territory-archive',
@@ -18,6 +19,7 @@ const HIDDEN_REPOSITORIES = new Set([
   'interference-coatings-analysis-synthesis',
   'js.org',
   'orders-api-mcp',
+  'umms-docs',
   'url-dashboard',
 ]);
 const FEATURED_REPOSITORIES = new Set([
@@ -31,9 +33,7 @@ const FEATURED_REPOSITORIES = new Set([
   'ss-tmk-specification',
   'sois-onboard-interface-architecture',
   'viwi-vsm-architecture',
-  'deshifrator-docs',
   'technical-writing-portfolio',
-  'umms-docs',
 ]);
 
 const API = 'https://api.github.com';
