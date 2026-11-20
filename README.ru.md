@@ -19,9 +19,11 @@
 
 Реестр фиксирует срез инвентаризации, языки документации, границы проектов, теги и несоответствия метаданных. Список публичных репозиториев в самом дашборде загружается динамически.
 
-## Избранные направления
+## Избранные проекты
 
-- [ППО «Территория» и связанная документация ПО](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый навигационный репозиторий с сохранением границ отдельных компонентов. [Опубликованный портал](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) · [Архив ППО «Территория»](https://ekatmoz88-alt.github.io/ppo-territory-archive/) · [Документация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/deshifrator-docs/) · [Спецификация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/descriptor-arm-spec/) · [УММС / SOAP](https://ekatmoz88-alt.github.io/umms-docs/) · [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
+Дашборд содержит **11 основных карточек**. Это курируемые кейсы, а не число всех репозиториев. Дополнительный индекс репозиториев загружается динамически через GitHub API.
+
+- [ППО «Территория» и связанная документация ПО](https://github.com/ekatmoz88-alt/territory-descriptor-unified) — единый проектный контур и навигационный репозиторий с сохранением границ систем, приложений, подсистем и модулей. [Опубликованный портал](https://ekatmoz88-alt.github.io/territory-descriptor-unified/) · [Архив ППО «Территория»](https://ekatmoz88-alt.github.io/ppo-territory-archive/) · [Документация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/deshifrator-docs/) · [Спецификация АРМ «Дешифратор»](https://ekatmoz88-alt.github.io/descriptor-arm-spec/) · [УММС / SOAP](https://ekatmoz88-alt.github.io/umms-docs/) · [Архитектурный каталог EN/RU](https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/architecture/architecture.html) · [Контекст системы и границы — RU](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.ru.md) · [System context and scope — EN](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/system-context-and-scope.en.md).
 - [Oracle Global11 — Data Model & OLAP Architecture](https://github.com/ekatmoz88-alt/global11-demo-data-platform) — историческая среда Oracle Global 11g, развёрнутая и эксплуатировавшаяся на офисном сервере. Документация охватывает подготовку и изменения реляционной схемы, размерное проектирование в Oracle SQL Developer Data Modeler, ролевые временные измерения, level-based и ragged hierarchies, использование измерений в кубах, меры, метаданные DMRS и процесс экспорта в Oracle Analytic Workspace. [Опубликованная документация](https://ekatmoz88-alt.github.io/global11-demo-data-platform/) · [История Data Modeler design](https://ekatmoz88-alt.github.io/global11-demo-data-platform/GLOBAL11-DATA-MODELER-DESIGN.ru.html) · [Спецификация Cube_1111](https://ekatmoz88-alt.github.io/global11-demo-data-platform/CUBE-1111-FINAL-SPECIFICATION.html).
 - [Orders API Documentation](https://github.com/ekatmoz88-alt/api-docs-portfolio-v2) — REST API reference, OpenAPI 3.1 и Docs-as-Code validation.
 - [VIWI / VSM — Sanitized Architecture Documentation](https://ekatmoz88-alt.github.io/viwi-vsm-architecture/) — документация архитектурных концепций service mapping, валидации и генерации кода; публичная версия очищена от ограниченных проектных сведений.
@@ -30,6 +32,18 @@
 - Fintech workflows и security documentation.
 - Docs-as-Code и автоматизация QA.
 - Hardware documentation.
+
+- [Technical Writing Workflows](https://ekatmoz88-alt.github.io/technical-writing-workflows/) — автоматизация проверок OpenAPI, Markdown и ссылок.
+- [ADP201P4 Hardware Documentation](https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/) — документация аппаратного модуля и его интерфейсов.
+- [Fintech Operations Documentation](https://ekatmoz88-alt.github.io/fintech-docs-demo/) — обезличенная документация операторской консоли, рабочих процессов и аудита.
+- [SOIS Onboard Interface Architecture](https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/) — демонстрационное исследование архитектуры интерфейсных сервисов CCSDS SOIS.
+- [Cobalt UI Navigation](https://github.com/ekatmoz88-alt/cobalt-ui-navigation-docs) — документация C++ UI-компонента.
+
+### Разделение проектных материалов
+
+- **ППО «Территория» / «Дешифратор» / UMMS** — единый проектный контур документации; внутренние системные, прикладные и компонентные границы сохраняются. Ссылки на документацию «Дешифратора», его спецификацию и UMMS приведены в карточке проекта.
+- **Oracle Global11** — отдельный проект Oracle 11g, реляционной и размерной модели, OLAP и DMRS.
+- **C# / SQLite** — компонентный анализ слоя доступа к данным DbStationary в направлении «Дешифратор». Это не часть Oracle Global11 и не отдельная карточка проекта.
 
 ## Технологии
 
