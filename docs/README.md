@@ -1,5 +1,6 @@
 # GitHub Profile Dashboard — документация
 
+- [Реестр консолидации проектов и дублей](portfolio-consolidation-index.md)
 - [Обзор проекта](PROJECT_GUIDE.md)
 - [Разработка и публикация](OPERATIONS.md)
 - [Documentation Architecture & Engineering](documentation/README.md)
