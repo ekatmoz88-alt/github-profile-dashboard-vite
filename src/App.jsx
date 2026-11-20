@@ -416,7 +416,7 @@ export default function App() {
                 <article className="featured-project panel">
                   <div className="featured-project-copy">
                     <p className="eyebrow">SYSTEM ANALYSIS · SECURE IDENTITY · ENTERPRISE INTEGRATION</p>
-                    <h3>High-Security Work Patent — System Architecture (2013)</h3>
+                    <h3>High-Security Work Patent — System Architecture</h3>
                     <p>A 2013 system concept for a secure identity-card service, developed as part of a pilot project at Scientific Instruments. The architecture connects the journey from intake and identity checks to card personalisation, chip reading, cryptographic services and a payment application. The case study preserves the original system thinking and the analyst’s role.</p>
                     <p className="project-note">The case documents the proposed architecture and analytical scope. It does not claim that the pilot reached production. PPO Territory is shown as a participating information system, not as the name of this project.</p>
                     <div className="featured-project-tags">
