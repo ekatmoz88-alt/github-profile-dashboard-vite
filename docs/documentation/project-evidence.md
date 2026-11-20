@@ -39,11 +39,11 @@ When several source classes are used together, keep their roles explicit. For ex
 
 ## Evidence map across published projects
 
-The following map connects the methodology to concrete materials in the public portfolio. Links point to project artifacts; the descriptions state the claims those artifacts can support, not broader claims about unobserved runtime behavior.
+The following map connects the methodology to concrete materials in the public portfolio. PPO Territory, Deshifrator and UMMS are presented as one connected project contour, while their system and runtime boundaries remain explicit. Links point to project artifacts; the descriptions state the claims those artifacts can support, not broader claims about unobserved runtime behavior.
 
 ### 1. Global11 — Oracle relational model and OLAP documentation
 
-**Methodology emphasis:** Analyze → Architect → Document.
+**Methodology emphasis:** Analyze → Architect → Document. This evidence track complements the Oracle and enterprise-system documentation above; it is not a separate project.
 
 | Methodology activity | Published evidence | What it supports | Boundary |
 |---|---|---|---|
@@ -54,29 +54,29 @@ The following map connects the methodology to concrete materials in the public p
 
 **Case-study wording:** describe the work as analysis and documentation of the Global11 relational model and the design/specification of the Cube_1111 OLAP model. Do not describe Cube_1111 as deployed or technically validated.
 
-### 2. ППО ID Docs — enterprise application, Oracle information base, and documented operations
+### 2. PPO Territory / Deshifrator / UMMS — connected project contour, Oracle information base, and documented operations
 
 **Methodology emphasis:** Analyze → Architect → Document.
 
 | Methodology activity | Published evidence | What it supports | Boundary |
 |---|---|---|---|
-| Establish project and documentation scope | [Repository overview](https://github.com/ekatmoz88-alt/territory-docs/blob/main/README.md) | Scope of the public documentation set and its technical domains | The public repository is a documentation package, not the complete historical production environment |
-| Classify the information base | [Database overview](https://github.com/ekatmoz88-alt/territory-docs/blob/main/database/index.md) | Document-based inventory of 401 tables, grouping arithmetic, and distinction from a separate physical-structure document listing 381 entries | The 401-table distribution is not represented as a fresh query of the live Oracle catalog |
-| Describe logical and physical data structures | [Logical structure model](https://github.com/ekatmoz88-alt/territory-docs/blob/main/database/logical-structure-model.md) · [Physical structure specification](https://github.com/ekatmoz88-alt/territory-docs/blob/main/database/physical-structure-specification.md) | Published descriptions of functional data areas, tables, fields, and indexes within the source-document scope | Do not infer unlisted constraints or runtime data quality |
-| Relate source models and providers to database objects | [Source-code and models overview](https://github.com/ekatmoz88-alt/territory-docs/blob/main/source-code/index.md) | Documented mappings between selected application models/providers and Oracle tables | Each mapping is limited to the analyzed code and documented examples |
-| Describe API operations and data exchange | [API and operations](https://github.com/ekatmoz88-alt/territory-docs/blob/main/api/index.md) | Known operation names, JSON/SQL/Oracle interaction context, and evidence gaps | This is not a complete external API contract; operation names must not be promoted to exact routes or schemas without source evidence |
-| Connect architectural views | [Architecture overview](https://github.com/ekatmoz88-alt/territory-docs/blob/main/architecture/index.md) · [Architecture diagrams](https://github.com/ekatmoz88-alt/territory-docs/tree/main/docs/diagrams) | Documented system context, component views, and relationships between architecture, code, API, and database pages | Relationships marked as logical or inferred must retain those labels |
+| Establish project and documentation scope | [Repository overview](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/README.md) | Scope of the public documentation set and its technical domains | The public repository is a documentation package, not the complete historical production environment |
+| Classify the information base | [Database overview](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/territory-database/database/index.md) | Document-based inventory of 401 tables, grouping arithmetic, and distinction from a separate physical-structure document listing 381 entries | The 401-table distribution is not represented as a fresh query of the live Oracle catalog |
+| Describe logical and physical data structures | [Logical structure model](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/territory-database/database/logical-structure-model.md) · [Physical structure specification](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/territory-database/database/physical-structure-specification.md) | Published descriptions of functional data areas, tables, fields, and indexes within the source-document scope | Do not infer unlisted constraints or runtime data quality |
+| Relate source models and providers to database objects | [Source-code and models overview](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/territory-database/source-code/index.md) | Documented mappings between selected application models/providers and Oracle tables | Each mapping is limited to the analyzed code and documented examples |
+| Describe API operations and data exchange | [API and operations](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/territory-database/api/index.md) | Known operation names, JSON/SQL/Oracle interaction context, and evidence gaps | This is not a complete external API contract; operation names must not be promoted to exact routes or schemas without source evidence |
+| Connect architectural views | [Architecture overview](https://github.com/ekatmoz88-alt/territory-descriptor-unified/blob/main/materials/architecture/README.md) · [Architecture diagrams](https://github.com/ekatmoz88-alt/territory-descriptor-unified/tree/main/materials/architecture) | Documented system context, component views, and relationships between architecture, code, API, and database pages | Relationships marked as logical or inferred must retain those labels |
 
 **Case-study wording:** present this as documentation and analysis of a real enterprise software system and its Oracle information base, based on available project documentation and source materials. Keep documented operations distinct from a fully reconstructed or independently exercised API contract.
 
-### 3. ППО desktop application suite — source-based component and integration review
+### 3. Deshifrator workstation — source-based component and integration evidence (same project contour)
 
 **Methodology emphasis:** Analyze → Architect → Document → Verify (within the scope of available source artifacts).
 
 | Methodology activity | Published evidence | What it supports | Boundary |
 |---|---|---|---|
 | Define application-suite boundaries | [Repository overview and architecture boundary](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/README.md) | Scope covering ModuleMobile, ModuleStationary, and Printer / PassportPaint | ПОСС, ПОМС, ПОШ ВБД, and Oracle GLOBAL11 are explicitly outside this repository's application boundary |
-| Review components and dependencies | [Application-suite review](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md) · [Architecture](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/architecture.md) · [Dependencies and runtime](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md) | Selected component responsibilities, dependencies, workflows, and integration context described from available materials | The repository does not contain the complete original WPF source tree |
+| Review components and dependencies | [Application-suite review](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/application-suite-review.md) · [Architecture](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/architecture.md) · [Dependencies and runtime](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/dependencies-and-runtime.md) | Selected component responsibilities, dependencies, workflows, and integration context described from available materials | The public source-review repository does not contain the complete original WPF source tree |
 | Analyze the local data-access layer | [SQLite data-access review](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/data-access-review.md) · [Selected source files](https://github.com/ekatmoz88-alt/deshifrator-docs/tree/main/sources) | Source-based findings for the selected C# SQLite components | Five selected source files are review artifacts, not the full application source |
 | Describe file exchange and MRZ | [File exchange and MRZ](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/data-exchange-and-mrz.md) | Documented file identifiers, transfer models, processing states, encryption component references, and MRZ-related code scope | Do not publish real exchange files or secrets; do not claim complete ICAO conformance without independent test evidence |
 | Record evidence gaps and technical risks | [Repository completeness](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/repository-completeness.md) · [Risks and decisions](https://github.com/ekatmoz88-alt/deshifrator-docs/blob/main/docs/risks-and-decisions.md) | Explicit inventory of available and unavailable artifacts and unresolved verification work | Source review is not equivalent to full-system execution or hardware validation |
