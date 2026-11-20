@@ -9,6 +9,10 @@ A public portfolio dashboard for real technical writing and documentation engine
 **Bilingual repository registry and audit:** https://ekatmoz88-alt.github.io/github-profile-dashboard-vite/portfolio-audit.html
 
 
+## Repository consolidation
+
+See the [canonical project and duplicate consolidation index](docs/portfolio-consolidation-index.md) for canonical document locations, merged project groups, retired duplicate repositories and evidence boundaries.
+
 ## Purpose
 
 The dashboard presents selected documentation case studies across API documentation, enterprise information systems, desktop applications, database architecture and source-based technical analysis.
