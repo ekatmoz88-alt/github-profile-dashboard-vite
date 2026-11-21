@@ -4,23 +4,24 @@
   border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  /* CSS Grid layout for consistent card sizing */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  padding: 16px;
   min-height: 300px;
-  /* Equal height: all cards will stretch to the tallest one */
-  display: flex;
-  align-items: stretch;
 }
 
 .repo-item:hover {
   transform: translateY(-4px) scale(1.02);
   border-color: #C74634;
-  box-shadow: 0 8px 24px #23354a08;
+  box-shadow: 0 10px 24px rgba(22, 21, 19, 0.08);
 }
 
 .repo-main {
-  flex: 1;
-  padding: 20px;
+  grid-row: 2;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,7 +38,6 @@
 .repo-main p {
   color: #6b6b6b;
   font-size: 14px;
-  flex: 1;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -47,7 +47,8 @@
 }
 
 .repo-meta {
-  padding: 0 20px 20px;
+  grid-row: 3;
+  padding: 0 16px 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -71,9 +72,9 @@
 .repo-website {
   margin-top: 8px;
   padding: 8px 14px;
-  border: 1px solid var(--accent);
+  border: 1px solid #C74634;
   border-radius: 6px;
-  color: var(--accent);
+  color: #C74634;
   font-size: 12px;
   white-space: nowrap;
   background: #FFF5F0;
