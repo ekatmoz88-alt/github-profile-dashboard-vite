@@ -42,6 +42,13 @@ const FEATURED_REPOSITORIES = new Set([
   'dbstationary-architecture-docs',
 ]);
 
+// Custom live site URLs for featured repositories
+const CUSTOM_LIVE_URLS = {
+  'icao-mrtd-documentation': 'https://github.io',
+  'dbstationary-architecture-docs': 'https://github.io',
+];
+
+// Repository order for featured display
 const REPOSITORY_ORDER = [
   'quietgridlabs-c4-editor',
   'adp201p4-hardware-spec',
@@ -112,95 +119,91 @@ function eventDescription(event) {
 
 function websiteUrl(value) {
   if (!value) return '';
-  return /^https?:\\/\\//i.test(value) ? value : `https://${value}`;
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
 }
 
-function getLiveSiteUrl(repo) {
-  // A repository URL is not a live site. Show this link only when GitHub provides a homepage.
-  return repo.homepage ? websiteUrl(repo.homepage) : null;
+// Function to get live site URL for a repository
+function getLiveSiteUrl(repoName, homepage) {
+  // First check if there's a custom live URL for this repository
+  if (CUSTOM_LIVE_URLS[repoName]) {
+    return CUSTOM_LIVE_URLS[repoName];
+  }
+  // Fall back to homepage if available and valid
+  if (homepage && /^https?:\/\//i.test(homepage)) {
+    return homepage;
+  }
+  // Fall back to html_url if homepage not available
+  // This will be passed from the fetched data
+  return null;
 }
 
+// Main Dashboard Component
 function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
   const [languages, setLanguages] = useState([]);
-  const [username] = useState(USERNAME);
+  const [username, setUsername] = useState(USERNAME);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const { signal } = controller;
-
     async function fetchData() {
-      const [reposResult, eventsResult] = await Promise.allSettled([
-        githubGet(`/users/${username}/repos?per_page=100&sort=updated`, signal),
-        githubGet(`/users/${username}/events/public?per_page=100`, signal),
-      ]);
+      // Single API request for all featured repositories
+      try {
+        const response = await githubGet(`/users/${username}/repos?per_page=100`);
+        const featuredRepos = response.filter((repo) => FEATURED_REPOSITORIES.has(repo.name));
 
-      if (signal.aborted) return;
-
-      if (reposResult.status === 'fulfilled') {
-        const repos = reposResult.value;
-        const featured = repos
-          .filter((repo) => FEATURED_REPOSITORIES.has(repo.name) && !HIDDEN_REPOSITORIES.has(repo.name))
-          .map((repo) => ({
+        // Build repository data with live site URLs
+        const repoData = featuredRepos.map((repo) => {
+          const customLiveUrl = getLiveSiteUrl(repo.name, repo.homepage);
+          return {
             id: repo.id,
             name: repo.name,
             description: repo.description,
             html_url: repo.html_url,
             homepage: repo.homepage,
-            customLiveUrl: getLiveSiteUrl(repo),
             language: repo.language,
             stargazers_count: repo.stargazers_count,
             forks_count: repo.forks_count,
             updated_at: repo.updated_at,
             private: repo.private,
-          }));
+            customLiveUrl: customLiveUrl || undefined,
+          };
+        });
 
-        setRepositories(featured);
+        setRepositories(repoData);
 
-        const languageCounts = repos.reduce((counts, repo) => {
+        // Fetch events
+        const eventsResponse = await githubGet(`/users/${username}/events/public?per_page=100`);
+        setEvents(eventsResponse);
+
+        // Fetch languages from all repos
+        const langMap = {};
+        repos.forEach((repo) => {
           if (repo.language) {
-            counts[repo.language] = (counts[repo.language] || 0) + 1;
+            if (!langMap[repo.language]) {
+              langMap[repo.language] = 0;
+            }
+            langMap[repo.language] += 1;
           }
-          return counts;
-        }, {});
-
-        const totalLanguageRepositories = Object.values(languageCounts)
-          .reduce((sum, count) => sum + count, 0);
-
-        const languagesArray = Object.entries(languageCounts)
-          .map(([name, count]) => ({
-            name,
-            percent: totalLanguageRepositories
-              ? Math.round((count / totalLanguageRepositories) * 100)
-              : 0,
-          }))
-          .sort((a, b) => b.percent - a.percent);
-
+        });
+        const total = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+        const languagesArray = Object.entries(langMap).map(([name, count]) => ({
+          name,
+          percent: Math.round((count / total) * 100),
+        }));
         setLanguages(languagesArray);
-      } else if (reposResult.reason?.name !== 'AbortError') {
-        console.error('Failed to fetch repositories:', reposResult.reason);
-      }
-
-      if (eventsResult.status === 'fulfilled') {
-        setEvents(eventsResult.value);
-      } else if (eventsResult.reason?.name !== 'AbortError') {
-        console.error('Failed to fetch recent activity:', eventsResult.reason);
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
       }
     }
-
     fetchData();
-
-    return () => controller.abort();
-  }, [username]);
+  }, [FEATURED_REPOSITORIES, username]);
 
   const visibleRepositories = useMemo(() => {
-    const order = new Map(REPOSITORY_ORDER.map((name, index) => [name, index]));
-
     return repositories
       .filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name))
-      .sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER)
-        - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
+      .sort((a, b) => {
+        return REPOSITORY_ORDER.indexOf(a.name) - REPOSITORY_ORDER.indexOf(b.name);
+      });
   }, [repositories]);
 
   return (
@@ -216,6 +219,7 @@ function App() {
 
       <main>
         <section className="dashboard">
+          {/* Hero section */}
           <div className="hero">
             <div>
               <h1>GitHub Profile Dashboard</h1>
@@ -226,6 +230,7 @@ function App() {
             </a>
           </div>
 
+          {/* Featured Repositories */}
           <section className="featured-projects">
             <h2 className="featured-projects-heading">Featured Projects</h2>
             <div className="featured-project-grid">
@@ -237,12 +242,17 @@ function App() {
                     </a>
                     <p>{repo.description || 'No description provided.'}</p>
                     <div className="repo-meta">
-                      {repo.language && <span className="language-dot" aria-label={repo.language} />}
+                      {repo.language && <span className="language-dot" aria-label={repo.language} /> }
                       <span>★ {formatNumber(repo.stargazers_count)}</span>
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
                       {repo.customLiveUrl && (
                         <a className="repo-website" href={repo.customLiveUrl} target="_blank" rel="noopener noreferrer">
+                          Live site ↗
+                        </a>
+                      )}
+                      {!repo.customLiveUrl && repo.homepage && (
+                        <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noopener noreferrer">
                           Live site ↗
                         </a>
                       )}
@@ -257,6 +267,7 @@ function App() {
             </div>
           </section>
 
+          {/* Side column with language and activity panels */}
           <aside className="side-column">
             <section className="panel language-panel">
               <div className="panel-heading">
@@ -304,6 +315,8 @@ function App() {
             </section>
           </aside>
         </section>
+
+        <MethodologySection />
 
         <footer className="footer">
           <span>Data provided by the GitHub REST API</span>
