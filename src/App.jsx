@@ -44,6 +44,12 @@ const FEATURED_REPOSITORIES = new Set([
 
 const API = 'https://api.github.com';
 
+// Custom live site URLs for featured repositories
+const CUSTOM_LIVE_URLS: Record<string, string> = {
+  'icao-mrtd-documentation': 'https://github.io',
+  'dbstationary-architecture-docs': 'https://github.io',
+};
+
 async function githubGet(path, signal) {
   const response = await fetch(`${API}${path}`, {
     headers: { Accept: 'application/vnd.github+json' },
@@ -105,12 +111,6 @@ interface RepositoryData {
   // Live site support
   customLiveUrl?: string;
 }
-
-// Map of repositories with custom live URLs
-const CUSTOM_LIVE_URLS: Record<string, string> = {
-  'icao-mrtd-documentation': 'https://github.io',
-  'dbstationary-architecture-docs': 'https://github.io',
-};
 
 // Function to get live site URL for a repository
 function getLiveSiteUrl(repoName: string, homepage: string | null): string | null {
