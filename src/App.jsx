@@ -37,7 +37,8 @@ const FEATURED_REPOSITORIES = new Set([
   'sois-onboard-interface-architecture',
   'viwi-vsm-architecture',
   'technical-writing-portfolio',
-  'ikao-mrtd-documentation',
+  'icao-mrtd-documentation',
+  'dbstationary-architecture-docs',
 ]);
 
 const API = 'https://api.github.com';
@@ -153,8 +154,8 @@ export default function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [query, setQuery] = State('');
+  const [error, setError] = State('');
+  const [query, setQuery] = useState('');
   const [sort, setSort] = useState('updated');
 
   async function loadDashboard(signal) {
@@ -215,7 +216,6 @@ export default function App() {
             <h2>Featured Projects</h2>
             <div className="repo-list">
               {FEATURED_REPOSITORIES.intersection(new Set(repositories.map(r => r.name))).map((repo) => {
-                // Render featured project cards dynamically
                 return null; // Simplified - actual rendering uses predefined cards
               })}
             </div>
