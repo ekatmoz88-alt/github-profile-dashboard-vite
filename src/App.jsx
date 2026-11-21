@@ -90,26 +90,48 @@ function websiteUrl(value) {
   return /^https?:\/\//i.test(value) ? value : `https://${value}`;
 }
 
-function sqliteArchitectureDiagramCard({ diagram, onClick }) {
-  return (
-    <div className="sqlite-architecture-diagram-card" onClick={onClick}>
-      <svg className="sqlite-diagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-        <path d="M12 20V10M18 10L12 10M12 4l.01"/>
-      </svg>
-      <h3 className="sqlite-diagram-title">{diagram.title}</h3>
-      <p className="sqlite-diagram-desc">{diagram.description}</p>
-    </div>
-  );
+// Repository data structure with live site support
+interface RepositoryData {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  homepage: string | null;
+  language: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  updated_at: string;
+  private: boolean;
+  // Live site support
+  customLiveUrl?: string;
 }
 
-function SqliteArchitectureDashboard() {
-  // ... (rest of the component)
+// Map of repositories with custom live URLs
+const CUSTOM_LIVE_URLS: Record<string, string> = {
+  'icao-mrtd-documentation': 'https://github.io',
+  'dbstationary-architecture-docs': 'https://github.io',
+};
+
+// Function to get live site URL for a repository
+function getLiveSiteUrl(repoName: string, homepage: string | null): string | null {
+  // First check if there's a custom live URL for this repository
+  if (CUSTOM_LIVE_URLS[repoName]) {
+    return CUSTOM_LIVE_URLS[repoName];
+  }
+  // Fall back to homepage if available and valid
+  if (homepage && /^https?:\/\//i.test(homepage)) {
+    return homepage;
+  }
+  // Fall back to html_url if homepage not available
+  if (html_url) {
+    return html_url;
+  }
   return null;
 }
 
 // Main Dashboard Component
 function App() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<RepositoryData[]>([]);
   const [events, setEvents] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [username, setUsername] = useState(USERNAME);
@@ -121,8 +143,9 @@ function App() {
         const featuredPromises = Array.from(FEATURED_REPOSITORIES).map(async (repoName) => {
           try {
             const response = await githubGet(`/users/${username}/repos?per_page=100`);
-            const repo = response.find(r => r.name === repoName);
+            const repo = response.find((r: any) => r.name === repoName);
             if (repo) {
+              const customLiveUrl = getLiveSiteUrl(repo.name, repo.homepage);
               return {
                 id: repo.id,
                 name: repo.name,
@@ -134,6 +157,7 @@ function App() {
                 forks_count: repo.forks_count,
                 updated_at: repo.updated_at,
                 private: repo.private,
+                customLiveUrl: customLiveUrl || undefined,
               };
             }
             return null;
@@ -151,8 +175,8 @@ function App() {
 
         // Fetch languages
         const repos = await githubGet(`/users/${username}/repos?per_page=100`);
-        const langMap = {};
-        repos.forEach((repo) => {
+        const langMap: Record<string, number> = {};
+        repos.forEach((repo: any) => {
           if (repo.language) {
             if (!langMap[repo.language]) {
               langMap[repo.language] = 0;
@@ -160,8 +184,8 @@ function App() {
             langMap[repo.language] += 1;
           }
         });
-        const total = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
-        const languagesArray = Object.entries(langMap).map(([name, count]) => ({
+        const total = repos.reduce((sum: number, r: any) => sum + (r.stargazers_count || 0), 0);
+        const languagesArray = Object.entries(langMap).map(([name, count]: [string, number]) => ({
           name,
           percent: Math.round((count / total) * 100),
         }));
@@ -176,7 +200,7 @@ function App() {
   const visibleRepositories = useMemo(() => {
     return repositories
       .filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name))
-      .sort((a, b) => {
+      .sort((a: RepositoryData, b: RepositoryData) => {
         const order = ['quietgridlabs-c4-editor', 'adp201p4-hardware-spec', 'api-docs-portfolio-v2', 'cobalt-ui-navigation-docs', 'fintech-docs-demo', 'global11-demo-data-platform', 'territory-descriptor-unified', 'technical-writing-workflows', 'ss-tmk-specification', 'sois-onboard-interface-architecture', 'viwi-vsm-architecture', 'technical-writing-portfolio', 'icao-mrtd-documentation', 'dbstationary-architecture-docs'];
         return order.indexOf(a.name) - order.indexOf(b.name);
       });
@@ -222,7 +246,8 @@ function App() {
                       <span>★ {formatNumber(repo.stargazers_count)}</span>
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
-                      {repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
+                      {repo.customLiveUrl && <a className="repo-website" href={repo.customLiveUrl} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
+                      {!repo.customLiveUrl && repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
                     </div>
                   </div>
                   <span className={repo.private ? 'visibility private' : 'visibility'}>
