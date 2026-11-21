@@ -4,9 +4,12 @@
   border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 300px;
+  /* Equal height: all cards will stretch to the tallest one */
+  display: flex;
+  align-items: stretch;
 }
 
 .repo-item:hover {
@@ -17,9 +20,10 @@
 
 .repo-main {
   flex: 1;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  justify-content: space-between;
 }
 
 .repo-main a {
@@ -27,6 +31,7 @@
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 8px;
+  text-decoration: none;
 }
 
 .repo-main p {
@@ -34,6 +39,11 @@
   font-size: 14px;
   flex: 1;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .repo-meta {
@@ -55,6 +65,7 @@
   height: 8px;
   border-radius: 50%;
   background: #E5E2DF;
+  flex-shrink: 0;
 }
 
 .repo-website {
@@ -67,10 +78,16 @@
   white-space: nowrap;
   background: #FFF5F0;
   align-self: flex-start;
+  margin-top: auto;
 }
 
 .repo-website:hover {
   background: #FFE2DF;
   border-color: #B53A2C;
   color: #161513;
+}
+
+/* Ensure all repo-items in the grid have consistent min-height */
+.featured-project-grid > article.repo-item {
+  flex: 0 0 auto;
 }
