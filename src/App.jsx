@@ -263,7 +263,7 @@ function App() {
               {visibleRepositories.map((repo) => (
                 <article className="repo-item" key={repo.id}>
                   <div className="repo-main">
-                    <a href={repo.name === 'cobalt-ui-navigation-docs' ? repo.customLiveUrl : repo.html_url} target="_blank" rel="noopener noreferrer">
+                    <a href={repo.name === 'cobalt-ui-navigation-docs' || repo.name === 'quietgridlabs-c4-editor' ? repo.customLiveUrl : repo.html_url} target="_blank" rel="noopener noreferrer">
                       {repo.name} ↗
                     </a>
                     <p>{getProjectDescription(repo)}</p>
