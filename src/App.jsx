@@ -154,7 +154,7 @@ export default function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = State('');
+  const [error, setError] = useState('');
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('updated');
 
@@ -277,7 +277,7 @@ export default function App() {
                     <span className="activity-marker" />
                     <div><p>{eventDescription(event)}</p><time>{timeAgo(event.created_at)}</time></div>
                   </div>
-                ))}
+                ))
                 {!events.length && <p className="empty-state">No recent public events found.</p>}
               </div>
               <a className="all-activity" href={`https://github.com/${USERNAME}?tab=activity`} target="_blank" rel="noreferrer">View full activity ↗</a>
