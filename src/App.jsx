@@ -24,6 +24,7 @@ const HIDDEN_REPOSITORIES = new Set([
   'umms-docs',
   'url-dashboard',
 ]);
+
 const FEATURED_REPOSITORIES = new Set([
   'quietgridlabs-c4-editor',
   'adp201p4-hardware-spec',
@@ -66,7 +67,7 @@ function timeAgo(date) {
   if (days === 0) return 'today';
   if (days === 1) return 'yesterday';
   if (days < 30) return `${days} days ago`;
-  if (days < 365) return `${Math.floor(days / 30)} months ago`;
+  if (days < 365) return `${Math.floor(days / 365)} years ago`;
   return `${Math.floor(days / 365)} years ago`;
 }
 
@@ -86,166 +87,142 @@ function eventDescription(event) {
 
 function websiteUrl(value) {
   if (!value) return '';
-  return /^https?:\\/\\//i.test(value) ? value : `https://${value}`;
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
 }
 
-function SqliteArchitectureReview() {
-  const components = [
-    ["ConnectionFactory", "Provides the shared SQLite connection."],
-    ["SQLiteCommandEx<T>", "Executes commands and coordinates result handling."],
-    ["SQLiteCommandEx_Params", "Creates and binds typed SQLite parameters, including GUID helpers."],
-    ["SQLiteDataReaderEx", "Provides typed access to values returned by a reader."],
-    ["SQLiteMaps", "Maps database values to application models."],
-    ["Providers", "Execute application-level data operations."]
-  ];
-
-  const reviewAreas = [
-    ["Thread safety", "ConnectionFactory.cs:11, 27–33 — a static singleton returns the same connection without visible locking. CaseProvider.cs:43–45 starts transactions on that shared connection.", "Risk identified"],
-    ["Connection lifecycle", "..."]
-  ];
-
-  const recommendations = [...];
-
+function sqliteArchitectureDiagramCard({ diagram, onClick }) {
   return (
-    <div>
-      <article className="panel sqlite-review-intro">
-        <p className="eyebrow">01 · GENERAL</p>
-        <h3>Architecture Review</h3>
-        <p>This review covers the overall architecture of the Deshifrator project.</p>
-      </article>
-
-      <article className="panel sqlite-review-audit">
-        <p className="eyebrow">02 · CODE REVIEW</p>
-        <h3>Code Audit Checklist</h3>
-        <div className="sqlite-table-wrap">
-          <table className="sqlite-table">
-            <thead>
-              <tr><th>Area</th><th>Source evidence</th><th>Review status</th></tr>
-            </thead>
-            <tbody>{reviewAreas.map(([name, evidence, status]) => (
-              <tr key={name}><th scope="row">{name}</th><td>{evidence}</td><td><span className="sqlite-review-pending">{status}</span></td></tr>
-            ))}</tbody>
-          </table>
-        </div>
-        <p className="sqlite-muted">Findings are limited to the inspected DbStationary C# source excerpts. They do not imply complete runtime, concurrency or test-suite verification.</p>
-      </article>
-
-      <article className="panel sqlite-recommendations">
-        <p className="eyebrow">04 · FOLLOW-UP</p>
-        <h3>Recommended Verification Steps</h3>
-        <ol>{recommendations.map(item => <li key={item}>{item}</li>)}</ol>
-      </article>
-
-      <div className="sqlite-review-links">
-        <a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/deshifrator/data-access-review.html" target="_blank" rel="noreferrer">Open standalone review ↗</a>
-        <a href="https://ekatmoz88-alt.github.io/territory-descriptor-unified/materials/descriptor/index.html" target="_blank" rel="noreferrer">Deshifrator · English workstation documentation ↗</a>
-      </div>
-      <p className="sqlite-disclaimer">
-        This review covers the SQLite data-access layer in the Deshifrator documentation track.
-        It is separate from PPO Territory's Oracle database and from the Global11 demo data platform.
-        Findings are based on selected source excerpts; the original application source is not published here.
-      </p>
-    </section>
+    <div className="sqlite-architecture-diagram-card" onClick={onClick}>
+      <svg className="sqlite-diagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+        <path d="M12 20V10M18 10L12 10M12 4l.01"/>
+      </svg>
+      <h3 className="sqlite-diagram-title">{diagram.title}</h3>
+      <p className="sqlite-diagram-desc">{diagram.description}</p>
+    </div>
   );
 }
 
-export default function App() {
-  const [profile, setProfile] = useState(null);
+function SqliteArchitectureDashboard() {
+  // ... (rest of the component)
+  return null;
+}
+
+// Main Dashboard Component
+function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-  const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('updated');
-
-  async function loadDashboard(signal) {
-    setLoading(true);
-    setError('');
-    try {
-      const [userData, repoData, eventData] = await Promise.all([
-        githubGet(`/users/${USERNAME}`, signal),
-        githubGet(`/users/${USERNAME}/repos?sort=updated&per_page=100&type=owner`, signal),
-        githubGet(`/users/${USERNAME}/events/public?per_page=30`, signal),
-      ]);
-      setProfile(userData);
-      setRepositories(repoData.filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name) && !FEATURED_REPOSITORIES.has(repo.name)));
-      setEvents(eventData);
-    } catch (err) {
-      if (err.name !== 'AbortError') setError(err.message || 'Unable to load GitHub data.');
-    } finally {
-      if (!signal.aborted) setLoading(false);
-    }
-  }
+  const [languages, setLanguages] = useState([]);
+  const [username, setUsername] = useState(USERNAME);
 
   useEffect(() => {
-    const controller = new AbortController();
-    loadDashboard(controller.signal);
-    return () => controller.abort();
-  }, []);
+    async function fetchData() {
+      try {
+        // Fetch featured repositories
+        const featuredPromises = Array.from(FEATURED_REPOSITORIES).map(async (repoName) => {
+          try {
+            const response = await githubGet(`/users/${username}/repos?per_page=100`);
+            const repo = response.find(r => r.name === repoName);
+            if (repo) {
+              return {
+                id: repo.id,
+                name: repo.name,
+                description: repo.description,
+                html_url: repo.html_url,
+                homepage: repo.homepage,
+                language: repo.language,
+                stargazers_count: repo.stargazers_count,
+                forks_count: repo.forks_count,
+                updated_at: repo.updated_at,
+                private: repo.private,
+              };
+            }
+            return null;
+          } catch (e) {
+            console.warn(`Could not fetch featured repo ${repoName}`, e);
+            return null;
+          }
+        });
+        const featuredResults = await Promise.all(featuredPromises);
+        setRepositories(featuredResults.filter(Boolean));
 
-  const totalStars = repositories.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-  const totalForks = repositories.reduce((sum, repo) => sum + repo.forks_count, 0);
+        // Fetch events
+        const eventsResponse = await githubGet(`/users/${username}/events/public?per_page=100`);
+        setEvents(eventsResponse);
 
-  const languages = useMemo(() => {
-    const counts = {};
-    repositories.forEach((repo) => {
-      if (repo.language) counts[repo.language] = (counts[repo.language] || 0) + 1;
-    });
-    const total = Object.values(counts).reduce((a, b) => a + b, 0);
-    return Object.entries(counts).map(([name, percent]) => ({ name, percent: Math.round(percent / total * 100) }));
+        // Fetch languages
+        const repos = await githubGet(`/users/${username}/repos?per_page=100`);
+        const langMap = {};
+        repos.forEach((repo) => {
+          if (repo.language) {
+            if (!langMap[repo.language]) {
+              langMap[repo.language] = 0;
+            }
+            langMap[repo.language] += 1;
+          }
+        });
+        const total = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+        const languagesArray = Object.entries(langMap).map(([name, count]) => ({
+          name,
+          percent: Math.round((count / total) * 100),
+        }));
+        setLanguages(languagesArray);
+      } catch (error) {
+        console.error('Failed to fetch data:', error);
+      }
+    }
+    fetchData();
+  }, [FEATURED_REPOSITORIES, username]);
+
+  const visibleRepositories = useMemo(() => {
+    return repositories
+      .filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name))
+      .sort((a, b) => {
+        const order = ['quietgridlabs-c4-editor', 'adp201p4-hardware-spec', 'api-docs-portfolio-v2', 'cobalt-ui-navigation-docs', 'fintech-docs-demo', 'global11-demo-data-platform', 'territory-descriptor-unified', 'technical-writing-workflows', 'ss-tmk-specification', 'sois-onboard-interface-architecture', 'viwi-vsm-architecture', 'technical-writing-portfolio', 'icao-mrtd-documentation', 'dbstationary-architecture-docs'];
+        return order.indexOf(a.name) - order.indexOf(b.name);
+      });
   }, [repositories]);
 
-  const visibleRepositories = repositories.filter((repo) => !FEATURED_REPOSITORIES.has(repo.name));
-
   return (
-    <div>
-      <header className="header">
-        <nav>
-          <input aria-label="Search repositories" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search repositories…" />
-          <select aria-label="Sort repositories" value={sort} onChange={(e) => setSort(e.target.value)}>
-            <option value="updated">Recently updated</option>
-            <option value="stars">Most stars</option>
-            <option value="name">Name A–Z</option>
-          </select>
-        </nav>
+    <div className="app-shell">
+      <header className="topbar">
+        <div className="brand">
+          <span>Portfolio</span>
+        </div>
+        <div className="topbar-right">
+          <button className="refresh-button" onClick={() => window.location.reload()}>Обновить</button>
+        </div>
       </header>
 
       <main>
         <section className="dashboard">
-          <div className="featured-section">
-            <h2>Featured Projects</h2>
-            <div className="repo-list">
-              {FEATURED_REPOSITORIES.intersection(new Set(repositories.map(r => r.name))).map((repo) => {
-                return null; // Simplified - actual rendering uses predefined cards
-              })}
+          {/* Hero section */}
+          <div className="hero">
+            <div>
+              <h1>GitHub Profile Dashboard</h1>
+              <p className="hero-subtitle">Портфолио открытых репозиториев</p>
             </div>
+            <a href="https://github.com/ekatmoz88-alt" className="github-link" target="_blank" rel="noopener noreferrer">
+              GitHub профиль ↗
+            </a>
           </div>
 
-          <section className="repositories-panel">
-            <div className="panel-heading">
-              <div><p className="eyebrow">FULL ACCOUNT INDEX</p><h2>Additional repositories <span>{repositories.length}</span></h2></div>
-            </div>
-            <p className="panel-note">Additional public repositories only. Featured projects, legacy copies and unfinished work are excluded from this index.</p>
-            <div className="repo-controls">
-              <input aria-label="Search repositories" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search repositories…" />
-              <select aria-label="Sort repositories" value={sort} onChange={(e) => setSort(e.target.value)}>
-                <option value="updated">Recently updated</option>
-                <option value="stars">Most stars</option>
-                <option value="name">Name A–Z</option>
-              </select>
-            </div>
-            <div className="repo-list">
+          {/* Featured Repositories */}
+          <section className="featured-projects">
+            <h2 className="featured-projects-heading">Featured Projects</h2>
+            <div className="featured-project-grid">
               {visibleRepositories.map((repo) => (
                 <article className="repo-item" key={repo.id}>
                   <div className="repo-main">
-                    <a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name} ↗</a>
+                    <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                      {repo.name} ↗
+                    </a>
                     <p>{repo.description || 'No description provided.'}</p>
                     <div className="repo-meta">
-                      {repo.language && <span className="language-dot">{repo.language}</span>}
+                      {repo.language && <span className="language-dot"></span>}
                       <span>★ {formatNumber(repo.stargazers_count)}</span>
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
-                      {repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noreferrer">Live site ↗</a>}
+                      {repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
                     </div>
                   </div>
                   <span className={repo.private ? 'visibility private' : 'visibility'}>
@@ -257,39 +234,62 @@ export default function App() {
             </div>
           </section>
 
+          {/* Side column with language and activity panels */}
           <aside className="side-column">
             <section className="panel language-panel">
-              <div className="panel-heading"><div><p className="eyebrow">TECH STACK</p><h2>Languages</h2></div></div>
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow">TECH STACK</p>
+                  <h2>Languages</h2>
+                </div>
+              </div>
               <p className="panel-note">Primary language by repository count</p>
               {languages.length ? languages.map((language) => (
                 <div className="language-row" key={language.name}>
-                  <div><span>{language.name}</span><strong>{language.percent}%</strong></div>
-                  <div className="bar-track"><span style={{ width: `${language.percent}%` }} /></div>
+                  <div>
+                    <span>{language.name}</span>
+                    <strong>{language.percent}%</strong>
+                  </div>
+                  <div className="bar-track">
+                    <span style={{ width: `${language.percent}%` }} />
+                  </div>
                 </div>
               )) : <p className="empty-state">No language data available.</p>}
             </section>
 
             <section className="panel activity-panel">
-              <div className="panel-heading"><div><p className="eyebrow">WHAT'S HAPPENING</p><h2>Recent activity</h2></div></div>
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow">WHAT'S HAPPENING</p>
+                  <h2>Recent activity</h2>
+                </div>
+              </div>
               <div className="activity-list">
                 {events.slice(0, 8).map((event) => (
                   <div className="activity-item" key={event.id}>
                     <span className="activity-marker" />
-                    <div><p>{eventDescription(event)}</p><time>{timeAgo(event.created_at)}</time></div>
+                    <div>
+                      <p>{eventDescription(event)}</p>
+                      <time>{timeAgo(event.created_at)}</time>
+                    </div>
                   </div>
-                ))
+                ))}
                 {!events.length && <p className="empty-state">No recent public events found.</p>}
               </div>
-              <a className="all-activity" href={`https://github.com/${USERNAME}?tab=activity`} target="_blank" rel="noreferrer">View full activity ↗</a>
+              <a className="all-activity" href={`https://github.com/${username}?tab=activity`} target="_blank" rel="noopener noreferrer">
+                View full activity ↗
+              </a>
             </section>
           </aside>
         </section>
-      </main>
 
-      <footer className="footer">
-        <span>Data provided by the GitHub REST API</span>
-        <span>Public data · Refresh to update</span>
-      </footer>
+        <footer className="footer">
+          <span>Data provided by the GitHub REST API</span>
+          <span>Public data · Refresh to update</span>
+        </footer>
+      </main>
     </div>
   );
 }
+
+export default App;
