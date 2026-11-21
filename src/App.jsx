@@ -126,6 +126,23 @@ function getLiveSiteUrl(homepage) {
   }
 }
 
+const LIVE_SITE_URLS = {
+  'quietgridlabs-c4-editor': 'https://ekatmoz88-alt.github.io/quietgridlabs-c4-editor/',
+  'adp201p4-hardware-spec': 'https://ekatmoz88-alt.github.io/adp201p4-hardware-spec/',
+  'api-docs-portfolio-v2': 'https://ekatmoz88-alt.github.io/api-docs-portfolio-v2/',
+  'cobalt-ui-navigation-docs': 'https://ekatmoz88-alt.github.io/cobalt-ui-navigation-docs/',
+  'fintech-docs-demo': 'https://ekatmoz88-alt.github.io/fintech-docs-demo/',
+  'global11-demo-data-platform': 'https://ekatmoz88-alt.github.io/global11-demo-data-platform/',
+  'territory-descriptor-unified': 'https://ekatmoz88-alt.github.io/territory-descriptor-unified/',
+  'technical-writing-workflows': 'https://ekatmoz88-alt.github.io/technical-writing-workflows/',
+  'ss-tmk-specification': 'https://ekatmoz88-alt.github.io/ss-tmk-specification/',
+  'sois-onboard-interface-architecture': 'https://ekatmoz88-alt.github.io/sois-onboard-interface-architecture/',
+  'viwi-vsm-architecture': 'https://ekatmoz88-alt.github.io/viwi-vsm-architecture/',
+  'technical-writing-portfolio': 'https://ekatmoz88-alt.github.io/technical-writing-portfolio/',
+  'icao-mrtd-documentation': 'https://ekatmoz88-alt.github.io/icao-mrtd-documentation/',
+  'dbstationary-architecture-docs': 'https://ekatmoz88-alt.github.io/dbstationary-architecture-docs/',
+};
+
 const PROJECT_DESCRIPTIONS = {
   'api-docs-portfolio-v2': 'REST API and legacy SOAP/WSDL documentation with OpenAPI 3.1, Postman, Redoc and Docs-as-Code (EN/RU).',
   'global11-demo-data-platform': 'Oracle Global 11g relational data model, data dictionary, OLAP concepts and SQL analysis.',
@@ -162,7 +179,7 @@ function App() {
             description: repo.description,
             html_url: repo.html_url,
             homepage: repo.homepage,
-            customLiveUrl: getLiveSiteUrl(repo.homepage),
+            customLiveUrl: LIVE_SITE_URLS[repo.name] || getLiveSiteUrl(repo.homepage),
             language: repo.language,
             stargazers_count: repo.stargazers_count,
             forks_count: repo.forks_count,
