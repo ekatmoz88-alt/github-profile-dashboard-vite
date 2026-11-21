@@ -305,8 +305,6 @@ function App() {
           </aside>
         </section>
 
-        <MethodologySection />
-
         <footer className="footer">
           <span>Data provided by the GitHub REST API</span>
           <span>Public data · Refresh to update</span>
