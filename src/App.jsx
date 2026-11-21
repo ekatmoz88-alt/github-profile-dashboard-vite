@@ -151,6 +151,10 @@ function getProjectDescription(repo) {
   return PROJECT_DESCRIPTIONS[repo.name] || repo.description || 'Description is not set in GitHub repository metadata.';
 }
 
+function getProjectUrl(repo) {
+  return repo.customLiveUrl || repo.html_url;
+}
+
 function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
@@ -262,7 +266,7 @@ function App() {
               {visibleRepositories.map((repo) => (
                 <article className="repo-item" key={repo.id}>
                   <div className="repo-main">
-                    <a href={repo.customLiveUrl || repo.html_url} target="_blank" rel="noopener noreferrer">
+                    <a href={getProjectUrl(repo)} target="_blank" rel="noopener noreferrer">
                       {repo.name} ↗
                     </a>
                     <p>{getProjectDescription(repo)}</p>
@@ -277,7 +281,7 @@ function App() {
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
                       {repo.customLiveUrl && (
-                        <a className="repo-website" href={repo.customLiveUrl} target="_blank" rel="noopener noreferrer">
+                        <a className="repo-website" href={getProjectUrl(repo)} target="_blank" rel="noopener noreferrer">
                           Live site ↗
                         </a>
                       )}
