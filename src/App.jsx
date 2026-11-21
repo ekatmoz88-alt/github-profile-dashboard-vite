@@ -45,7 +45,7 @@ const FEATURED_REPOSITORIES = new Set([
 const API = 'https://api.github.com';
 
 // Custom live site URLs for featured repositories
-const CUSTOM_LIVE_URLS: Record<string, string> = {
+const CUSTOM_LIVE_URLS = {
   'icao-mrtd-documentation': 'https://github.io',
   'dbstationary-architecture-docs': 'https://github.io',
 };
@@ -97,23 +97,22 @@ function websiteUrl(value) {
 }
 
 // Repository data structure with live site support
-interface RepositoryData {
-  id: number;
-  name: string;
-  description: string;
-  html_url: string;
-  homepage: string | null;
-  language: string | null;
-  stargazers_count: number;
-  forks_count: number;
-  updated_at: string;
-  private: boolean;
-  // Live site support
-  customLiveUrl?: string;
+function RepositoryData(id, name, description, html_url, homepage, language, stargazers_count, forks_count, updated_at, private, customLiveUrl) {
+  this.id = id;
+  this.name = name;
+  this.description = description;
+  this.html_url = html_url;
+  this.homepage = homepage;
+  this.language = language;
+  this.stargazers_count = stargazers_count;
+  this.forks_count = forks_count;
+  this.updated_at = updated_at;
+  this.private = private;
+  this.customLiveUrl = customLiveUrl;
 }
 
 // Function to get live site URL for a repository
-function getLiveSiteUrl(repoName: string, homepage: string | null): string | null {
+function getLiveSiteUrl(repoName, homepage) {
   // First check if there's a custom live URL for this repository
   if (CUSTOM_LIVE_URLS[repoName]) {
     return CUSTOM_LIVE_URLS[repoName];
@@ -131,7 +130,7 @@ function getLiveSiteUrl(repoName: string, homepage: string | null): string | nul
 
 // Main Dashboard Component
 function App() {
-  const [repositories, setRepositories] = useState<RepositoryData[]>([]);
+  const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [username, setUsername] = useState(USERNAME);
@@ -143,22 +142,22 @@ function App() {
         const featuredPromises = Array.from(FEATURED_REPOSITORIES).map(async (repoName) => {
           try {
             const response = await githubGet(`/users/${username}/repos?per_page=100`);
-            const repo = response.find((r: any) => r.name === repoName);
+            const repo = response.find((r) => r.name === repoName);
             if (repo) {
               const customLiveUrl = getLiveSiteUrl(repo.name, repo.homepage);
-              return {
-                id: repo.id,
-                name: repo.name,
-                description: repo.description,
-                html_url: repo.html_url,
-                homepage: repo.homepage,
-                language: repo.language,
-                stargazers_count: repo.stargazers_count,
-                forks_count: repo.forks_count,
-                updated_at: repo.updated_at,
-                private: repo.private,
-                customLiveUrl: customLiveUrl || undefined,
-              };
+              return new RepositoryData(
+                repo.id,
+                repo.name,
+                repo.description,
+                repo.html_url,
+                repo.homepage,
+                repo.language,
+                repo.stargazers_count,
+                repo.forks_count,
+                repo.updated_at,
+                repo.private,
+                customLiveUrl || undefined
+              );
             }
             return null;
           } catch (e) {
@@ -175,8 +174,8 @@ function App() {
 
         // Fetch languages
         const repos = await githubGet(`/users/${username}/repos?per_page=100`);
-        const langMap: Record<string, number> = {};
-        repos.forEach((repo: any) => {
+        const langMap = {};
+        repos.forEach((repo) => {
           if (repo.language) {
             if (!langMap[repo.language]) {
               langMap[repo.language] = 0;
@@ -184,8 +183,8 @@ function App() {
             langMap[repo.language] += 1;
           }
         });
-        const total = repos.reduce((sum: number, r: any) => sum + (r.stargazers_count || 0), 0);
-        const languagesArray = Object.entries(langMap).map(([name, count]: [string, number]) => ({
+        const total = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+        const languagesArray = Object.entries(langMap).map((name, count) => ({
           name,
           percent: Math.round((count / total) * 100),
         }));
@@ -200,7 +199,7 @@ function App() {
   const visibleRepositories = useMemo(() => {
     return repositories
       .filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name))
-      .sort((a: RepositoryData, b: RepositoryData) => {
+      .sort((a, b) => {
         const order = ['quietgridlabs-c4-editor', 'adp201p4-hardware-spec', 'api-docs-portfolio-v2', 'cobalt-ui-navigation-docs', 'fintech-docs-demo', 'global11-demo-data-platform', 'territory-descriptor-unified', 'technical-writing-workflows', 'ss-tmk-specification', 'sois-onboard-interface-architecture', 'viwi-vsm-architecture', 'technical-writing-portfolio', 'icao-mrtd-documentation', 'dbstationary-architecture-docs'];
         return order.indexOf(a.name) - order.indexOf(b.name);
       });
