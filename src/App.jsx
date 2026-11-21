@@ -114,7 +114,25 @@ function websiteUrl(value) {
 }
 
 function getLiveSiteUrl(homepage) {
-  return homepage ? websiteUrl(homepage) : null;
+  if (!homepage) return null;
+
+  const normalized = websiteUrl(homepage);
+  try {
+    const url = new URL(normalized);
+    if (url.hostname === 'github.com' || url.hostname === 'www.github.com') return null;
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+const PROJECT_DESCRIPTIONS = {
+  'api-docs-portfolio-v2': 'REST API and legacy SOAP/WSDL documentation with OpenAPI 3.1, Postman, Redoc and Docs-as-Code (EN/RU).',
+  'global11-demo-data-platform': 'Oracle Global 11g relational data model, data dictionary, OLAP concepts and SQL analysis.',
+};
+
+function getProjectDescription(repo) {
+  return PROJECT_DESCRIPTIONS[repo.name] || repo.description || 'Description is not set in GitHub repository metadata.';
 }
 
 function App() {
@@ -231,9 +249,14 @@ function App() {
                     <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                       {repo.name} ↗
                     </a>
-                    <p>{repo.description || 'No description provided.'}</p>
+                    <p>{getProjectDescription(repo)}</p>
                     <div className="repo-meta">
-                      {repo.language && <span className="language-dot" aria-label={repo.language} />}
+                      {repo.language && (
+                        <>
+                          <span className="language-dot" aria-hidden="true" />
+                          <span className="language-name">{repo.language}</span>
+                        </>
+                      )}
                       <span>★ {formatNumber(repo.stargazers_count)}</span>
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
