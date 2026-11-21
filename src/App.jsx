@@ -42,43 +42,62 @@ const FEATURED_REPOSITORIES = new Set([
   'dbstationary-architecture-docs',
 ]);
 
-const API = 'https://api.github.com';
+const REPOSITORY_ORDER = [
+  'quietgridlabs-c4-editor',
+  'adp201p4-hardware-spec',
+  'api-docs-portfolio-v2',
+  'cobalt-ui-navigation-docs',
+  'fintech-docs-demo',
+  'global11-demo-data-platform',
+  'territory-descriptor-unified',
+  'technical-writing-workflows',
+  'ss-tmk-specification',
+  'sois-onboard-interface-architecture',
+  'viwi-vsm-architecture',
+  'technical-writing-portfolio',
+  'icao-mrtd-documentation',
+  'dbstationary-architecture-docs',
+];
 
-// Custom live site URLs for featured repositories
-const CUSTOM_LIVE_URLS = {
-  'icao-mrtd-documentation': 'https://github.io',
-  'dbstationary-architecture-docs': 'https://github.io',
-};
+const API = 'https://api.github.com';
 
 async function githubGet(path, signal) {
   const response = await fetch(`${API}${path}`, {
     headers: { Accept: 'application/vnd.github+json' },
     signal,
   });
+
   if (!response.ok) {
     const message = response.status === 403
       ? 'GitHub API rate limit reached. Please try again later.'
       : `GitHub API request failed (${response.status}).`;
     throw new Error(message);
   }
+
   return response.json();
 }
 
 function formatNumber(value = 0) {
-  return new Intl.NumberFormat('en', { notation: value > 9999 ? 'compact' : 'standard' }).format(value);
+  return new Intl.NumberFormat('en', {
+    notation: value > 9999 ? 'compact' : 'standard',
+  }).format(value);
 }
 
 function timeAgo(date) {
-  const days = Math.max(0, Math.floor((Date.now() - new Date(date).getTime()) / 86400000));
+  const timestamp = new Date(date).getTime();
+  if (!Number.isFinite(timestamp)) return 'date unavailable';
+
+  const days = Math.max(0, Math.floor((Date.now() - timestamp) / 86400000));
   if (days === 0) return 'today';
   if (days === 1) return 'yesterday';
   if (days < 30) return `${days} days ago`;
-  if (days < 365) return `${Math.floor(days / 365)} years ago`;
+  if (days < 365) return `${Math.floor(days / 30)} months ago`;
   return `${Math.floor(days / 365)} years ago`;
 }
 
 function eventDescription(event) {
   const repo = event.repo?.name?.replace(`${USERNAME}/`, '') || 'a repository';
+
   switch (event.type) {
     case 'PushEvent': return `Pushed ${event.payload?.commits?.length || 1} commit(s) to ${repo}`;
     case 'CreateEvent': return `Created ${event.payload?.ref_type || 'a resource'} in ${repo}`;
@@ -93,116 +112,95 @@ function eventDescription(event) {
 
 function websiteUrl(value) {
   if (!value) return '';
-  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+  return /^https?:\\/\\//i.test(value) ? value : `https://${value}`;
 }
 
-// Repository data structure with live site support
-function RepositoryData(id, name, description, html_url, homepage, language, stargazers_count, forks_count, updated_at, private, customLiveUrl) {
-  this.id = id;
-  this.name = name;
-  this.description = description;
-  this.html_url = html_url;
-  this.homepage = homepage;
-  this.language = language;
-  this.stargazers_count = stargazers_count;
-  this.forks_count = forks_count;
-  this.updated_at = updated_at;
-  this.private = private;
-  this.customLiveUrl = customLiveUrl;
+function getLiveSiteUrl(repo) {
+  // A repository URL is not a live site. Show this link only when GitHub provides a homepage.
+  return repo.homepage ? websiteUrl(repo.homepage) : null;
 }
 
-// Function to get live site URL for a repository
-function getLiveSiteUrl(repoName, homepage) {
-  // First check if there's a custom live URL for this repository
-  if (CUSTOM_LIVE_URLS[repoName]) {
-    return CUSTOM_LIVE_URLS[repoName];
-  }
-  // Fall back to homepage if available and valid
-  if (homepage && /^https?:\/\//i.test(homepage)) {
-    return homepage;
-  }
-  // Fall back to html_url if homepage not available
-  if (html_url) {
-    return html_url;
-  }
-  return null;
-}
-
-// Main Dashboard Component
 function App() {
   const [repositories, setRepositories] = useState([]);
   const [events, setEvents] = useState([]);
   const [languages, setLanguages] = useState([]);
-  const [username, setUsername] = useState(USERNAME);
+  const [username] = useState(USERNAME);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
     async function fetchData() {
-      try {
-        // Fetch featured repositories
-        const featuredPromises = Array.from(FEATURED_REPOSITORIES).map(async (repoName) => {
-          try {
-            const response = await githubGet(`/users/${username}/repos?per_page=100`);
-            const repo = response.find((r) => r.name === repoName);
-            if (repo) {
-              const customLiveUrl = getLiveSiteUrl(repo.name, repo.homepage);
-              return new RepositoryData(
-                repo.id,
-                repo.name,
-                repo.description,
-                repo.html_url,
-                repo.homepage,
-                repo.language,
-                repo.stargazers_count,
-                repo.forks_count,
-                repo.updated_at,
-                repo.private,
-                customLiveUrl || undefined
-              );
-            }
-            return null;
-          } catch (e) {
-            console.warn(`Could not fetch featured repo ${repoName}`, e);
-            return null;
-          }
-        });
-        const featuredResults = await Promise.all(featuredPromises);
-        setRepositories(featuredResults.filter(Boolean));
+      const [reposResult, eventsResult] = await Promise.allSettled([
+        githubGet(`/users/${username}/repos?per_page=100&sort=updated`, signal),
+        githubGet(`/users/${username}/events/public?per_page=100`, signal),
+      ]);
 
-        // Fetch events
-        const eventsResponse = await githubGet(`/users/${username}/events/public?per_page=100`);
-        setEvents(eventsResponse);
+      if (signal.aborted) return;
 
-        // Fetch languages
-        const repos = await githubGet(`/users/${username}/repos?per_page=100`);
-        const langMap = {};
-        repos.forEach((repo) => {
+      if (reposResult.status === 'fulfilled') {
+        const repos = reposResult.value;
+        const featured = repos
+          .filter((repo) => FEATURED_REPOSITORIES.has(repo.name) && !HIDDEN_REPOSITORIES.has(repo.name))
+          .map((repo) => ({
+            id: repo.id,
+            name: repo.name,
+            description: repo.description,
+            html_url: repo.html_url,
+            homepage: repo.homepage,
+            customLiveUrl: getLiveSiteUrl(repo),
+            language: repo.language,
+            stargazers_count: repo.stargazers_count,
+            forks_count: repo.forks_count,
+            updated_at: repo.updated_at,
+            private: repo.private,
+          }));
+
+        setRepositories(featured);
+
+        const languageCounts = repos.reduce((counts, repo) => {
           if (repo.language) {
-            if (!langMap[repo.language]) {
-              langMap[repo.language] = 0;
-            }
-            langMap[repo.language] += 1;
+            counts[repo.language] = (counts[repo.language] || 0) + 1;
           }
-        });
-        const total = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
-        const languagesArray = Object.entries(langMap).map((name, count) => ({
-          name,
-          percent: Math.round((count / total) * 100),
-        }));
+          return counts;
+        }, {});
+
+        const totalLanguageRepositories = Object.values(languageCounts)
+          .reduce((sum, count) => sum + count, 0);
+
+        const languagesArray = Object.entries(languageCounts)
+          .map(([name, count]) => ({
+            name,
+            percent: totalLanguageRepositories
+              ? Math.round((count / totalLanguageRepositories) * 100)
+              : 0,
+          }))
+          .sort((a, b) => b.percent - a.percent);
+
         setLanguages(languagesArray);
-      } catch (error) {
-        console.error('Failed to fetch data:', error);
+      } else if (reposResult.reason?.name !== 'AbortError') {
+        console.error('Failed to fetch repositories:', reposResult.reason);
+      }
+
+      if (eventsResult.status === 'fulfilled') {
+        setEvents(eventsResult.value);
+      } else if (eventsResult.reason?.name !== 'AbortError') {
+        console.error('Failed to fetch recent activity:', eventsResult.reason);
       }
     }
+
     fetchData();
-  }, [FEATURED_REPOSITORIES, username]);
+
+    return () => controller.abort();
+  }, [username]);
 
   const visibleRepositories = useMemo(() => {
+    const order = new Map(REPOSITORY_ORDER.map((name, index) => [name, index]));
+
     return repositories
       .filter((repo) => !HIDDEN_REPOSITORIES.has(repo.name))
-      .sort((a, b) => {
-        const order = ['quietgridlabs-c4-editor', 'adp201p4-hardware-spec', 'api-docs-portfolio-v2', 'cobalt-ui-navigation-docs', 'fintech-docs-demo', 'global11-demo-data-platform', 'territory-descriptor-unified', 'technical-writing-workflows', 'ss-tmk-specification', 'sois-onboard-interface-architecture', 'viwi-vsm-architecture', 'technical-writing-portfolio', 'icao-mrtd-documentation', 'dbstationary-architecture-docs'];
-        return order.indexOf(a.name) - order.indexOf(b.name);
-      });
+      .sort((a, b) => (order.get(a.name) ?? Number.MAX_SAFE_INTEGER)
+        - (order.get(b.name) ?? Number.MAX_SAFE_INTEGER));
   }, [repositories]);
 
   return (
@@ -218,7 +216,6 @@ function App() {
 
       <main>
         <section className="dashboard">
-          {/* Hero section */}
           <div className="hero">
             <div>
               <h1>GitHub Profile Dashboard</h1>
@@ -229,7 +226,6 @@ function App() {
             </a>
           </div>
 
-          {/* Featured Repositories */}
           <section className="featured-projects">
             <h2 className="featured-projects-heading">Featured Projects</h2>
             <div className="featured-project-grid">
@@ -241,12 +237,15 @@ function App() {
                     </a>
                     <p>{repo.description || 'No description provided.'}</p>
                     <div className="repo-meta">
-                      {repo.language && <span className="language-dot"></span>}
+                      {repo.language && <span className="language-dot" aria-label={repo.language} />}
                       <span>★ {formatNumber(repo.stargazers_count)}</span>
                       <span>⑂ {formatNumber(repo.forks_count)}</span>
                       <span>Updated {timeAgo(repo.updated_at)}</span>
-                      {repo.customLiveUrl && <a className="repo-website" href={repo.customLiveUrl} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
-                      {!repo.customLiveUrl && repo.homepage && <a className="repo-website" href={websiteUrl(repo.homepage)} target="_blank" rel="noopener noreferrer">Live site ↗</a>}
+                      {repo.customLiveUrl && (
+                        <a className="repo-website" href={repo.customLiveUrl} target="_blank" rel="noopener noreferrer">
+                          Live site ↗
+                        </a>
+                      )}
                     </div>
                   </div>
                   <span className={repo.private ? 'visibility private' : 'visibility'}>
@@ -258,7 +257,6 @@ function App() {
             </div>
           </section>
 
-          {/* Side column with language and activity panels */}
           <aside className="side-column">
             <section className="panel language-panel">
               <div className="panel-heading">
@@ -306,6 +304,8 @@ function App() {
             </section>
           </aside>
         </section>
+
+        <MethodologySection />
 
         <footer className="footer">
           <span>Data provided by the GitHub REST API</span>
