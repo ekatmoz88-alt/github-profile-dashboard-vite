@@ -18,6 +18,19 @@ The dashboard is an index of evidence, not a substitute for the evidence itself.
 
 Markers describe the **claim-to-evidence relationship**, not the overall quality of a person or project. A single project may contain claims with different statuses.
 
+## Single source of truth and cross-references
+
+Avoid repeating the same project facts, repository descriptions, functional summaries, and technical explanations across multiple pages.
+
+- Keep each reusable fact or description in one **master section** (the canonical source).
+- In other documents, use a short cross-reference instead of copying the full explanation, for example: `See Criteria 3D` or `See Criteria 4C`.
+- Use descriptive links that identify the destination section; preserve the exact criterion IDs when they are defined by the project or review framework.
+- Update the master section first. Then check that dependent pages still link to the correct section and do not retain outdated duplicated wording.
+- Keep genuinely different project-specific details in their own project sections; cross-reference shared material without flattening distinct system or repository boundaries.
+- Do not create a cross-reference to an undefined criterion. If the target section does not exist yet, mark the reference as pending or define the criterion before publication.
+
+The goal is one authoritative explanation per fact, with lightweight navigation from every place where readers need it.
+
 ## Claim-to-evidence workflow
 
 1. Write one specific claim about work performed.
