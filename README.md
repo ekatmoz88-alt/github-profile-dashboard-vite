@@ -11,6 +11,10 @@ A public portfolio dashboard for real technical writing and documentation engine
 
 ## Repository consolidation
 
+## Evidence-first editing
+
+Resume and dashboard claims follow the [evidence-first policy](docs/documentation/resume-and-dashboard-evidence-policy.md): every material statement is linked to a supporting artifact, assigned an evidence marker, and kept within the limits of what the source proves. Metrics and achievements are not added without traceable evidence. Public materials require a PII and secrets review.
+
 See the [canonical project and duplicate consolidation index](docs/portfolio-consolidation-index.md) for canonical document locations, merged project groups, retired duplicate repositories and evidence boundaries.
 
 ## Purpose
