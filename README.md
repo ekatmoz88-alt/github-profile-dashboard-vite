@@ -2,7 +2,11 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
-A public portfolio dashboard for real technical writing and documentation engineering projects.
+A public portfolio of technical investigation, architecture reconstruction and evidence-based documentation.
+
+> I investigate complex software systems, reconstruct their architecture, and turn technical sources into structured, reliable and maintainable documentation.
+
+The focus is not limited to end-user instructions: it includes source analysis, system boundaries, data and interface models, architecture diagrams, technical specifications and documentation quality controls. The role presented here is **Technical Writer with an engineering and analytical specialization** — not software architect or software developer.
 
 **Live dashboard:** https://github-profile-dashboard-vite.vercel.app/  
 **GitHub profile:** https://github.com/ekatmoz88-alt  
