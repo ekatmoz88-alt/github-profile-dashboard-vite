@@ -252,8 +252,8 @@ function App() {
         <section className="dashboard">
           <div className="hero">
             <div>
-              <h1>GitHub Profile Dashboard</h1>
-              <p className="hero-subtitle">Портфолио открытых репозиториев</p>
+              <h1>Technical Documentation Portfolio</h1>
+              <p className="hero-subtitle">Исследую сложные программные системы, восстанавливаю их архитектуру и превращаю технические источники в структурированную, достоверную и поддерживаемую документацию.</p>
             </div>
             <a href="https://github.com/ekatmoz88-alt" className="github-link" target="_blank" rel="noopener noreferrer">
               GitHub профиль ↗
