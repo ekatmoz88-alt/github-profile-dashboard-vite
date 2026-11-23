@@ -38,6 +38,7 @@ const FEATURED_REPOSITORIES = new Set([
   'technical-writing-portfolio',
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
+  'network-schedule-docs',
 ]);
 
 const REPOSITORY_ORDER = [
@@ -55,6 +56,7 @@ const REPOSITORY_ORDER = [
   'technical-writing-portfolio',
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
+  'network-schedule-docs',
 ];
 
 const API = 'https://api.github.com';
@@ -145,6 +147,7 @@ const LIVE_SITE_URLS = {
 const PROJECT_DESCRIPTIONS = {
   'api-docs-portfolio-v2': 'REST API and legacy SOAP/WSDL documentation with OpenAPI 3.1, Postman, Redoc and Docs-as-Code (EN/RU).',
   'global11-demo-data-platform': 'Oracle Global 11g relational data model, data dictionary, OLAP concepts and SQL analysis.',
+  'network-schedule-docs': 'Evidence-based documentation of a network scheduling simulator: topology, packet transfer, time-slot scheduling and physical test-bench boundaries.',
 };
 
 function getProjectDescription(repo) {
