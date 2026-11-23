@@ -142,6 +142,7 @@ const LIVE_SITE_URLS = {
   'viwi-vsm-architecture': 'https://ekatmoz88-alt.github.io/viwi-vsm-architecture/',
   'technical-writing-portfolio': 'https://ekatmoz88-alt.github.io/technical-writing-portfolio/',
   'icao-mrtd-documentation': 'https://ekatmoz88-alt.github.io/icao-mrtd-documentation/',
+  'network-schedule-docs': 'https://ekatmoz88-alt.github.io/network-schedule-docs/',
 };
 
 const PROJECT_DESCRIPTIONS = {
