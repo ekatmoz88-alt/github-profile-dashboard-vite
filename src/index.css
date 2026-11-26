@@ -239,3 +239,24 @@ h1, h2 { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+.architecture-case-studies-card {
+  grid-column: 1 / -1;
+  min-height: 132px;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.architecture-case-studies-card:hover { border-color: #d4c7c1; color: inherit; }
+.architecture-card-title {
+  color: #25221f;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.architecture-case-studies-card:hover .architecture-card-title { color: var(--accent); }
+.architecture-case-studies-card .repo-main > p { max-width: 720px; }
+@media (max-width: 980px) {
+  .architecture-case-studies-card { grid-column: 1; }
+}
