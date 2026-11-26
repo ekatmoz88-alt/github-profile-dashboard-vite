@@ -39,6 +39,8 @@ const FEATURED_REPOSITORIES = new Set([
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
   'network-schedule-docs',
+  'rudp-architecture-showcase',
+  'infotainment-services-architecture-showcase',
 ]);
 
 const REPOSITORY_ORDER = [
@@ -57,6 +59,8 @@ const REPOSITORY_ORDER = [
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
   'network-schedule-docs',
+  'rudp-architecture-showcase',
+  'infotainment-services-architecture-showcase',
 ];
 
 const API = 'https://api.github.com';
