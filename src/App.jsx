@@ -118,7 +118,7 @@ function eventDescription(event) {
 
 function websiteUrl(value) {
   if (!value) return '';
-  return /^https?:\\/\\//i.test(value) ? value : `https://${value}`;
+  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
 }
 
 function getLiveSiteUrl(homepage) {
