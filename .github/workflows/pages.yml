@@ -34,6 +34,37 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Validate architecture case studies page
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+
+          page = Path("public/architecture-case-studies.html")
+          if not page.is_file():
+              sys.exit("ERROR: public/architecture-case-studies.html is missing")
+
+          content = page.read_text(encoding="utf-8")
+          repositories = [
+              "rudp-architecture-showcase",
+              "infotainment-services-architecture-showcase",
+              "embedded-tls-architecture-showcase",
+              "routing-engine-architecture-showcase",
+          ]
+
+          for repository in repositories:
+              repo_url = f"https://github.com/ekatmoz88-alt/{repository}"
+              badge_url = f"{repo_url}/actions/workflows/ci.yml/badge.svg?branch=main"
+              if repo_url not in content:
+                  sys.exit(f"ERROR: repository link is missing: {repository}")
+              if badge_url not in content:
+                  sys.exit(f"ERROR: GitHub Actions badge is missing: {repository}")
+
+          if content.count("badge.svg?branch=main") != 4:
+              sys.exit("ERROR: expected exactly four GitHub Actions CI badges")
+
+          print("Architecture case studies page: all four repository links and CI badges validated.")
+          PY
       - run: npm run build
       - name: Validate OpenAPI draft with Spectral
         run: npx --yes @stoplight/spectral-cli@6.15.0 lint docs/global11-olap/openapi-draft.yaml --fail-severity=error
