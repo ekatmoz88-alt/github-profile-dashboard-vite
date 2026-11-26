@@ -41,6 +41,7 @@ const FEATURED_REPOSITORIES = new Set([
   'network-schedule-docs',
   'rudp-architecture-showcase',
   'infotainment-services-architecture-showcase',
+  'embedded-tls-architecture-showcase',
 ]);
 
 const REPOSITORY_ORDER = [
@@ -61,6 +62,7 @@ const REPOSITORY_ORDER = [
   'network-schedule-docs',
   'rudp-architecture-showcase',
   'infotainment-services-architecture-showcase',
+  'embedded-tls-architecture-showcase',
 ];
 
 const API = 'https://api.github.com';
@@ -116,7 +118,7 @@ function eventDescription(event) {
 
 function websiteUrl(value) {
   if (!value) return '';
-  return /^https?:\/\//i.test(value) ? value : `https://${value}`;
+  return /^https?:\\/\\//i.test(value) ? value : `https://${value}`;
 }
 
 function getLiveSiteUrl(homepage) {
@@ -153,6 +155,11 @@ const PROJECT_DESCRIPTIONS = {
   'api-docs-portfolio-v2': 'REST API and legacy SOAP/WSDL documentation with OpenAPI 3.1, Postman, Redoc and Docs-as-Code (EN/RU).',
   'global11-demo-data-platform': 'Oracle Global 11g relational data model, data dictionary, OLAP concepts and SQL analysis.',
   'network-schedule-docs': 'Evidence-based documentation of a network scheduling simulator: topology, packet transfer, time-slot scheduling and physical test-bench boundaries.',
+  'embedded-tls-architecture-showcase': 'Архитектурный разбор криптографического стека (WolfSSL), протокола TLS 1.3, абстракции I/O Callbacks и профилей сборки CMake для встраиваемых систем.',
+};
+
+const PROJECT_TAGS = {
+  'embedded-tls-architecture-showcase': ['C', 'Embedded TLS', 'Security / Crypto', 'C4 / Mermaid', 'CMake'],
 };
 
 function getProjectDescription(repo) {
@@ -278,6 +285,13 @@ function App() {
                       {repo.name} ↗
                     </a>
                     <p>{getProjectDescription(repo)}</p>
+                    {PROJECT_TAGS[repo.name]?.length > 0 && (
+                      <div className="repo-tags" aria-label="Project tags">
+                        {PROJECT_TAGS[repo.name].map((tag) => (
+                          <span className="repo-tag" key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                    )}
                     <div className="repo-meta">
                       {repo.language && (
                         <>
