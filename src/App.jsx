@@ -39,9 +39,6 @@ const FEATURED_REPOSITORIES = new Set([
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
   'network-schedule-docs',
-  'rudp-architecture-showcase',
-  'infotainment-services-architecture-showcase',
-  'embedded-tls-architecture-showcase',
 ]);
 
 const REPOSITORY_ORDER = [
@@ -60,9 +57,6 @@ const REPOSITORY_ORDER = [
   'icao-mrtd-documentation',
   'dbstationary-architecture-docs',
   'network-schedule-docs',
-  'rudp-architecture-showcase',
-  'infotainment-services-architecture-showcase',
-  'embedded-tls-architecture-showcase',
 ];
 
 const API = 'https://api.github.com';
@@ -314,6 +308,24 @@ function App() {
                   </span>
                 </article>
               ))}
+              <a
+                className="repo-item architecture-case-studies-card"
+                href="./architecture-case-studies.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Source-Based System Architecture Case Studies, four repositories"
+              >
+                <div className="repo-main">
+                  <span className="architecture-card-title">Source-Based System Architecture Case Studies (4 Repositories) ↗</span>
+                  <p>Four source-based architecture studies covering Reliable UDP, automotive infotainment services, embedded TLS and the Valhalla routing engine.</p>
+                  <div className="repo-meta">
+                    <span>4 repositories</span>
+                    <span>C4 · Sequence · Graph model · OpenAPI 3.1</span>
+                    <span className="repo-website">Open case studies ↗</span>
+                  </div>
+                </div>
+                <span className="visibility">Architecture</span>
+              </a>
               {!visibleRepositories.length && <p className="empty-state">No repositories match that search.</p>}
             </div>
           </section>
