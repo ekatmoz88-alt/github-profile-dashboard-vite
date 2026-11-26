@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf9f8">
+  <title>Architecture Case Studies | Technical Documentation Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202b3c;
+      --muted: #6b6b6b;
+      --line: #e5e2df;
+      --accent: #c74634;
+      --surface: #fff;
+      --canvas: #fbf9f8;
+      --soft: #f7f1ee;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: var(--canvas); color: var(--ink); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .topbar { min-height: 68px; padding: 0 max(5vw, calc((100vw - 1120px) / 2)); display: flex; align-items: center; background: #161513; border-bottom: 1px solid #302d2a; }
+    .brand { color: #fff; font-size: 16px; font-weight: 700; letter-spacing: -.3px; }
+    main { width: min(100% - 40px, 1120px); margin: 0 auto; padding: 42px 0 56px; }
+    .back { display: inline-flex; align-items: center; margin-bottom: 28px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--accent); font-size: 12px; font-weight: 650; }
+    .back:hover { border-color: var(--accent); }
+    .eyebrow { margin: 0 0 9px; color: var(--accent); font-size: 10px; font-weight: 750; letter-spacing: 1.5px; text-transform: uppercase; }
+    h1 { margin: 0 0 10px; color: #161513; font-size: clamp(29px, 4vw, 40px); line-height: 1.12; letter-spacing: -1.3px; }
+    .intro { max-width: 760px; margin: 0 0 28px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .case { min-width: 0; padding: 21px; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; box-shadow: 0 2px 8px #23354a08; }
+    .case-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 9px; }
+    h2 { margin: 0; color: #25221f; font-size: 17px; line-height: 1.35; letter-spacing: -.25px; }
+    .repo-link { display: inline-block; margin-top: 5px; color: var(--accent); font-size: 11px; font-weight: 650; overflow-wrap: anywhere; }
+    .description { min-height: 44px; margin: 13px 0 17px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .artifacts-label { margin: 0 0 8px; color: #514c47; font-size: 10px; font-weight: 750; letter-spacing: .8px; text-transform: uppercase; }
+    .artifacts { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 18px; padding: 0; list-style: none; }
+    .artifacts a { display: inline-flex; padding: 6px 9px; color: #65534e; background: var(--soft); border: 1px solid #eaded8; border-radius: 999px; font-size: 10px; line-height: 1.25; }
+    .artifacts a:hover { border-color: var(--accent); color: var(--accent); }
+    .ci { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 9px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .ci-label { color: #77716c; font-size: 10px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; }
+    .ci img { display: block; width: auto; max-width: 100%; height: 20px; }
+    footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: #89827c; font-size: 10px; line-height: 1.5; }
+    @media (max-width: 720px) { main { padding-top: 28px; } .grid { grid-template-columns: 1fr; } .description { min-height: 0; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./">Technical Documentation Portfolio</a></header>
+  <main>
+    <a class="back" href="./">← Back to Portfolio Dashboard</a>
+    <p class="eyebrow">Architecture &amp; Systems Engineering</p>
+    <h1>Source-Based System Architecture Case Studies</h1>
+    <p class="intro">Four repository-based studies of software architecture and technical interfaces. Each case links to its source repository, supporting documentation and the live GitHub Actions CI status for the main branch.</p>
+
+    <section class="grid" aria-label="Architecture case studies">
+      <article class="case">
+        <div class="case-head"><div>
+          <h2>Reliable UDP (RUDP) Emulator</h2>
+          <a class="repo-link" href="https://github.com/ekatmoz88-alt/rudp-architecture-showcase" target="_blank" rel="noopener noreferrer">ekatmoz88-alt/rudp-architecture-showcase ↗</a>
+        </div></div>
+        <p class="description">Reliable transport over UDP: packet framing, CRC checks, acknowledgements, retransmission and session management.</p>
+        <p class="artifacts-label">Documentation artifacts</p>
+        <ul class="artifacts">
+          <li><a href="https://github.com/ekatmoz88-alt/rudp-architecture-showcase/blob/main/docs/architecture-c4.md" target="_blank" rel="noopener noreferrer">C4 architecture</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/rudp-architecture-showcase/blob/main/docs/protocol-and-sequence.md" target="_blank" rel="noopener noreferrer">Protocol &amp; sequence diagrams</a></li>
+        </ul>
+        <div class="ci"><span class="ci-label">GitHub Actions · main</span><a href="https://github.com/ekatmoz88-alt/rudp-architecture-showcase/actions" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ekatmoz88-alt/rudp-architecture-showcase/actions/workflows/ci.yml/badge.svg?branch=main" alt="RUDP Architecture CI status"></a></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><div>
+          <h2>Infotainment Services Architecture</h2>
+          <a class="repo-link" href="https://github.com/ekatmoz88-alt/infotainment-services-architecture-showcase" target="_blank" rel="noopener noreferrer">ekatmoz88-alt/infotainment-services-architecture-showcase ↗</a>
+        </div></div>
+        <p class="description">Modular C/C++ service layer for a multimedia platform, CMake project composition and inter-process communication.</p>
+        <p class="artifacts-label">Documentation artifacts</p>
+        <ul class="artifacts">
+          <li><a href="https://github.com/ekatmoz88-alt/infotainment-services-architecture-showcase/blob/main/docs/architecture-c4.md" target="_blank" rel="noopener noreferrer">C4 architecture</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/infotainment-services-architecture-showcase/blob/main/docs/ipc-and-sequences.md" target="_blank" rel="noopener noreferrer">IPC &amp; sequence diagrams</a></li>
+        </ul>
+        <div class="ci"><span class="ci-label">GitHub Actions · main</span><a href="https://github.com/ekatmoz88-alt/infotainment-services-architecture-showcase/actions" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ekatmoz88-alt/infotainment-services-architecture-showcase/actions/workflows/ci.yml/badge.svg?branch=main" alt="Infotainment CI status"></a></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><div>
+          <h2>Embedded TLS / WolfSSL</h2>
+          <a class="repo-link" href="https://github.com/ekatmoz88-alt/embedded-tls-architecture-showcase" target="_blank" rel="noopener noreferrer">ekatmoz88-alt/embedded-tls-architecture-showcase ↗</a>
+        </div></div>
+        <p class="description">Embedded cryptographic stack: WolfSSL modules, TLS handshake flow, configurable build profiles and custom I/O callbacks.</p>
+        <p class="artifacts-label">Documentation artifacts</p>
+        <ul class="artifacts">
+          <li><a href="https://github.com/ekatmoz88-alt/embedded-tls-architecture-showcase/blob/main/docs/architecture-c4.md" target="_blank" rel="noopener noreferrer">C4 architecture</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/embedded-tls-architecture-showcase/blob/main/docs/tls-handshake-and-io.md" target="_blank" rel="noopener noreferrer">TLS sequence &amp; I/O callbacks</a></li>
+        </ul>
+        <div class="ci"><span class="ci-label">GitHub Actions · main</span><a href="https://github.com/ekatmoz88-alt/embedded-tls-architecture-showcase/actions" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ekatmoz88-alt/embedded-tls-architecture-showcase/actions/workflows/ci.yml/badge.svg?branch=main" alt="Embedded TLS CI status"></a></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><div>
+          <h2>Valhalla Routing Engine</h2>
+          <a class="repo-link" href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase" target="_blank" rel="noopener noreferrer">ekatmoz88-alt/routing-engine-architecture-showcase ↗</a>
+        </div></div>
+        <p class="description">Source-based analysis of Valhalla: tile-based graph model, routing modules, REST interface and Protobuf API contracts.</p>
+        <p class="artifacts-label">Documentation artifacts</p>
+        <ul class="artifacts">
+          <li><a href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/blob/main/docs/architecture-c4.md" target="_blank" rel="noopener noreferrer">C4 architecture</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/blob/main/docs/graph-data-model.md" target="_blank" rel="noopener noreferrer">Graph data model</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/blob/main/docs/api-specification.md" target="_blank" rel="noopener noreferrer">API specification</a></li>
+          <li><a href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/blob/main/api/openapi.yaml" target="_blank" rel="noopener noreferrer">OpenAPI 3.1</a></li>
+        </ul>
+        <div class="ci"><span class="ci-label">GitHub Actions · main</span><a href="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/actions" target="_blank" rel="noopener noreferrer"><img src="https://github.com/ekatmoz88-alt/routing-engine-architecture-showcase/actions/workflows/ci.yml/badge.svg?branch=main" alt="Routing Engine CI status"></a></div>
+      </article>
+    </section>
+    <footer>CI badges are served by GitHub Actions and reflect each repository's workflow status for the main branch. Artifact links open the corresponding source documents in GitHub.</footer>
+  </main>
+</body>
+</html>
