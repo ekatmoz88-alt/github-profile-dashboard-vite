@@ -150,6 +150,7 @@ const PROJECT_DESCRIPTIONS = {
   'global11-demo-data-platform': 'Oracle Global 11g relational data model, data dictionary, OLAP concepts and SQL analysis.',
   'network-schedule-docs': 'Evidence-based documentation of a network scheduling simulator: topology, packet transfer, time-slot scheduling and physical test-bench boundaries.',
   'embedded-tls-architecture-showcase': 'Архитектурный разбор криптографического стека (WolfSSL), протокола TLS 1.3, абстракции I/O Callbacks и профилей сборки CMake для встраиваемых систем.',
+  'territory-descriptor-unified': 'АРМ ППО «Территория» / АРМ «Дешифратор» — единая техническая документация (RU/EN).\n1. Архитектура системы — модули, контуры, интеграции.\n2. База данных — ERD, 24 прикладные таблицы.\n3. API и обмен данными — MRZ, файловый обмен.\n4. Верификация — матрица ТЗ–МИ–реализация.\n5. Реестр дефектов — BUG-01…BUG-07.\nДокументация: https://ekatmoz88-alt.github.io/territory-descriptor-unified/#/',
 };
 
 const PROJECT_TAGS = {
